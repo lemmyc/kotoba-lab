@@ -7,15 +7,19 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import { defineConfig } from 'vite'
 
+const mdxPlugin = mdx({
+  providerImportSource: '@mdx-js/react',
+  remarkPlugins: [remarkGfm],
+  rehypePlugins: [rehypeSlug],
+})
+
 export default defineConfig({
   plugins: [
     {
       enforce: 'pre',
-      ...mdx({
-        providerImportSource: '@mdx-js/react',
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeSlug],
-      }),
+      ...mdxPlugin,
+      // `?raw` imports (the content tests read lesson sources this way) must stay plain text.
+      transform: (value: string, id: string) => (/[?&]raw\b/.test(id) ? undefined : mdxPlugin.transform(value, id)),
     },
     react({ include: /\.(mdx|js|jsx|ts|tsx)$/ }),
     tailwindcss(),

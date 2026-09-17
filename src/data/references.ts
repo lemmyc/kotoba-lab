@@ -131,6 +131,16 @@ export const references: Reference[] = [
     chapters: ['hinh-thai-hoc', 'cu-phap-hoc'],
   },
   {
+    id: 'nguyen-tai-can-1975',
+    authors: 'Nguyễn Tài Cẩn',
+    year: 1975,
+    title: 'Ngữ pháp tiếng Việt: Tiếng – Từ ghép – Đoản ngữ',
+    focus: 'vi',
+    kind: 'textbook',
+    note: 'Công trình kinh điển về "tiếng" (hình tiết), từ ghép và đoản ngữ tiếng Việt.',
+    chapters: ['hinh-thai-hoc', 'cu-phap-hoc'],
+  },
+  {
     id: 'thompson-1965',
     authors: 'Thompson, L. C.',
     year: 1965,

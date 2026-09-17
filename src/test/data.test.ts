@@ -12,6 +12,10 @@ const rawLessons = import.meta.glob<string>('../content/lessons/*.mdx', { query:
 const registered = Object.keys(mdxComponents).filter((name) => /^[A-Z]/.test(name))
 
 describe('content data', () => {
+  it('reads lesson sources as plain text', () => {
+    expect(Object.values(rawLessons).every((source) => typeof source === 'string')).toBe(true)
+  })
+
   it('passes all integrity checks', () => {
     expect(checkContentData({ lessons, glossaryByChapter, quizzesByChapter, references })).toEqual([])
   })

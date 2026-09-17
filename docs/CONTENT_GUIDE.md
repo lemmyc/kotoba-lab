@@ -31,6 +31,8 @@ Các phần *Mục tiêu bài học*, *Thuật ngữ chính*, *Đọc thêm*, *Q
 - Giảng bằng **tiếng Việt**, câu rõ ràng, xưng hô trung tính ("bạn", "chúng ta").
 - Thuật ngữ lần đầu xuất hiện: **in đậm**, kèm tiếng Anh trong ngoặc, *in nghiêng*: **tính võ đoán** (*arbitrariness*). Thuật ngữ quan trọng thì dùng `<Definition>`.
 - Ví dụ ưu tiên thứ tự: tiếng Việt → tiếng Anh → tiếng Nhật.
+- **Lồng ghép ba ngôn ngữ ngay trong phần lý thuyết.** Mỗi mục `###` của *Cơ sở lý thuyết* nên có ví dụ tiếng Anh và tiếng Nhật bên cạnh tiếng Việt, không để dành hết cho phần mở rộng.
+- **Phần mở rộng phải có chiều sâu**: mỗi phần *Mở rộng: Tiếng Anh / Tiếng Nhật* nên có từ 4 mục `###` trở lên, đi vào hiện tượng đặc thù của ngôn ngữ đó, khó khăn của người Việt khi học và góc Hán Việt (với tiếng Nhật).
 - Phần mở rộng tiếng Anh/Nhật **vẫn giảng bằng tiếng Việt**, chỉ ví dụ viết bằng ngôn ngữ gốc. Riêng `<Summary lang="en|ja">` viết hẳn bằng tiếng Anh/Nhật.
 - **Không bịa** số liệu, trích dẫn, ví dụ "của bệnh nhân" hay năm xuất bản. Chưa chắc thì ghi `<Todo>` kèm "cần kiểm chứng".
 - Quy ước: dấu `\*` trước câu sai ngữ pháp (hoặc dùng `<Ex bad>`); IPA theo giọng Mỹ (General American); romaji theo hệ **Hepburn có dấu trường âm** (tōgoron, kenjōgo); âm mũi trước nguyên âm viết `n'` (on'inron).
