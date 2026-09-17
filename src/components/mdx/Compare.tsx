@@ -21,10 +21,24 @@ function Cell({ value, lang }: { value?: string; lang?: 'ja' }) {
       </span>
     )
   }
-  return <JaText text={value} lang={lang} />
+  // **bold** segments alternate with plain ones after the split
+  const parts = value.split(/\*\*(.+?)\*\*/)
+  return (
+    <span lang={lang}>
+      {parts.map((part, index) =>
+        index % 2 === 1 ? (
+          <strong key={index} className="font-semibold text-brand">
+            <JaText text={part} />
+          </strong>
+        ) : (
+          <JaText key={index} text={part} />
+        ),
+      )}
+    </span>
+  )
 }
 
-/** Vietnamese – English – Japanese comparison table. Cells accept furigana markup. */
+/** Vietnamese – English – Japanese comparison table. Cells accept furigana markup and **bold**. */
 export function Compare({ rows, caption }: CompareProps) {
   return (
     <div className="not-prose my-6 overflow-x-auto rounded-xl border border-line bg-surface">

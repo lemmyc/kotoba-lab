@@ -84,7 +84,7 @@ Các từ trong `text`, `romaji`, `gloss` cách nhau bằng dấu cách. Nếu s
 <Gloss lang="ja" text="私{わたし}は 本{ほん}を 読{よ}む" romaji="watashi-wa hon-o yomu" gloss="tôi-CĐ sách-TN đọc" translation="Tôi đọc sách." />
 <Gloss lang="ja" bad text="…" />   ← có dấu * (sai ngữ pháp)
 ```
-Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を), **CN** (chủ ngữ が), **QK** (quá khứ), **PĐ** (phủ định), **LS** (lịch sự ます). Giải thích viết tắt ngay dưới ví dụ đầu tiên của chương.
+Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を), **CN** (chủ ngữ が), **QK** (quá khứ), **PĐ** (phủ định), **LS** (lịch sự ます), **NV** (nghi vấn か), **GK** (gây khiến させ), **BĐ** (bị động られ). Từ gồm nhiều chữ tiếng Việt trong dòng chú giải thì nối bằng dấu chấm (`hôm.qua`, `đọc.QK`). Giải thích viết tắt ngay dưới ví dụ đầu tiên của chương.
 
 ### `<Compare>`: bảng so sánh ba ngôn ngữ
 ```mdx
@@ -96,6 +96,7 @@ Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を),
   ]}
 />
 ```
+Trong ô dùng được furigana và `**đậm**` (ví dụ để đánh dấu trung tâm của cụm). Markdown khác như `*nghiêng*` hay liên kết không được xử lý.
 
 ### `<Tree>`: cây cú pháp, cây hình thái
 Viết bằng ký hiệu ngoặc vuông có nhãn. Sau nhãn, các chữ liền nhau gộp thành một lá; ngoặc lồng bên trong là nút con.

@@ -1,69 +1,213 @@
-{/* Chương 4 — KHUNG BÀI. Viết theo chuẩn của chương 1 (ban-chat-ngon-ngu.mdx); xóa <Todo> khi viết xong từng mục. */}
-
 ## Cơ sở lý thuyết
 
-Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu trúc có thứ bậc. Cú pháp học nghiên cứu những quy tắc cho phép ta ghép từ thành cụm từ, cụm từ thành câu, và giải thích vì sao tiếng Việt nói "Tôi ăn cơm" còn tiếng Nhật lại nói "Tôi cơm ăn".
+Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu trúc có thứ bậc. **Cú pháp học** (*syntax*) nghiên cứu những quy tắc cho phép ta ghép từ thành cụm từ, cụm từ thành câu. Nó cũng giải thích vì sao tiếng Việt nói "Tôi ăn cơm", còn tiếng Nhật lại nói "Tôi cơm ăn".
 
 ### Tri thức cú pháp
 
-<Todo>
-- Người bản ngữ biết: câu đúng/sai ngữ pháp, trật tự từ, quan hệ giữa các thành phần, câu mơ hồ, câu đồng nghĩa khác cấu trúc.
-- Nhắc lại ví dụ "Colorless green ideas…" (Chương 1) và ví dụ tiếng Việt.
-</Todo>
+Tương tự tri thức về từ ở [Chương 3](/bai-hoc/hinh-thai-hoc), người bản ngữ có một khối tri thức cú pháp vô thức. Họ biết:
+
+1. **Câu nào đúng, câu nào sai ngữ pháp**, kể cả với câu vô nghĩa. Ví dụ quen thuộc là *Colorless green ideas sleep furiously* ([Chương 1](/bai-hoc/ban-chat-ngon-ngu)). Tiếng Việt cũng vậy: "Những ý tưởng xanh lá không màu ngủ dữ dội" vô nghĩa nhưng đúng ngữ pháp, còn "\*Dữ dội ngủ không màu ý tưởng" thì không.
+2. **Trật tự từ** mà ngôn ngữ đòi hỏi:
+
+<Ex>Tôi đã đọc quyển sách này.</Ex>
+<Ex bad>Tôi quyển sách này đã đọc.</Ex>
+<Ex>I have read this book.</Ex>
+<Ex bad>I this book have read.</Ex>
+
+Với tiếng Nhật thì ngược lại: động từ **phải** đứng cuối.
+
+<Gloss lang="ja" text="私{わたし}は この 本{ほん}を 読{よ}んだ" romaji="watashi-wa kono hon-o yonda" gloss="tôi-CĐ này sách-TN đọc.QK" translation="Tôi đã đọc quyển sách này." />
+
+<Gloss lang="ja" bad text="私{わたし}は 読{よ}んだ この 本{ほん}を" romaji="watashi-wa yonda kono hon-o" gloss="tôi-CĐ đọc.QK này sách-TN" translation="(sai: động từ không được đứng trước tân ngữ trong câu trung tính)" />
+
+Viết tắt trong dòng chú giải: **CĐ** là trợ từ chủ đề は, **CN** là trợ từ chủ ngữ が, **TN** là trợ từ tân ngữ を, **QK** là quá khứ, **LS** là đuôi lịch sự ます, **NV** là tiểu từ nghi vấn か.
+
+3. **Quan hệ giữa các thành phần**: trong "Nam nhờ Lan mua sách", người mua là Lan chứ không phải Nam, dù "Nam" đứng gần đầu câu.
+4. **Câu mơ hồ**: một chuỗi từ có thể có hai cấu trúc, như sẽ thấy ở mục mơ hồ cấu trúc.
+5. **Câu đồng nghĩa khác cấu trúc**: "Mèo đuổi chuột" và "Chuột bị mèo đuổi"; *The cat chased the mouse* và *The mouse was chased by the cat*; <Ja t="猫{ねこ}がネズミを追{お}いかけた" /> và <Ja t="ネズミが猫{ねこ}に追{お}いかけられた" />.
 
 ### Thành tố và phép thử thành tố
 
-<Todo>
-- `<Definition>` thành tố (constituent — 構成素).
-- Phép thử: thay thế (bằng đại từ), di chuyển, trả lời câu hỏi, đặt liên từ.
-- Ví dụ tiếng Việt: "[Cô giáo mới của lớp tôi] [đã về quê]".
-</Todo>
+<Definition term="Thành tố" en="constituent" ipa="kənˈstɪtʃuənt" ja="構成素{こうせいそ}" romaji="kōseiso">
+Một từ hoặc một nhóm từ hoạt động như **một đơn vị thống nhất** trong cấu trúc câu.
+</Definition>
+
+Trong câu "Cô giáo mới của lớp tôi đã về quê", chuỗi "cô giáo mới của lớp tôi" là một thành tố, còn "của lớp tôi đã" thì không. Làm sao chứng minh? Nhà ngôn ngữ học dùng các **phép thử thành tố**:
+
+| Phép thử | Cách làm | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|---|
+| **Thay thế** | Thay cả chuỗi bằng một đại từ | "**Cô ấy** đã về quê." | "**She** went back to her hometown." | <Ja t="彼女{かのじょ}は帰省{きせい}した" /> |
+| **Trả lời câu hỏi** | Chuỗi đó đứng một mình làm câu trả lời | "Ai về quê?" – "Cô giáo mới của lớp tôi." | "Who went back to their hometown?" – "Our new teacher." | <Ja t="誰{だれ}が帰省{きせい}した？" /> – <Ja t="新{あたら}しい先生{せんせい}。" /> |
+| **Di chuyển** | Đưa cả chuỗi sang vị trí khác | "Người về quê là cô giáo mới của lớp tôi." | "It was our new teacher who went back to her hometown." | <Ja t="帰省{きせい}したのは新{あたら}しい先生{せんせい}だ" /> |
+| **Kết hợp** | Nối chuỗi với một chuỗi cùng loại bằng "và" | "Cô giáo mới của lớp tôi và thầy hiệu trưởng…" | "Our new teacher and the principal…" | <Ja t="新{あたら}しい先生{せんせい}と校長{こうちょう}…" /> |
+
+Chuỗi không phải thành tố sẽ "trượt" các phép thử: không thể thay "của lớp tôi đã" bằng một đại từ, cũng không thể dùng nó làm câu trả lời.
+
+<Callout type="tip">
+Tiếng Nhật có một "phép thử" rất tiện: cả khối **danh từ + trợ từ** có thể đổi chỗ tự do trước động từ (hiện tượng *scrambling*). Chỉ những gì là một thành tố mới cùng di chuyển được. Ví dụ, <Ja t="本{ほん}を" /> luôn đi cùng nhau, không thể tách 本 khỏi を.
+</Callout>
 
 ### Phạm trù cú pháp
 
-<Todo>
-- Phạm trù từ vựng: danh từ (N), động từ (V), tính từ (Adj), giới từ (P)…
-- Phạm trù cụm từ: NP, VP, PP, AP; câu (S).
-- Lưu ý đặc thù tiếng Việt: loại từ, tính từ hoạt động như vị từ.
-</Todo>
+Các từ và cụm từ được xếp vào **phạm trù cú pháp** (*syntactic category*). Những từ cùng phạm trù thay thế được cho nhau mà câu vẫn đúng ngữ pháp.
+
+**Phạm trù từ vựng** (loại từ):
+
+| Ký hiệu | Phạm trù | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|---|
+| N | Danh từ | mèo, sách | cat, book | <Ja t="猫{ねこ}" />, <Ja t="本{ほん}" /> |
+| V | Động từ | ăn, đọc | eat, read | <Ja t="食{た}べる" />, <Ja t="読{よ}む" /> |
+| Adj | Tính từ | đẹp, cao | beautiful, tall | <Ja t="高{たか}い" />, <Ja t="静{しず}か" /> |
+| P | Giới từ / hậu giới từ | ở, trong, của | in, on, of | で, に, の (trợ từ) |
+| Det | Từ hạn định | này, ấy, những | the, this, my | この, その |
+| Aux | Trợ động từ / hư từ thì thể | đã, sẽ, đang | will, can, have | (gắn sau động từ: ‑た, ‑ている) |
+
+**Phạm trù cụm từ** được đặt tên theo trung tâm của nó: **NP** (cụm danh từ), **VP** (cụm động từ), **PP** (cụm giới từ), **AP** (cụm tính từ). **S** là câu.
+
+<Callout type="culture" title="Đặc thù của ba ngôn ngữ">
+- **Tiếng Việt** có **loại từ** (*classifier*): "ba **con** mèo", "hai **quyển** sách". Loại từ đứng giữa số từ và danh từ.
+- **Tính từ tiếng Việt** hoạt động như vị từ, làm vị ngữ trực tiếp mà không cần hệ từ: "Hoa **đẹp**." Tiếng Anh bắt buộc có *be*: *The flower **is** beautiful*. Tiếng Nhật giống tiếng Việt với tính từ đuôi い: <Ja t="花{はな}が美{うつく}しい" /> (không cần です hay だ).
+- **Tiếng Nhật** cũng có từ chỉ đơn vị (<Ja t="助数詞{じょすうし}" romaji="josūshi" />): <Ja t="猫{ねこ}三匹{さんびき}" romaji="neko sanbiki" /> (ba con mèo), <Ja t="本{ほん}二冊{にさつ}" romaji="hon nisatsu" /> (hai quyển sách).
+</Callout>
 
 ### Quy tắc cấu trúc cụm từ và cây cú pháp
 
-<Todo>
-- Quy tắc viết lại: S → NP VP; NP → (Det) N; VP → V NP…
-- Vẽ cây cú pháp (cần component sơ đồ cây — có thể dùng khối mã hoặc bổ sung component `Tree` sau).
-- Ví dụ song song: "Tôi ăn cơm" / "I eat rice".
-</Todo>
+Tri thức về cách ghép thành tố có thể viết thành **quy tắc cấu trúc cụm từ** (*phrase structure rules*), đọc là "gồm có". Ngoặc tròn đánh dấu thành phần không bắt buộc:
+
+```
+S  → NP VP          (câu gồm cụm danh từ và cụm động từ)
+NP → (Det) N        (cụm danh từ gồm từ hạn định tùy chọn và danh từ)
+VP → V (NP) (PP)    (cụm động từ gồm động từ, có thể có tân ngữ và cụm giới từ)
+PP → P NP           (cụm giới từ gồm giới từ và cụm danh từ)
+```
+
+Áp dụng các quy tắc này sẽ sinh ra một **cây cú pháp** (*phrase structure tree*): mỗi nút là một thành tố, các nhánh cho biết thành tố nào nằm trong thành tố nào. Hãy so sánh hai câu cùng nghĩa:
+
+<Tree t="[S [NP [N Tôi]] [VP [V ăn] [NP [N cơm]]]]" caption="Tôi ăn cơm." />
+
+<Tree t="[S [NP [N I]] [VP [V eat] [NP [N rice]]]]" caption="I eat rice." />
+
+Hai cây gần như giống hệt nhau: cả tiếng Việt và tiếng Anh đều đặt động từ **trước** tân ngữ trong VP. Cây của tiếng Nhật cho thấy một hình ảnh phản chiếu:
+
+<Tree t="[S [NP 私{わたし}は|watashi-wa] [VP [NP ご飯{はん}を|gohan-o] [V 食{た}べる|taberu]]]" caption="私はご飯を食べる。Trong VP, tân ngữ đứng trước, động từ đứng sau." />
+
+<Callout type="note">
+Để cây gọn, ở đây trợ từ (は, を) được viết liền với danh từ. Nhiều phân tích coi trợ từ là **hậu giới từ**, tức trung tâm của một cụm riêng đứng *sau* danh từ, như sẽ thấy ở mục tiếp theo.
+</Callout>
+
+**Cụm danh từ tiếng Việt** có cấu trúc phong phú với vị trí khá cố định cho từng loại thành tố. Nguyễn Tài Cẩn đã phân tích kỹ cấu trúc này:
+
+| tổng lượng | số lượng | loại từ | **danh từ trung tâm** | định ngữ | chỉ định |
+|---|---|---|---|---|---|
+| tất cả | những | con | **mèo** | đen | ấy |
+
+Tiếng Anh: *all those black **cats***. Tiếng Nhật: <Ja t="あの黒{くろ}い猫{ねこ}たち全部{ぜんぶ}" romaji="ano kuroi neko-tachi zenbu" />. Tiếng Việt đặt phần lớn định ngữ **sau** danh từ trung tâm ("mèo **đen** ấy"). Tiếng Anh và tiếng Nhật đặt tính từ và từ chỉ định **trước** danh từ.
 
 ### Trung tâm, bổ ngữ và tham số trung tâm
 
-<Todo>
-- `<Definition>` trung tâm (head — 主要部).
-- Ngôn ngữ trung tâm đứng đầu (head-initial) vs trung tâm đứng cuối (head-final).
-- Hệ quả dây chuyền: vị trí động từ – tân ngữ, giới từ – hậu giới từ, danh từ – mệnh đề quan hệ.
-</Todo>
+<Definition term="Trung tâm" en="head" ipa="hɛd" ja="主要部{しゅようぶ}" romaji="shuyōbu">
+Thành tố **quyết định phạm trù và đặc tính của cả cụm**: danh từ là trung tâm của NP, động từ là trung tâm của VP, giới từ là trung tâm của PP.
+</Definition>
+
+Các thành tố đi kèm và bổ sung ý nghĩa cho trung tâm được gọi là **bổ ngữ** (*complement*). Ví dụ, tân ngữ là bổ ngữ của động từ. Một phát hiện quan trọng của loại hình học là các ngôn ngữ thường đặt trung tâm ở **cùng một phía** trong mọi loại cụm:
+
+- **Trung tâm đứng đầu** (*head-initial*): động từ trước tân ngữ, giới từ trước danh từ, danh từ trước mệnh đề quan hệ.
+- **Trung tâm đứng cuối** (*head-final*): tân ngữ trước động từ, danh từ trước **hậu giới từ**, mệnh đề quan hệ trước danh từ.
+
+Lựa chọn này gọi là **tham số trung tâm** (*head parameter*). Nó giải thích vì sao nhiều khác biệt giữa tiếng Việt và tiếng Nhật đi thành **chuỗi dây chuyền**, chứ không phải những quy tắc rời rạc:
+
+<Compare
+  caption="Trung tâm được in đậm. Tiếng Việt nhất quán trung tâm đứng đầu, tiếng Nhật nhất quán trung tâm đứng cuối, tiếng Anh pha trộn."
+  rows={[
+    { aspect: 'Động từ – tân ngữ', vi: '**đọc** sách', en: '**read** books', ja: '本{ほん}を **読{よ}む**' },
+    { aspect: 'Giới từ – danh từ', vi: '**ở** Hà Nội', en: '**in** Tokyo', ja: '東京{とうきょう} **で**' },
+    { aspect: 'Danh từ – sở hữu', vi: '**sách** của tôi', en: 'my **book** (trung tâm đứng cuối)', ja: '私{わたし}の **本{ほん}**' },
+    { aspect: 'Danh từ – tính từ', vi: '**nhà** đẹp', en: 'a beautiful **house** (trung tâm đứng cuối)', ja: 'きれいな **家{いえ}**' },
+    { aspect: 'Danh từ – mệnh đề quan hệ', vi: '**sách** [tôi mua hôm qua]', en: 'the **book** [I bought yesterday]', ja: '[昨日{きのう}買{か}った] **本{ほん}**' },
+    { aspect: 'Liên từ phụ thuộc – mệnh đề', vi: '(nghĩ) **rằng** [Lan đến]', en: '(think) **that** [Lan came]', ja: '[ランさんが来{き}た] **と** (思{おも}う)' },
+    { aspect: 'Trợ động từ – động từ', vi: '**đã** ăn', en: '**have** eaten', ja: '食{た}べ **た**' },
+  ]}
+/>
+
+Sự đối xứng thể hiện rõ nhất khi đặt hai cụm có cùng nghĩa cạnh nhau:
+
+<Tree t="[VP [VP [V đọc] [NP sách]] [PP [P ở] [NP thư viện]]]" caption="đọc sách ở thư viện: giới từ ở đứng trước danh từ" />
+
+<Tree t="[VP [PP [NP 図書館{としょかん}|toshokan] [P で|de]] [VP [NP 本{ほん}を|hon-o] [V 読{よ}む|yomu]]]" caption="図書館で本を読む: hậu giới từ で đứng sau danh từ, động từ đứng cuối" />
+
+<Callout type="tip" title="Ứng dụng khi học ngoại ngữ">
+Người Việt học tiếng Nhật chỉ cần nhớ một nguyên tắc: *trung tâm đứng cuối*. Từ đó có thể suy ra hàng loạt quy tắc: động từ ở cuối câu, trợ từ đứng sau danh từ, mệnh đề bổ nghĩa đứng trước danh từ, と đứng sau mệnh đề trích dẫn. Thay vì học thuộc từng quy tắc rời, hãy "lật gương" cấu trúc tiếng Việt.
+</Callout>
 
 ### Tính đệ quy
 
-<Todo>
-- `<Definition>` đệ quy (recursion — 再帰性).
-- Ví dụ: "Nam nghĩ rằng Lan biết rằng Minh nói rằng…"; "the cat that chased the rat that ate the cheese".
-</Todo>
+<Definition term="Tính đệ quy" en="recursion" ipa="rɪˈkɜːrʒən" ja="再帰性{さいきせい}" romaji="saikisei">
+Khả năng **lồng một cấu trúc vào bên trong cấu trúc cùng loại**, lặp lại không giới hạn. Nhờ đó, về lý thuyết, không có câu nào là "dài nhất".
+</Definition>
+
+Đệ quy xuất hiện ở cả ba ngôn ngữ, nhưng hướng mở rộng khác nhau theo tham số trung tâm:
+
+- **Mệnh đề trong mệnh đề**:
+  - "Nam nghĩ **rằng** Lan biết **rằng** Minh nói **rằng** trời sắp mưa."
+  - *Nam thinks **that** Lan knows **that** Minh said **that** it will rain.*
+  - <Ja t="ナムさんは[ランさんが[ミンさんが雨{あめ}が降{ふ}ると言{い}った]と知{し}っている]と思{おも}っている" />: mỗi mệnh đề mới được lồng vào **bên trái**, ngay trước と.
+- **Mệnh đề quan hệ nối tiếp**:
+  - *This is the cat **that** chased the rat **that** ate the cheese **that** lay in the house **that** Jack built.*
+  - "Đây là con mèo đã đuổi con chuột đã ăn miếng phô mai…"
+  - <Ja t="ジャックが建{た}てた家{いえ}にあったチーズを食{た}べたネズミを追{お}いかけた猫{ねこ}" />: tiếng Nhật xếp các mệnh đề theo thứ tự ngược lại, và danh từ chính "con mèo" nằm ở **cuối cùng**.
+- **Sở hữu lồng nhau**:
+  - "con mèo của chị gái của bạn tôi"
+  - *my friend's sister's cat*
+  - <Ja t="私{わたし}の友達{ともだち}のお姉{ねえ}さんの猫{ねこ}" />
+
+<Callout type="note">
+Về lý thuyết, đệ quy là vô hạn. Trên thực tế, trí nhớ ngắn hạn giới hạn độ dài câu ta xử lý được. Lại gặp sự phân biệt **năng lực** – **hiệu năng** ở [Chương 1](/bai-hoc/ban-chat-ngon-ngu).
+</Callout>
 
 ### Mơ hồ cấu trúc
 
-<Todo>
-- "The boy saw the man with the telescope" — hai cây cú pháp.
-- Ví dụ tiếng Việt: "Con gà rán" hay "con gà rán" (cụm danh từ vs câu)?; "Nhà ông ấy mới xây".
-</Todo>
+<Definition term="Mơ hồ cấu trúc" en="structural ambiguity" ipa="ˈstrʌktʃərəl ˌæmbɪˈɡjuːəti" ja="構造的曖昧性{こうぞうてきあいまいせい}" romaji="kōzōteki aimaisei">
+Hiện tượng một chuỗi từ có **hai (hoặc nhiều) cấu trúc thành tố** khác nhau, dẫn đến hai cách hiểu, dù không từ nào đa nghĩa.
+</Definition>
+
+Ví dụ kinh điển của tiếng Anh: *The boy saw the man with the telescope.*
+
+<Tree t="[S [^NP the boy] [VP [V saw] [^NP the man] [PP [P with] [^NP the telescope]]]]" caption="Cách hiểu 1: PP gắn vào VP. Cậu bé dùng kính viễn vọng để nhìn." />
+
+<Tree t="[S [^NP the boy] [VP [V saw] [NP [^NP the man] [PP [P with] [^NP the telescope]]]]]" caption="Cách hiểu 2: PP nằm trong NP. Cậu bé nhìn người đàn ông đang cầm kính viễn vọng." />
+
+Hiện tượng tương tự trong tiếng Việt và tiếng Nhật:
+
+| Câu / cụm | Cách hiểu 1 | Cách hiểu 2 |
+|---|---|---|
+| Nhà ông ấy mới xây. | [Nhà ông ấy] [mới xây]: *Nhà của ông ấy mới được xây.* | Nhà [ông ấy mới xây]: *ngôi nhà mà ông ấy vừa xây* (một cụm danh từ) |
+| những thầy giáo và học sinh giỏi | [thầy giáo và học sinh] giỏi: cả hai nhóm đều giỏi | thầy giáo và [học sinh giỏi]: chỉ học sinh giỏi |
+| *old men and women* | *old* [*men and women*]: cả đàn ông và phụ nữ đều già | [*old men*] *and women*: chỉ đàn ông già |
+| <Ja t="かわいい田中{たなか}さんの犬{いぬ}" /> | かわいい [田中さんの犬]: *con chó dễ thương của anh Tanaka* | [かわいい田中さん] の犬: *con chó của anh Tanaka dễ thương* |
+
+<Callout type="warning">
+Cần phân biệt **mơ hồ cấu trúc** với **mơ hồ từ vựng**. Trong câu "Đem cá về kho", sự mơ hồ nằm ở nghĩa của từ "kho" (nhà kho hay kho cá). Trong các ví dụ trên, mọi từ đều rõ nghĩa; chỉ **cách nhóm** các từ là khác nhau. Mơ hồ từ vựng được bàn ở [Chương 5](/bai-hoc/ngu-nghia-hoc).
+</Callout>
 
 ### Cú pháp tiếng Việt: một số nét đặc trưng
 
-<Todo>
-- Trật tự SVO, định ngữ đứng sau danh từ ("nhà đẹp", "sách của tôi").
-- Cấu trúc chủ đề – thuyết (topic – comment): "Cơm, tôi ăn rồi."
-- Câu hỏi: từ để hỏi giữ nguyên vị trí ("Anh ăn gì?"), tiểu từ "không", "chưa".
-</Todo>
+**1. Trật tự SVO và định ngữ đứng sau.** Tiếng Việt là ngôn ngữ SVO nhất quán trung tâm đứng đầu: "nhà **đẹp**", "sách **của tôi**", "người **mà tôi gặp hôm qua**". Vì từ không biến đổi hình thái, **trật tự từ** gánh vác phần lớn việc thể hiện quan hệ ngữ pháp: "Mèo đuổi chó" khác hẳn "Chó đuổi mèo". Tiếng Nhật thì nhờ trợ từ mà có thể đổi chỗ: <Ja t="猫{ねこ}が犬{いぬ}を追{お}う" /> và <Ja t="犬{いぬ}を猫{ねこ}が追{お}う" /> đều nghĩa là "mèo đuổi chó".
+
+**2. Cấu trúc đề – thuyết.** Rất nhiều câu tiếng Việt được tổ chức theo **đề** (*topic*: điều được nói đến) và **thuyết** (*comment*: điều nói về nó), thường ngăn cách bằng "thì", "là" hoặc một quãng ngắt:
+
+<Ex>Cơm, tôi ăn rồi.</Ex>
+<Ex>Voi thì vòi dài.</Ex>
+<Ex>Quyển sách này tôi đọc rồi.</Ex>
+
+Câu "Voi thì vòi dài" rất khó phân tích theo mô hình chủ ngữ – vị ngữ của ngữ pháp châu Âu: "voi" không phải chủ ngữ của "dài". Cao Xuân Hạo (*Tiếng Việt – Sơ thảo ngữ pháp chức năng*, 1991) đã lập luận rằng cấu trúc cơ bản của câu tiếng Việt là **đề – thuyết**. Thú vị là câu tương ứng trong tiếng Nhật, <Ja t="象{ぞう}は鼻{はな}が長{なが}い" />, cũng là ví dụ nổi tiếng nhất của ngữ pháp Nhật (xem phần mở rộng tiếng Nhật).
+
+**3. Câu hỏi.**
+- **Từ để hỏi giữ nguyên vị trí** (*wh-in-situ*), đúng chỗ của thành phần được hỏi: "Anh ăn **gì**?" (so với "Anh ăn **cơm**."), "**Ai** gọi điện?", "Anh đi **đâu**?".
+- **Câu hỏi có/không** dùng tiểu từ ở cuối: "Anh có ăn **không**?", "Anh ăn cơm **chưa**?", "Anh là sinh viên **à**?"
+
+Tiếng Nhật cũng giữ nguyên từ để hỏi và dùng tiểu từ か cuối câu. Tiếng Anh thì **đưa từ để hỏi lên đầu** và đảo trợ động từ. Về mặt câu hỏi, tiếng Việt gần tiếng Nhật hơn tiếng Anh.
+
+**4. Lược thành phần.** Trong hội thoại, tiếng Việt lược chủ ngữ, tân ngữ khi đã rõ ngữ cảnh: "Ăn cơm chưa?" – "Ăn rồi." Tiếng Nhật cũng vậy (<Ja t="食{た}べた？" /> – <Ja t="うん、食{た}べた。" />). Tiếng Anh hầu như bắt buộc có chủ ngữ: *Did you eat?* – *Yes, I did.*
 
 ## Mở rộng: Tiếng Anh
 
@@ -71,18 +215,85 @@ Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu 
 
 ### Quy tắc cấu trúc cụm từ tiếng Anh
 
-<Todo>
-- S → NP VP; NP → Det (Adj) N (PP); VP → V (NP) (PP); PP → P NP.
-- Cây cú pháp cho "The student read a book in the library".
-</Todo>
+Một bộ quy tắc đầy đủ hơn cho tiếng Anh:
+
+```
+S  → NP VP
+NP → Det (Adj) N (PP)
+VP → V (NP) (PP)
+PP → P NP
+```
+
+Áp dụng cho câu *The student read a book in the library*:
+
+<Tree t="[S [NP [Det The] [N student]] [VP [V read] [NP [Det a] [N book]] [PP [P in] [NP [Det the] [N library]]]]]" caption="Cây cú pháp của The student read a book in the library." />
+
+Chỉ với vài quy tắc, ta sinh ra được vô số câu. Quy tắc NP chứa PP, mà PP lại chứa NP: đây chính là nguồn gốc của đệ quy (*the book on the table in the room near the kitchen…*).
 
 ### Câu hỏi và sự di chuyển
 
-<Todo>
-- Đảo trợ động từ (subject–auxiliary inversion): "You can swim" → "Can you swim?".
-- Chèn "do" (do-support).
-- Di chuyển từ để hỏi (wh-movement): "What did you eat?" — so sánh với "Anh ăn gì?".
-</Todo>
+Tiếng Anh tạo câu hỏi bằng cách **di chuyển** các thành phần, điều mà tiếng Việt và tiếng Nhật không làm.
+
+**Đảo trợ động từ** (*subject–auxiliary inversion*): trợ động từ chuyển lên trước chủ ngữ.
+
+<Ex>You can swim.</Ex>
+<Ex>Can you swim?</Ex>
+
+Quy tắc này dựa vào **cấu trúc**, không dựa vào vị trí tuyến tính. Với câu có mệnh đề quan hệ, trợ động từ được đảo là của mệnh đề chính, chứ không phải trợ động từ đứng đầu tiên:
+
+<Ex>The boy who is tall can swim.</Ex>
+<Ex>Can the boy who is tall swim?</Ex>
+<Ex bad note="đảo nhầm trợ động từ trong mệnh đề quan hệ">Is the boy who tall can swim?</Ex>
+
+**Chèn "do"** (*do-support*): nếu câu không có trợ động từ, tiếng Anh chèn *do/does/did* để có thứ mà đảo:
+
+<Ex>You like coffee. → Do you like coffee?</Ex>
+<Ex bad>Like you coffee?</Ex>
+
+**Di chuyển từ để hỏi** (*wh-movement*): từ để hỏi chuyển từ vị trí gốc lên đầu câu, để lại một "chỗ trống" (\_\_\_):
+
+| Câu gốc | Câu hỏi tiếng Anh | Tiếng Việt | Tiếng Nhật |
+|---|---|---|---|
+| You ate **rice**. | **What** did you eat \_\_\_? | Anh ăn **gì**? | <Ja t="何{なに}を食{た}べましたか" /> |
+| You met **Lan** at school. | **Who** did you meet \_\_\_ at school? | Anh gặp **ai** ở trường? | <Ja t="学校{がっこう}で誰{だれ}に会{あ}いましたか" /> |
+| You live **in Hanoi**. | **Where** do you live \_\_\_? | Anh sống **ở đâu**? | <Ja t="どこに住{す}んでいますか" /> |
+
+### Chủ ngữ bắt buộc và chủ ngữ giả
+
+Tiếng Anh gần như **bắt buộc** có chủ ngữ. Ngay cả khi không có tác thể nào, câu vẫn cần một **chủ ngữ giả** (*expletive / dummy subject*):
+
+| Tiếng Anh | Tiếng Việt | Tiếng Nhật |
+|---|---|---|
+| ***It** is raining.* | Trời mưa. / Mưa rồi. | <Ja t="雨{あめ}が降{ふ}っている" /> |
+| ***It** is hot today.* | Hôm nay nóng. | <Ja t="今日{きょう}は暑{あつ}い" /> |
+| ***There** is a cat in the room.* | Trong phòng có con mèo. | <Ja t="部屋{へや}に猫{ねこ}がいる" /> |
+
+*It* và *there* ở đây không mang nghĩa gì; chúng chỉ lấp vị trí chủ ngữ mà ngữ pháp đòi hỏi.
+
+### Cụm danh từ tiếng Anh: trật tự tính từ
+
+Khi nhiều tính từ cùng bổ nghĩa cho một danh từ, người nói tiếng Anh tuân theo một trật tự khá ổn định mà hiếm khi được dạy tường minh: **ý kiến – kích thước – tuổi – màu sắc – nguồn gốc – chất liệu – mục đích**:
+
+<Ex>a lovely little old red Italian leather riding boot</Ex>
+<Ex bad>a leather red old little lovely boot</Ex>
+
+Tiếng Việt đặt định ngữ **sau** danh từ, và thứ tự thường **gần như ngược lại**: "chiếc ủng cưỡi ngựa bằng da Ý màu đỏ cũ nhỏ xinh". Tiếng Nhật đặt tất cả **trước** danh từ, giống tiếng Anh: <Ja t="かわいい小{ちい}さな赤{あか}い靴{くつ}" />.
+
+### Lỗi cú pháp thường gặp của người Việt
+
+Chuyển di từ tiếng mẹ đẻ (xem [Chương 9](/bai-hoc/thu-dac-ngon-ngu)) tạo ra những lỗi có thể dự đoán được:
+
+| Lỗi | Nguồn gốc từ tiếng Việt | Câu đúng |
+|---|---|---|
+| \*She very beautiful. | Tính từ làm vị ngữ trực tiếp ("Cô ấy rất đẹp") | She **is** very beautiful. |
+| \*Is raining. | Không có chủ ngữ giả | **It** is raining. |
+| \*You eat what? | Từ để hỏi giữ nguyên vị trí ("Anh ăn gì?") | What **do** you eat? |
+| \*I have a book very interesting. | Định ngữ đứng sau danh từ | I have a very interesting book. |
+| \*Yesterday I go to school. | Thì thể hiện bằng từ chỉ thời gian, động từ không đổi | Yesterday I **went** to school. |
+
+<Callout type="note">
+*You eat what?* vẫn dùng được trong tiếng Anh, nhưng chỉ như một **câu hỏi lặp lại** (*echo question*) khi ngạc nhiên hoặc nghe không rõ, không phải câu hỏi thông thường.
+</Callout>
 
 </LangSection>
 
@@ -92,25 +303,78 @@ Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu 
 
 ### Trật tự SOV và tính trung tâm đứng cuối
 
-<Todo>
-- `<Gloss>` cho: <Ja t="私{わたし}は" /> <Ja t="昨日{きのう}" /> <Ja t="図書館{としょかん}で" /> <Ja t="本{ほん}を" /> <Ja t="読{よ}んだ" />.
-- Hậu giới từ (trợ từ) thay cho giới từ: 図書館で = "ở thư viện".
-- Mệnh đề quan hệ đứng trước danh từ: <Ja t="昨日{きのう}買{か}った本{ほん}" /> ("quyển sách [đã mua hôm qua]").
-</Todo>
+Tiếng Nhật là ví dụ gần như hoàn hảo của một ngôn ngữ **trung tâm đứng cuối**. Chỉ có một vị trí thật sự cố định: **vị ngữ ở cuối câu**.
 
-### Trợ từ は, が, を, に
+<Gloss lang="ja" text="私{わたし}は 昨日{きのう} 図書館{としょかん}で 本{ほん}を 読{よ}んだ" romaji="watashi-wa kinō toshokan-de hon-o yonda" gloss="tôi-CĐ hôm.qua thư.viện-ở sách-TN đọc.QK" translation="Hôm qua tôi đọc sách ở thư viện." />
 
-<Todo>
-- Chức năng cơ bản và các cặp dễ nhầm (は vs が).
-- Đảo trật tự tham tố (scrambling) nhờ trợ từ — liên hệ ví dụ Chương 1.
-</Todo>
+- **Hậu giới từ** thay cho giới từ: <Ja t="図書館{としょかん}で" /> = "ở thư viện", <Ja t="東京{とうきょう}から" /> = "từ Tokyo", <Ja t="友達{ともだち}と" /> = "với bạn".
+- **Mệnh đề quan hệ đứng trước danh từ**, không cần đại từ quan hệ (*that/which*) hay "mà":
+
+<Gloss lang="ja" text="[昨日{きのう} 買{か}った] 本{ほん}" romaji="[kinō katta] hon" gloss="[hôm.qua mua.QK] sách" translation="quyển sách [(mà) tôi đã mua hôm qua]" />
+
+- **Liên từ và tiểu từ đứng cuối mệnh đề**: <Ja t="雨{あめ}が降{ふ}ったから" /> (vì trời mưa), <Ja t="雨{あめ}が降{ふ}ると思{おも}う" /> (nghĩ rằng trời sẽ mưa). Tiếng Việt đặt "vì", "rằng" ở **đầu** mệnh đề.
+
+### Trợ từ は, が, を, に, で
+
+Trợ từ (<Ja t="助詞{じょし}" romaji="joshi" />) là "xương sống" của câu tiếng Nhật: chúng đánh dấu vai trò của từng cụm danh từ, nhờ vậy trật tự có thể linh hoạt.
+
+| Trợ từ | Chức năng chính | Ví dụ | Nghĩa |
+|---|---|---|---|
+| は (wa) | Chủ đề: "về … thì" | <Ja t="私{わたし}は学生{がくせい}です" /> | Tôi (thì) là sinh viên. |
+| が (ga) | Chủ ngữ, thông tin mới | <Ja t="雨{あめ}が降{ふ}っている" /> | Trời đang mưa. |
+| を (o) | Tân ngữ trực tiếp | <Ja t="本{ほん}を読{よ}む" /> | đọc sách |
+| に (ni) | Đích đến, nơi tồn tại, người nhận | <Ja t="学校{がっこう}に行{い}く" />, <Ja t="友達{ともだち}に本{ほん}をあげる" /> | đi đến trường, tặng sách cho bạn |
+| で (de) | Nơi diễn ra hành động, phương tiện | <Ja t="図書館{としょかん}で勉強{べんきょう}する" />, <Ja t="バスで行{い}く" /> | học ở thư viện, đi bằng xe buýt |
+
+**Cặp khó nhất: は và が.**
+
+- は giới thiệu **chủ đề** đã biết hoặc tạo **đối lập**. が đánh dấu chủ ngữ mang **thông tin mới**, hoặc nhấn mạnh "chính là".
+- <Ja t="私{わたし}は田中{たなか}です" />: *Tôi là Tanaka* (giới thiệu bình thường). <Ja t="私{わたし}が田中{たなか}です" />: *Chính tôi là Tanaka* (trả lời "Ai là Tanaka?").
+- Từ để hỏi làm chủ ngữ phải đi với が: <Ja t="誰{だれ}が来{き}ましたか" /> đúng, còn \*誰は来ましたか thì sai.
+- Trong mệnh đề phụ, chủ ngữ thường dùng が: <Ja t="[私{わたし}が買{か}った]本{ほん}" /> (quyển sách tôi mua).
+
+**Đảo trật tự tham tố** (<Ja t="かき混{ま}ぜ" romaji="kakimaze" />, *scrambling*): vì vai trò đã được trợ từ đánh dấu, các cụm trước động từ có thể đổi chỗ để nhấn mạnh, như đã thấy ở [Chương 1](/bai-hoc/ban-chat-ngon-ngu):
+
+<Gloss lang="ja" text="この 本{ほん}を 田中{たなか}さんが 書{か}いた" romaji="kono hon-o Tanaka-san-ga kaita" gloss="này sách-TN Tanaka-CN viết.QK" translation="Quyển sách này, anh Tanaka đã viết. (nhấn mạnh quyển sách)" />
+
+### 象は鼻が長い: câu "hai chủ ngữ"
+
+Câu <Ja t="象{ぞう}は鼻{はな}が長{なが}い" romaji="zō wa hana ga nagai" /> ("Voi thì vòi dài") là ví dụ nổi tiếng nhất của ngữ pháp tiếng Nhật. Nhà ngữ pháp **Mikami Akira** (<Ja t="三上章{みかみあきら}" />) dùng nó làm tên cuốn sách <Ja t="象{ぞう}は鼻{はな}が長{なが}い" /> (1960).
+
+<Gloss lang="ja" text="象{ぞう}は 鼻{はな}が 長{なが}い" romaji="zō-wa hana-ga nagai" gloss="voi-CĐ vòi-CN dài" translation="Voi thì vòi dài." />
+
+- <Ja t="鼻{はな}が長{なが}い" /> là một mệnh đề hoàn chỉnh (*vòi dài*).
+- <Ja t="象{ぞう}は" /> đứng ngoài mệnh đề đó, nêu **chủ đề**: đang nói về loài voi.
+- Mikami lập luận rằng は đánh dấu **chủ đề**, còn が mới đánh dấu **cách chủ ngữ**. Ông thậm chí đề xuất bỏ hẳn khái niệm "chủ ngữ" khỏi ngữ pháp tiếng Nhật.
+
+<Callout type="culture" title="Góc đối chiếu">
+"**Voi thì vòi dài**" (Việt) – <Ja t="象{ぞう}は鼻{はな}が長{なが}い" /> (Nhật) – *Elephants have long trunks* (Anh). Tiếng Việt và tiếng Nhật đều dùng cấu trúc **đề – thuyết** rất tự nhiên, còn tiếng Anh phải chuyển sang câu chủ ngữ – vị ngữ với động từ *have*. Đây là một trong những nét loại hình mà tiếng Việt và tiếng Nhật chia sẻ, dù hai ngôn ngữ khác nhau về trật tự từ.
+</Callout>
 
 ### Câu hỏi và lược chủ ngữ
 
-<Todo>
-- Tiểu từ か cuối câu; từ để hỏi giữ nguyên vị trí: <Ja t="何{なに}を食{た}べましたか" />.
-- Lược bỏ chủ ngữ/tân ngữ khi đã rõ trong ngữ cảnh (pro-drop) — so sánh với tiếng Việt.
-</Todo>
+**Câu hỏi**: thêm tiểu từ か cuối câu, từ để hỏi **giữ nguyên vị trí**, trật tự không đổi.
+
+<Gloss lang="ja" text="何{なに}を 食{た}べ まし た か" romaji="nani-o tabe mashi ta ka" gloss="cái.gì-TN ăn LS QK NV" translation="(Anh) đã ăn gì?" />
+
+Trong hội thoại thân mật, か thường được thay bằng ngữ điệu lên giọng và trợ từ cũng có thể lược: <Ja t="何{なに}食{た}べた？" /> (*nani tabeta?*).
+
+**Lược chủ ngữ và tân ngữ**: khi ngữ cảnh đã rõ, người Nhật thường **không nói** chủ ngữ, nhất là "tôi" và "bạn". Nói <Ja t="私{わたし}は" /> hay <Ja t="あなたは" /> quá nhiều khiến câu nghe thiếu tự nhiên, thậm chí thiếu lịch sự.
+
+| Tiếng Nhật | Tiếng Việt | Tiếng Anh |
+|---|---|---|
+| <Ja t="昨日{きのう}、映画{えいが}を見{み}ました。" /> | Hôm qua (tôi) xem phim. | Yesterday **I** watched a movie. |
+| <Ja t="もう食{た}べた？" /> – <Ja t="うん、食{た}べた。" /> | Ăn chưa? – Ăn rồi. | Have **you** eaten? – Yes, **I** have. |
+| <Ja t="行{い}きますか。" /> | (Anh) có đi không? | Are **you** going? |
+
+Tiếng Việt và tiếng Nhật giống nhau ở chỗ lược chủ ngữ tự do; tiếng Anh là ngôn ngữ khác biệt trong bộ ba này.
+
+### Khó khăn của người Việt khi học cú pháp tiếng Nhật
+
+- **Mệnh đề quan hệ**: phải đặt cả mệnh đề **trước** danh từ. "Người mà tôi gặp hôm qua ở ga" → <Ja t="昨日{きのう}駅{えき}で会{あ}った人{ひと}" />, tức "hôm qua ở ga gặp người". Mệnh đề càng dài, người học càng dễ "quên" danh từ chính đang chờ ở cuối.
+- **Chọn は hay が**: không có tương đương trực tiếp trong tiếng Việt. Gần đúng: は ≈ "thì" (đề), が ≈ nhấn mạnh "chính … là".
+- **Giới từ thành hậu giới từ**: "ở Hà Nội" → <Ja t="ハノイで" /> (hoặc ハノイに), "với bạn" → <Ja t="友達{ともだち}と" />. Trợ từ đứng **sau**, và phải chọn đúng で hay に tùy động từ.
+- **Tiểu từ cuối câu có lợi thế**: tiếng Việt có "à, nhé, nhỉ" ở cuối câu, tương ứng khá sát với か, ね, よ của tiếng Nhật (<Ja t="いい天気{てんき}ですね" /> ≈ "Trời đẹp nhỉ").
 
 </LangSection>
 
@@ -119,34 +383,34 @@ Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu 
 <Compare
   rows={[
     { aspect: 'Trật tự cơ bản', vi: 'SVO', en: 'SVO', ja: 'SOV' },
+    { aspect: 'Tham số trung tâm', vi: 'Trung tâm đứng đầu (nhất quán)', en: 'Chủ yếu đứng đầu, có ngoại lệ (tính từ, sở hữu)', ja: 'Trung tâm đứng cuối (nhất quán)' },
     { aspect: 'Vị trí tính từ', vi: 'Sau danh từ: nhà đẹp', en: 'Trước danh từ: a beautiful house', ja: 'Trước danh từ: きれいな家{いえ}' },
     { aspect: 'Mệnh đề quan hệ', vi: 'Sau danh từ: sách [mà tôi mua]', en: 'Sau danh từ: the book [that I bought]', ja: 'Trước danh từ: [私{わたし}が買{か}った]本{ほん}' },
     { aspect: 'Giới từ / hậu giới từ', vi: 'Giới từ: ở Hà Nội', en: 'Giới từ: in Tokyo', ja: 'Hậu giới từ (trợ từ): 東京{とうきょう}で' },
+    { aspect: 'Đánh dấu vai trò ngữ pháp', vi: 'Trật tự từ', en: 'Trật tự từ (và cách của đại từ: he/him)', ja: 'Trợ từ: が, を, に' },
     { aspect: 'Vị trí từ để hỏi', vi: 'Giữ nguyên: Anh ăn gì?', en: 'Đưa lên đầu: What did you eat?', ja: 'Giữ nguyên: 何{なに}を食{た}べましたか' },
-    { aspect: 'Lược chủ ngữ', vi: '', en: 'Hầu như bắt buộc có chủ ngữ', ja: 'Rất phổ biến' },
+    { aspect: 'Câu hỏi có/không', vi: 'Tiểu từ cuối: có … không?, chưa?', en: 'Đảo trợ động từ: Can you…? Do you…?', ja: 'Tiểu từ cuối: か' },
+    { aspect: 'Lược chủ ngữ', vi: 'Phổ biến trong hội thoại', en: 'Hầu như bắt buộc có chủ ngữ, kể cả chủ ngữ giả (it, there)', ja: 'Rất phổ biến' },
+    { aspect: 'Cấu trúc đề – thuyết', vi: 'Rất phổ biến: Voi thì vòi dài.', en: 'Hạn chế, mang tính đánh dấu: As for elephants, …', ja: 'Rất phổ biến: 象{ぞう}は鼻{はな}が長{なが}い' },
+    { aspect: 'Tính từ làm vị ngữ', vi: 'Trực tiếp: Hoa đẹp.', en: 'Cần be: The flower is beautiful.', ja: 'Trực tiếp với tính từ い: 花{はな}が美{うつく}しい' },
   ]}
 />
 
-<Todo>
-- Rà soát ô "Lược chủ ngữ" tiếng Việt và bổ sung hàng về cấu trúc chủ đề.
-</Todo>
-
 ## Tóm tắt
 
-<Todo>
-- 5–6 gạch đầu dòng ý chính của chương.
-</Todo>
+- Câu có **cấu trúc thứ bậc** gồm các **thành tố** lồng vào nhau. Các phép thử (thay thế, trả lời câu hỏi, di chuyển, kết hợp) giúp nhận diện thành tố.
+- **Quy tắc cấu trúc cụm từ** (S → NP VP…) sinh ra **cây cú pháp**. Chỉ với một số ít quy tắc, người nói tạo được vô số câu nhờ **tính đệ quy**.
+- **Tham số trung tâm** giải thích chuỗi khác biệt dây chuyền: tiếng Việt nhất quán trung tâm đứng đầu, tiếng Nhật nhất quán trung tâm đứng cuối, tiếng Anh pha trộn.
+- **Mơ hồ cấu trúc** xảy ra khi một chuỗi từ có hai cách nhóm thành tố; nó có ở cả ba ngôn ngữ.
+- Tiếng Việt dựa vào **trật tự từ**, ưa cấu trúc **đề – thuyết**, giữ từ để hỏi tại chỗ và lược chủ ngữ tự do. Ở ba điểm cuối, tiếng Việt gần với tiếng Nhật hơn tiếng Anh.
+- Tiếng Anh tạo câu hỏi bằng **di chuyển** (đảo trợ động từ, *do*, *wh-movement*) và bắt buộc có chủ ngữ. Tiếng Nhật dùng **trợ từ** để đánh dấu vai trò, cho phép đảo trật tự trước động từ.
 
 <Summary lang="en">
-<Todo>
-- Đoạn tóm tắt 3–4 câu bằng tiếng Anh.
-</Todo>
+Sentences are hierarchically structured: words group into **constituents**, which can be identified by substitution, question, movement and coordination tests. **Phrase structure rules** generate tree diagrams, and **recursion** lets a finite set of rules produce infinitely many sentences. The **head parameter** captures a cluster of word-order differences: Vietnamese is consistently head-initial, Japanese is consistently head-final, and English is mostly head-initial with some exceptions. English forms questions by moving elements (auxiliary inversion, *do*-support, *wh*-movement) and requires overt subjects, while Vietnamese and Japanese leave question words in place, freely drop subjects and make heavy use of topic–comment structures.
 </Summary>
 
 <Summary lang="ja">
-<Todo>
-- Đoạn tóm tắt 2–3 câu bằng tiếng Nhật (dùng `<Ja t="..." />`).
-</Todo>
+<Ja t="文{ぶん}は単語{たんご}の単純{たんじゅん}な並{なら}びではなく、構成素{こうせいそ}が入{い}れ子{こ}になった階層構造{かいそうこうぞう}を持{も}つ。主要部{しゅようぶ}パラメータによって、ベトナム語{ご}は主要部先頭型{しゅようぶせんとうがた}、日本語{にほんご}は主要部末尾型{しゅようぶまつびがた}、英語{えいご}はその中間的{ちゅうかんてき}な性格{せいかく}を示{しめ}す。英語{えいご}は疑問文{ぎもんぶん}で要素{ようそ}を移動{いどう}させるが、ベトナム語{ご}と日本語{にほんご}は疑問詞{ぎもんし}をその場{ば}に残{のこ}し、主題{しゅだい}と主語省略{しゅごしょうりゃく}を多用{たよう}する。" />
 </Summary>
 
 ## Câu hỏi thảo luận
@@ -154,3 +418,6 @@ Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu 
 1. Dùng các phép thử thành tố để chứng minh "quyển sách mới của tôi" là một thành tố trong câu "Quyển sách mới của tôi bị mất rồi".
 2. Vì sao người Việt học tiếng Nhật thường thấy mệnh đề quan hệ khó hơn người Nhật học tiếng Việt thấy? (Gợi ý: tham số trung tâm.)
 3. Tìm một câu tiếng Việt mơ hồ về cấu trúc và vẽ hai cây cú pháp tương ứng.
+4. Dịch câu "Người đàn ông mà tôi gặp ở ga hôm qua là giáo viên tiếng Nhật" sang tiếng Anh và tiếng Nhật. Vị trí của danh từ "người đàn ông" thay đổi thế nào trong mỗi bản dịch?
+5. "Voi thì vòi dài" và <Ja t="象{ぞう}は鼻{はな}が長{なが}い" /> có cấu trúc giống nhau. Vì sao việc phân tích chúng theo mô hình "chủ ngữ – vị ngữ" lại gặp khó khăn?
+6. Quy tắc đảo trợ động từ tiếng Anh dựa vào cấu trúc chứ không dựa vào thứ tự tuyến tính. Ví dụ *Can the boy who is tall swim?* cho thấy điều gì về tri thức ngôn ngữ của trẻ em bản ngữ?
