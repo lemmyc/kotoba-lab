@@ -266,6 +266,17 @@ export const references: Reference[] = [
     chapters: ['cu-phap-hoc'],
   },
   {
+    id: 'bunka-keigo-2007',
+    authors: '文化審議会 (Hội đồng Văn hóa Nhật Bản)',
+    year: 2007,
+    title: '敬語の指針 (Keigo no shishin – Hướng dẫn về kính ngữ)',
+    focus: 'ja',
+    kind: 'online',
+    url: 'https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf',
+    note: 'Chia kính ngữ thành năm loại: tôn kính ngữ, khiêm nhường ngữ I, khiêm nhường ngữ II (丁重語), lịch sự ngữ, mỹ hóa ngữ.',
+    chapters: ['ngu-dung-hoc'],
+  },
+  {
     id: 'kindaichi-nihongo',
     authors: '金田一春彦 (Kindaichi Haruhiko)',
     title: '日本語 新版 (上・下) — Nihongo',
