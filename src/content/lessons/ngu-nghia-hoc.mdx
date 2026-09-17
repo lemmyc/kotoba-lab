@@ -1,69 +1,284 @@
-{/* Chương 5 — KHUNG BÀI. Viết theo chuẩn của chương 1 (ban-chat-ngon-ngu.mdx); xóa <Todo> khi viết xong từng mục. */}
-
 ## Cơ sở lý thuyết
 
-Biết một từ là biết nghĩa của nó; biết một câu là biết khi nào câu đó đúng. Ngữ nghĩa học nghiên cứu ý nghĩa ở cấp độ từ và câu, và cho thấy mỗi ngôn ngữ "chia cắt" thế giới theo cách riêng.
+Biết một từ là biết nghĩa của nó; biết một câu là biết khi nào câu đó đúng. **Ngữ nghĩa học** (*semantics*) nghiên cứu ý nghĩa ở cấp độ từ và câu. Nó cũng cho thấy mỗi ngôn ngữ "chia cắt" thế giới theo cách riêng: tiếng Việt có "lúa, thóc, gạo, cơm", tiếng Anh chỉ có *rice*.
 
 ### Nghĩa là gì?
 
-<Todo>
-- Nghĩa sở chỉ (reference) và nghĩa khái niệm (sense); ví dụ "Sao Hôm" / "Sao Mai" (Frege).
-- Quan điểm Việt ngữ học: nghĩa biểu vật, nghĩa biểu niệm, nghĩa biểu thái (Đỗ Hữu Châu) — trình bày ngắn gọn, dẫn nguồn.
-</Todo>
+Nhà logic học người Đức **Gottlob Frege** (1892) chỉ ra rằng "nghĩa" có ít nhất hai mặt:
+
+- **Sở chỉ** (*reference*): thực thể trong thế giới mà biểu thức chỉ đến.
+- **Nghĩa khái niệm** (*sense*): cách thức biểu thức "trình bày" thực thể đó.
+
+Ví dụ kinh điển là **Sao Hôm** và **Sao Mai**. Cả hai đều chỉ **cùng một** thiên thể là sao Kim, nên có cùng sở chỉ. Nhưng chúng có nghĩa khái niệm khác nhau: "ngôi sao sáng lúc chiều tối" và "ngôi sao sáng lúc rạng sáng". Vì vậy câu "Sao Hôm là Sao Mai" mang thông tin mới, còn "Sao Hôm là Sao Hôm" thì không.
+
+| | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|
+| Ngôi sao buổi chiều | Sao Hôm | *Evening Star* | <Ja t="宵{よい}の明星{みょうじょう}" romaji="yoi no myōjō" /> |
+| Ngôi sao buổi sáng | Sao Mai | *Morning Star* | <Ja t="明{あ}けの明星{みょうじょう}" romaji="ake no myōjō" /> |
+| Sở chỉ chung | sao Kim | *Venus* | <Ja t="金星{きんせい}" romaji="kinsei" /> |
+
+Việt ngữ học có một cách phân tích nghĩa của từ rất có ảnh hưởng. Đỗ Hữu Châu (*Từ vựng ngữ nghĩa tiếng Việt*, 1981) tách nghĩa từ vựng thành ba thành phần:
+
+- **Nghĩa biểu vật**: phần nghĩa liên hệ với sự vật, hiện tượng trong thực tế mà từ gọi tên.
+- **Nghĩa biểu niệm**: tập hợp các nét nghĩa khái quát, trừu tượng tạo nên khái niệm.
+- **Nghĩa biểu thái**: thái độ, cảm xúc, sự đánh giá đi kèm.
+
+Thành phần **biểu thái** giải thích vì sao các từ cùng sở chỉ vẫn không thay thế cho nhau được:
+
+| Sở chỉ | Trung tính | Tôn kính / trang trọng | Thân mật / suồng sã hoặc coi thường |
+|---|---|---|---|
+| Tiếng Việt: "chết" | chết | qua đời, từ trần | ngỏm, toi |
+| Tiếng Anh: *die* | *die* | *pass away* | *kick the bucket*, *croak* |
+| Tiếng Nhật: 死ぬ | <Ja t="死{し}ぬ" romaji="shinu" /> | <Ja t="亡{な}くなる" romaji="nakunaru" />, <Ja t="逝去{せいきょ}する" romaji="seikyo suru" /> | <Ja t="くたばる" romaji="kutabaru" /> |
 
 ### Nghĩa của câu và nguyên tắc tổ hợp
 
-<Todo>
-- Nguyên tắc tổ hợp: nghĩa của câu được xây dựng từ nghĩa của các thành phần và cách chúng kết hợp.
-- Ngoại lệ: thành ngữ ("đứng núi này trông núi nọ", "kick the bucket").
-- Điều kiện chân trị; quan hệ kéo theo (entailment), mâu thuẫn (contradiction), mơ hồ (ambiguity).
-</Todo>
+Người nói hiểu được vô số câu mới vì nghĩa của câu **được tính toán** từ các phần:
+
+<Definition term="Nguyên tắc tổ hợp" en="principle of compositionality" ipa="ˌkɑːmpəzɪʃəˈnæləti" ja="構成性{こうせいせい}の原理{げんり}" romaji="kōseisei no genri">
+Nghĩa của một biểu thức phức hợp được xác định bởi **nghĩa của các thành phần** và **cách chúng kết hợp** về cú pháp.
+</Definition>
+
+"Chó cắn mèo" và "Mèo cắn chó" có cùng các từ nhưng nghĩa khác nhau, vì cấu trúc khác nhau. Tiếng Anh: *The dog bit the cat* / *The cat bit the dog*. Tiếng Nhật giữ nguyên nghĩa khi đổi trật tự nhưng giữ trợ từ: <Ja t="犬{いぬ}が猫{ねこ}を噛{か}んだ" /> = <Ja t="猫{ねこ}を犬{いぬ}が噛{か}んだ" />. Trong tiếng Nhật, "cách kết hợp" được mã hóa bằng **trợ từ** chứ không chỉ bằng trật tự (xem [Chương 4](/bai-hoc/cu-phap-hoc)).
+
+**Ngoại lệ: thành ngữ.** Nghĩa của thành ngữ **không** tính được từ các thành phần:
+
+| Ngôn ngữ | Thành ngữ | Nghĩa đen | Nghĩa thực |
+|---|---|---|---|
+| Tiếng Việt | đứng núi này trông núi nọ | đứng trên núi này nhìn núi kia | không bằng lòng với cái mình có |
+| | ăn cháo đá bát | ăn cháo xong đá cái bát | vô ơn |
+| Tiếng Anh | *kick the bucket* | đá cái xô | chết |
+| | *spill the beans* | làm đổ đậu | để lộ bí mật |
+| Tiếng Nhật | <Ja t="猫{ねこ}の手{て}も借{か}りたい" /> | muốn mượn cả tay mèo | bận tối mắt |
+| | <Ja t="油{あぶら}を売{う}る" /> | bán dầu | la cà, lười biếng trong giờ làm |
+
+**Điều kiện chân trị, kéo theo, mâu thuẫn.** Hiểu nghĩa một câu trần thuật là biết **trong hoàn cảnh nào nó đúng**. Từ đó hình thành các quan hệ giữa câu:
+
+| Quan hệ | Định nghĩa | Ví dụ |
+|---|---|---|
+| **Kéo theo** (*entailment*) | Nếu A đúng thì B chắc chắn đúng | "Nam giết con nhện" → "Con nhện chết". *She killed the spider* → *The spider died*. |
+| **Mâu thuẫn** (*contradiction*) | A và B không thể cùng đúng | "Lan còn độc thân" ⟂ "Lan đã có chồng" |
+| **Đồng nghĩa câu** (*paraphrase*) | A kéo theo B và B kéo theo A | "Mèo đuổi chuột" ↔ "Chuột bị mèo đuổi" |
+| **Mơ hồ** (*ambiguity*) | Một câu có nhiều hơn một nghĩa | "Đem cá về kho" (kho: nhà kho / kho cá) |
+
+<Callout type="note">
+Kéo theo chỉ đi **một chiều**: "Con nhện chết" không kéo theo "Nam giết con nhện" (nhện có thể chết vì lý do khác). Mơ hồ có thể do **từ vựng** ("kho", *bank*) hoặc do **cấu trúc** (*The boy saw the man with the telescope*, xem [Chương 4](/bai-hoc/cu-phap-hoc)).
+</Callout>
 
 ### Quan hệ nghĩa giữa các từ
 
-<Todo>
-- `<Definition>` cho: đồng nghĩa, trái nghĩa, bao nghĩa (hạ danh), đa nghĩa, đồng âm (đã có trong glossary).
-- Ba loại trái nghĩa: bổ sung (sống – chết), thang độ (nóng – lạnh), quan hệ (mua – bán).
-- Phân biệt đa nghĩa và đồng âm — tiêu chí và ca khó.
-</Todo>
+Từ vựng của một ngôn ngữ không phải một danh sách rời rạc mà là một **mạng lưới** các quan hệ nghĩa.
+
+<Definition term="Từ đồng nghĩa" en="synonym" ipa="ˈsɪnənɪm" ja="同義語{どうぎご}" romaji="dōgigo">
+Những từ có nghĩa **giống hoặc gần giống** nhau. Đồng nghĩa tuyệt đối rất hiếm; thường các từ khác nhau ở sắc thái, ngữ vực hoặc cách kết hợp.
+</Definition>
+
+Một nguồn đồng nghĩa quan trọng của cả ba ngôn ngữ là **lớp từ vay mượn "cao cấp"** song song với lớp từ bản ngữ:
+
+| | Từ bản ngữ | Từ vay mượn | Khác biệt |
+|---|---|---|---|
+| **Tiếng Việt** | bắt đầu, chết, nhà | khởi đầu, tử vong, gia đình | Hán Việt trang trọng, sách vở hơn |
+| **Tiếng Anh** | *begin*, *buy*, *ask* | *commence*, *purchase*, *inquire* | Từ gốc Pháp/Latin trang trọng hơn |
+| **Tiếng Nhật** | <Ja t="始{はじ}める" />, <Ja t="速{はや}さ" /> | <Ja t="開始{かいし}する" />, <Ja t="速度{そくど}" /> | Kango trang trọng, chuyên môn hơn |
+
+<Definition term="Từ trái nghĩa" en="antonym" ipa="ˈæntənɪm" ja="反義語{はんぎご}" romaji="hangigo">
+Những từ có nghĩa **đối lập** nhau trên cùng một phương diện.
+</Definition>
+
+Có ba loại trái nghĩa chính:
+
+| Loại | Đặc điểm | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|---|
+| **Bổ sung** (*complementary*) | Phủ định cái này là khẳng định cái kia; không có trung gian | sống – chết | *alive – dead* | <Ja t="生{い}きている" /> – <Ja t="死{し}んでいる" /> |
+| **Thang độ** (*gradable*) | Có mức độ ở giữa; dùng được "rất", "hơn" | nóng – (ấm – mát) – lạnh | *hot – (warm – cool) – cold* | <Ja t="暑{あつ}い" /> – <Ja t="寒{さむ}い" /> |
+| **Quan hệ** (*relational / converse*) | Mô tả cùng một quan hệ từ hai phía | mua – bán, cha – con | *buy – sell*, *teacher – student* | <Ja t="買{か}う" /> – <Ja t="売{う}る" /> |
+
+Với trái nghĩa thang độ, "không nóng" **không** có nghĩa là "lạnh". Tương tự, *not happy* ≠ *sad*.
+
+<Definition term="Quan hệ bao nghĩa" en="hyponymy" ipa="haɪˈpɑːnəmi" ja="上位{じょうい}・下位関係{かいかんけい}" romaji="jōi-kai kankei">
+Quan hệ giữa từ có nghĩa **rộng** (thượng danh: hoa, *flower*, <Ja t="花{はな}" />) và từ có nghĩa **hẹp** nằm trong nó (hạ danh: hoa hồng, *rose*, バラ).
+</Definition>
+
+**Đa nghĩa và đồng âm.** Đây là cặp khái niệm dễ nhầm nhất:
+
+<Definition term="Từ đa nghĩa" en="polysemy" ipa="pəˈlɪsəmi" ja="多義性{たぎせい}" romaji="tagisei">
+Một từ có **nhiều nghĩa liên quan** với nhau, thường phát triển từ một nghĩa gốc qua ẩn dụ hoặc hoán dụ.
+</Definition>
+
+<Definition term="Từ đồng âm" en="homonym" ipa="ˈhɑːmənɪm" ja="同音異義語{どうおんいぎご}" romaji="dōon igigo">
+Những từ **trùng hình thức** nhưng nghĩa **không liên quan**, thường do trùng hợp ngẫu nhiên về nguồn gốc.
+</Definition>
+
+| | Đa nghĩa (nghĩa có liên hệ) | Đồng âm (nghĩa không liên hệ) |
+|---|---|---|
+| **Tiếng Việt** | **chân**: chân người, chân bàn, chân núi (bộ phận ở dưới, nâng đỡ) | **chân** (bộ phận cơ thể) – **chân** thành (Hán Việt 真: thật) |
+| **Tiếng Anh** | *head*: head of a person, head of a company, head of a line | *bank* (bờ sông) – *bank* (ngân hàng) |
+| **Tiếng Nhật** | <Ja t="口{くち}" romaji="kuchi" />: miệng, <Ja t="入{い}り口{ぐち}" /> (lối vào), <Ja t="口{くち}が堅{かた}い" /> (kín miệng) | <Ja t="記者{きしゃ}" /> (phóng viên) – <Ja t="汽車{きしゃ}" /> (tàu hơi nước) |
+
+<Callout type="warning" title="Ca khó">
+Tiêu chí "nghĩa có liên hệ hay không" đôi khi phụ thuộc vào trực giác và hiểu biết về từ nguyên. Người nói có thể cảm thấy hai nghĩa liên quan dù về lịch sử chúng khác nguồn, hoặc ngược lại. Từ điển cũng xử lý không thống nhất: có từ điển gộp thành một mục (đa nghĩa), có từ điển tách thành hai mục (đồng âm). Ví dụ, "đường" (đường đi) và "đường" (đường ăn) hầu hết đều coi là đồng âm, nhưng các nghĩa "đường" (đường kẻ, đường bay, đường lối) thì là đa nghĩa.
+</Callout>
 
 ### Trường nghĩa
 
-<Todo>
-- Khái niệm trường nghĩa; ví dụ trường nghĩa màu sắc, thân tộc, nấu nướng.
-- Giả thuyết tương đối ngôn ngữ (Sapir – Whorf): trình bày cân bằng, tránh khẳng định quá mức.
-</Todo>
+<Definition term="Trường nghĩa" en="semantic field" ipa="sɪˈmæntɪk fiːld" ja="意味場{いみば}" romaji="imiba">
+Tập hợp các từ có quan hệ với nhau về nghĩa, cùng "chia nhau" một vùng ý nghĩa: màu sắc, thân tộc, nấu nướng, lúa gạo…
+</Definition>
+
+Cùng một vùng ý nghĩa, mỗi ngôn ngữ **cắt** thành các ô khác nhau.
+
+**Trường nghĩa lúa gạo:**
+
+| Giai đoạn | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|
+| Cây non | mạ | *rice seedling* | <Ja t="苗{なえ}" romaji="nae" /> |
+| Cây đang trồng | lúa | *rice (plant)* | <Ja t="稲{いね}" romaji="ine" /> |
+| Hạt còn vỏ | thóc | *paddy, unhusked rice* | <Ja t="籾{もみ}" romaji="momi" /> |
+| Hạt đã xát | gạo | *rice* | <Ja t="米{こめ}" romaji="kome" /> |
+| Đã nấu chín | cơm | *(cooked) rice* | <Ja t="ご飯{はん}" romaji="gohan" /> |
+
+Tiếng Việt và tiếng Nhật, hai nền văn hóa lúa nước, có từ riêng cho từng giai đoạn. Tiếng Anh dùng một từ *rice* và thêm định ngữ khi cần. <Ja t="ご飯{はん}" /> và "cơm" còn mở rộng nghĩa thành **bữa ăn** nói chung ("ăn cơm chưa?", <Ja t="ご飯{はん}食{た}べた？" />), điều *rice* không làm được.
+
+**Trường nghĩa thân tộc:**
+
+| Quan hệ | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|
+| Anh / em trai | anh (lớn) – em (nhỏ, không phân biệt giới) | *brother* | <Ja t="兄{あに}" /> (lớn) – <Ja t="弟{おとうと}" /> (nhỏ) |
+| Chị / em gái | chị (lớn) – em | *sister* | <Ja t="姉{あね}" /> (lớn) – <Ja t="妹{いもうと}" /> (nhỏ) |
+| Anh / em của cha | bác (lớn hơn cha) – chú (nhỏ hơn cha) | *uncle* | <Ja t="伯父{おじ}" /> (lớn hơn) – <Ja t="叔父{おじ}" /> (nhỏ hơn): cùng đọc おじ, chỉ phân biệt trên chữ viết |
+| Anh / em của mẹ | cậu | *uncle* | <Ja t="伯父{おじ}" /> / <Ja t="叔父{おじ}" /> |
+| Chị / em của mẹ | dì (Bắc: bác nếu lớn hơn mẹ) | *aunt* | <Ja t="伯母{おば}" /> / <Ja t="叔母{おば}" /> |
+
+Tiếng Việt phân biệt **bên nội – bên ngoại** và **thứ bậc tuổi tác**. Tiếng Nhật phân biệt tuổi tác, nhưng với chú bác chỉ trên chữ viết. Tiếng Anh gần như chỉ phân biệt giới tính. Hệ thống này cũng là nền tảng của **xưng hô** tiếng Việt (xem [Chương 6](/bai-hoc/ngu-dung-hoc)).
+
+**Trường nghĩa màu sắc:**
+
+- Tiếng Việt dùng "**xanh**" cho cả *green* và *blue*, và phân biệt bằng định ngữ khi cần: xanh lá cây, xanh da trời, xanh dương.
+- Tiếng Nhật cổ dùng <Ja t="青{あお}" /> cho cả vùng xanh lá – xanh dương. Dấu vết còn lại đến nay: đèn giao thông màu xanh lá gọi là <Ja t="青信号{あおしんごう}" romaji="ao shingō" />, rau xanh là <Ja t="青野菜{あおやさい}" romaji="ao yasai" />, táo xanh là <Ja t="青{あお}りんご" romaji="ao ringo" />. Từ <Ja t="緑{みどり}" romaji="midori" /> cho màu xanh lá ngày nay phổ biến.
+- Tiếng Anh tách *green* và *blue* thành hai từ cơ bản.
+
+<Callout type="culture" title="Giả thuyết Sapir – Whorf: ngôn ngữ có quyết định tư duy?">
+**Giả thuyết tương đối ngôn ngữ** (thường gắn với tên Edward Sapir và Benjamin Lee Whorf) cho rằng ngôn ngữ ảnh hưởng đến cách người nói tri nhận thế giới. Cần phân biệt hai dạng:
+
+- **Dạng mạnh** (*quyết định luận*): ngôn ngữ **quyết định** tư duy; không có từ thì không nghĩ được. Dạng này hầu như bị bác bỏ. Người Việt vẫn **nhìn thấy** sự khác biệt giữa màu lá cây và màu bầu trời, và diễn đạt được bằng "xanh lá", "xanh dương".
+- **Dạng yếu**: ngôn ngữ có thể **ảnh hưởng** ở mức độ nhất định đến sự chú ý, trí nhớ hay tốc độ phân biệt. Một số thực nghiệm ủng hộ dạng này. Ví dụ, nghiên cứu của Winawer và cộng sự (2007) cho thấy người nói tiếng Nga, ngôn ngữ có hai từ cơ bản cho xanh nhạt và xanh đậm, phân biệt hai sắc độ đó nhanh hơn một chút khi chúng thuộc hai từ khác nhau.
+
+Nghiên cứu kinh điển của Berlin và Kay (1969) về các từ chỉ màu cơ bản lại nhấn mạnh tính **phổ quát**: các ngôn ngữ chia màu khác nhau nhưng không hoàn toàn tùy tiện.
+</Callout>
 
 ### Vai nghĩa
 
-<Todo>
-- Tác thể (agent), bị thể (theme/patient), công cụ, địa điểm, đích, người hưởng lợi…
-- Ví dụ: "Lan mở cửa bằng chìa khóa" / "Chìa khóa mở cửa" / "Cửa mở".
-</Todo>
+<Definition term="Vai nghĩa" en="thematic role" ipa="θɪˈmætɪk roʊl" ja="意味役割{いみやくわり}" romaji="imi yakuwari">
+Vai trò ngữ nghĩa mà một tham tố đảm nhận trong sự tình do động từ biểu thị: tác thể, bị thể, công cụ…
+</Definition>
+
+| Vai nghĩa | Nội dung | Ví dụ (thành phần in đậm) |
+|---|---|---|
+| **Tác thể** (*agent*) | Người/vật chủ động thực hiện hành động | **Lan** mở cửa. |
+| **Bị thể** (*theme / patient*) | Đối tượng chịu tác động | Lan mở **cửa**. |
+| **Công cụ** (*instrument*) | Phương tiện thực hiện hành động | Lan mở cửa **bằng chìa khóa**. |
+| **Kẻ trải nghiệm** (*experiencer*) | Người có cảm giác, nhận thức | **Tôi** thấy lạnh. |
+| **Địa điểm** (*location*) | Nơi diễn ra sự tình | Lan học **ở thư viện**. |
+| **Đích** (*goal*) | Nơi hoặc người mà hành động hướng tới | Lan gửi thư **cho Nam**. |
+| **Người hưởng lợi** (*beneficiary*) | Người được lợi từ hành động | Lan nấu cơm **cho mẹ**. |
+
+Vai nghĩa **không trùng** với chức năng cú pháp. Cùng là chủ ngữ nhưng vai nghĩa khác nhau:
+
+| Câu | Chủ ngữ | Vai nghĩa của chủ ngữ |
+|---|---|---|
+| **Lan** mở cửa bằng chìa khóa. / ***Lan** opened the door with the key.* | Lan | tác thể |
+| **Chìa khóa** mở cửa. / ***The key** opened the door.* | chìa khóa | công cụ |
+| **Cửa** mở. / ***The door** opened.* | cửa | bị thể |
+
+Tiếng Nhật thường dùng **hai động từ khác nhau** cho cặp "tác động – tự xảy ra": <Ja t="ドアを開{あ}ける" romaji="doa o akeru" /> (mở cửa, có tác thể) và <Ja t="ドアが開{あ}く" romaji="doa ga aku" /> (cửa mở, tự xảy ra). Tiếng Việt và tiếng Anh dùng cùng một động từ "mở", *open*.
 
 ### Ẩn dụ và hoán dụ
 
-<Todo>
-- Ẩn dụ ý niệm (Lakoff & Johnson): THỜI GIAN LÀ TIỀN BẠC; CUỘC ĐỜI LÀ MỘT HÀNH TRÌNH.
-- Hoán dụ: "cả làng" (người trong làng), "nhà trắng" (chính phủ Mỹ).
-</Todo>
+Nghĩa của từ không chỉ nằm trong từ điển mà còn gắn với **cách con người tư duy**. Lakoff và Johnson (*Metaphors We Live By*, 1980) chỉ ra rằng ẩn dụ không phải chỉ là tu từ văn chương, mà là một **cơ chế nhận thức** thường nhật.
+
+<Definition term="Ẩn dụ ý niệm" en="conceptual metaphor" ipa="kənˈsɛptʃuəl ˈmɛtəfɔːr" ja="概念{がいねん}メタファー" romaji="gainen metafā">
+Cách hiểu một **miền ý niệm trừu tượng** (thời gian, cảm xúc, cuộc đời) thông qua một **miền cụ thể** (tiền bạc, không gian, hành trình).
+</Definition>
+
+| Ẩn dụ ý niệm | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|
+| THỜI GIAN LÀ TIỀN BẠC | tiêu tốn thời gian, thời gian là vàng | *spend time*, *time is money* | <Ja t="時間{じかん}を使{つか}う" />, <Ja t="時{とき}は金{かね}なり" /> |
+| CUỘC ĐỜI LÀ HÀNH TRÌNH | đường đời, ngã rẽ cuộc đời | *at a crossroads*, *life's journey* | <Ja t="人生{じんせい}の岐路{きろ}" /> (ngã rẽ cuộc đời) |
+| VUI LÀ LÊN, BUỒN LÀ XUỐNG | tinh thần sa sút, phấn chấn lên | *feeling down*, *cheer up* | <Ja t="気分{きぶん}が落{お}ち込{こ}む" /> (tâm trạng rơi xuống) |
+| TƯƠNG LAI Ở PHÍA TRƯỚC | nhìn về phía trước | *look forward to* | <Ja t="前向{まえむ}き" /> (hướng về phía trước, lạc quan) |
+
+<Callout type="culture" title="Cảm xúc nằm ở đâu trong cơ thể?">
+Mỗi ngôn ngữ "đặt" cảm xúc và tính cách vào những bộ phận khác nhau:
+- **Tiếng Việt** ưa **lòng, bụng, gan**: *tốt bụng*, *xấu bụng*, *buồn lòng*, *to gan*.
+- **Tiếng Anh** ưa ***heart***: *kind-hearted*, *heartbroken*, *take heart*.
+- **Tiếng Nhật** ưa <Ja t="腹{はら}" /> (bụng) và <Ja t="胸{むね}" /> (ngực): <Ja t="腹{はら}が立{た}つ" /> (tức giận, nghĩa đen "bụng đứng lên"), <Ja t="腹黒{はらぐろ}い" /> (nham hiểm, nghĩa đen "bụng đen"), rất gần với "xấu bụng" của tiếng Việt.
+</Callout>
+
+<Definition term="Hoán dụ" en="metonymy" ipa="məˈtɑːnəmi" ja="換喩{かんゆ}" romaji="kan'yu">
+Dùng tên của một thực thể để chỉ một thực thể khác **có quan hệ gần gũi** với nó: toàn thể – bộ phận, nơi chốn – tổ chức, tác giả – tác phẩm…
+</Definition>
+
+| Kiểu hoán dụ | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|
+| Nơi chốn → người/tổ chức | *Cả làng* kéo đến xem. | *The White House* announced… | <Ja t="永田町{ながたちょう}" /> (khu vực Quốc hội → giới chính trị) |
+| Tác giả → tác phẩm | đọc Nguyễn Du | *read Shakespeare* | <Ja t="漱石{そうせき}を読{よ}む" /> (đọc Natsume Sōseki) |
+| Bộ phận → người | nhà đông *miệng ăn* | *all hands on deck* | <Ja t="人手{ひとで}が足{た}りない" /> (thiếu "tay người", thiếu nhân lực) |
+| Vật chứa → vật được chứa | uống hết *một chai* | *drink a bottle* | <Ja t="一杯{いっぱい}飲{の}む" /> (uống một chén) |
 
 ## Mở rộng: Tiếng Anh
 
 <LangSection lang="en">
 
-### Quan hệ nghĩa và kéo theo trong tiếng Anh
+### Kéo theo và kiểm tra nghĩa trong tiếng Anh
 
-<Todo>
-- Ví dụ entailment: "She killed the spider" → "The spider died".
-- Antonym types: dead/alive, hot/cold, buy/sell, "not happy" ≠ "sad".
-</Todo>
+Quan hệ kéo theo cho phép kiểm tra tri thức ngữ nghĩa một cách chặt chẽ:
+
+<Ex>She killed the spider. → The spider died.</Ex>
+<Ex>He managed to open the door. → He opened the door.</Ex>
+<Ex>She is a mother. → She is a parent.</Ex>
+<Ex bad note="kéo theo chỉ đi một chiều">The spider died. → She killed the spider.</Ex>
+
+Kéo theo có thể dùng để phát hiện **thành phần nghĩa** của từ. *Kill* kéo theo *die*, tức *kill* chứa thành phần "gây ra cái chết". *Manage to* kéo theo việc hành động đã xảy ra, còn *try to* thì không: *He tried to open the door* không kéo theo *He opened the door*.
+
+### Trái nghĩa và những bất đối xứng
+
+Tiếng Anh cho thấy trái nghĩa thang độ thường **không cân bằng**:
+
+- Hỏi *How **old** are you?* là trung tính, không ngụ ý người nghe già. Hỏi *How **young** are you?* lại ngụ ý người nghe trẻ. Tiếng Việt cũng vậy: "Anh bao nhiêu **tuổi**?", "Cái này **dài** bao nhiêu?" (không hỏi "ngắn bao nhiêu"). Tiếng Nhật: <Ja t="何歳{なんさい}ですか" />, <Ja t="長{なが}さはどのくらい？" />.
+- Thành viên "trung tính" của cặp (*old*, *long*, *tall*) được gọi là **không đánh dấu** (*unmarked*).
+
+**Tiền tố phủ định tạo trái nghĩa**: *happy – unhappy*, *legal – illegal*, *possible – impossible*. Nhưng *unhappy* không hoàn toàn bằng *sad*, và *not unhappy* không bằng *happy*: đây là cách nói giảm nhẹ rất đặc trưng của tiếng Anh.
 
 ### Thành ngữ và ẩn dụ
 
-<Todo>
-- kick the bucket, spill the beans; "time is money", "I'm feeling down".
-</Todo>
+Thành ngữ tiếng Anh thường dựa trên những ẩn dụ ý niệm chung:
+
+| Thành ngữ | Nghĩa | Ẩn dụ nền |
+|---|---|---|
+| *kick the bucket* | chết | (không rõ, nghĩa không tổ hợp) |
+| *spill the beans* | để lộ bí mật | BÍ MẬT LÀ VẬT ĐƯỢC CHỨA |
+| *I'm on top of the world* | rất hạnh phúc | VUI LÀ LÊN |
+| *We've hit a dead end* | bế tắc | CÔNG VIỆC LÀ HÀNH TRÌNH |
+| *He blew up* | nổi giận | GIẬN DỮ LÀ CHẤT LỎNG NÓNG TRONG BÌNH CHỨA |
+
+Thành ngữ khác nhau về **mức độ cố định**. *Spill the beans* vẫn hiểu được khi đổi thành *The beans were spilled*. *Kick the bucket* thì hầu như không chấp nhận \**The bucket was kicked* (với nghĩa "chết").
+
+### Đồng nghĩa ba tầng: bản ngữ – Pháp – Latin
+
+Lịch sử vay mượn (xem [Chương 11](/bai-hoc/bien-doi-ngon-ngu)) tạo cho tiếng Anh nhiều bộ ba đồng nghĩa, xếp từ thân mật đến trang trọng:
+
+| Gốc Anh cổ (German) | Gốc Pháp | Gốc Latin |
+|---|---|---|
+| *ask* | *question* | *interrogate* |
+| *kingly* | *royal* | *regal* |
+| *rise* | *mount* | *ascend* |
+| *time* | *age* | *epoch* |
+
+Tên con vật khi còn sống thường là từ gốc Anh cổ (*cow*, *pig*, *sheep*), còn tên thịt của chúng lại là từ gốc Pháp (*beef*, *pork*, *mutton*). Đây là dấu vết của thời kỳ giới quý tộc nói tiếng Pháp sau năm 1066.
+
+<Callout type="hanviet" title="Song song với tiếng Việt và tiếng Nhật">
+Cấu trúc "từ bản ngữ thân mật – từ vay mượn trang trọng" xuất hiện ở cả ba ngôn ngữ: *ask / inquire* ≈ "hỏi / chất vấn" ≈ <Ja t="聞{き}く" /> / <Ja t="質問{しつもん}する" />. Người Việt học tiếng Anh có thể dùng trực giác về từ Hán Việt để cảm nhận sắc thái trang trọng của từ gốc Latin.
+</Callout>
 
 </LangSection>
 
@@ -73,18 +288,63 @@ Biết một từ là biết nghĩa của nó; biết một câu là biết khi 
 
 ### Đồng âm trong tiếng Nhật
 
-<Todo>
-- Vì sao tiếng Nhật có rất nhiều từ đồng âm: kho âm tiết hạn chế + lớp từ Hán.
-- Ví dụ: きしゃ — <Ja t="記者{きしゃ}" /> (phóng viên), <Ja t="汽車{きしゃ}" /> (tàu hỏa hơi nước); はし — <Ja t="橋{はし}" />/<Ja t="箸{はし}" />/<Ja t="端{はし}" />.
-- Vai trò của kanji trong việc phân biệt nghĩa khi đọc.
-</Todo>
+Tiếng Nhật có **rất nhiều từ đồng âm**, chủ yếu vì hai lý do:
+
+1. **Kho âm tiết hạn chế**: chỉ 5 nguyên âm, cấu trúc âm tiết đơn giản (CV).
+2. **Lớp từ Hán**: khi vay chữ Hán, nhiều âm Hán vốn khác nhau (có thanh điệu, có phụ âm cuối) bị **đồng nhất** thành cùng một cách đọc tiếng Nhật.
+
+Câu chơi chữ nổi tiếng gồm bốn từ đều đọc *kisha*:
+
+<Gloss lang="ja" text="貴社{きしゃ}の 記者{きしゃ}が 汽車{きしゃ}で 帰社{きしゃ}した" romaji="kisha-no kisha-ga kisha-de kisha-shita" gloss="quý.công.ty-của phóng.viên-CN tàu.hỏa-bằng về.công.ty-làm.QK" translation="Phóng viên của quý công ty đã về công ty bằng tàu hỏa." />
+
+Viết tắt: **CN** là trợ từ chủ ngữ が, **QK** là quá khứ.
+
+<Callout type="hanviet">
+Bốn từ *kisha* có âm Hán Việt **khác nhau**: 貴社 **quý xã**, 記者 **ký giả**, 汽車 **khí xa**, 帰社 **quy xã**. Tiếng Việt giữ lại nhiều khác biệt âm của tiếng Hán trung đại hơn tiếng Nhật, như thanh điệu và phụ âm cuối. Vì vậy người Việt nhìn chữ Hán thường phân biệt được những từ mà người Nhật phải dựa vào ngữ cảnh.
+</Callout>
+
+**Vai trò của kanji.** Khi đọc, kanji giúp phân biệt các từ đồng âm ngay lập tức. Ba từ *hashi*: <Ja t="橋{はし}" /> (cầu), <Ja t="箸{はし}" /> (đũa), <Ja t="端{はし}" /> (mép). Khi nói, người Nhật dựa vào **ngữ cảnh** và **trọng âm cao độ** ([Chương 7](/bai-hoc/ngu-am-hoc)). Đây là một lý do khiến việc bỏ hẳn kanji để chỉ dùng kana, dù từng được đề xuất, chưa bao giờ được thực hiện ([Chương 12](/bai-hoc/chu-viet)).
 
 ### Từ gần nghĩa: wago và kango
 
-<Todo>
-- <Ja t="始{はじ}める" /> / <Ja t="開始{かいし}する" />; <Ja t="速{はや}さ" /> / <Ja t="速度{そくど}" /> — khác biệt về ngữ vực.
-- Liên hệ cặp từ thuần Việt – Hán Việt: "bắt đầu" / "khởi đầu".
-</Todo>
+Như "bắt đầu / khởi đầu" trong tiếng Việt, tiếng Nhật có rất nhiều cặp **wago** (thuần Nhật) – **kango** (Hán) gần nghĩa nhưng khác ngữ vực:
+
+| Wago (thân mật, đời thường) | Kango (trang trọng, chuyên môn) | Nghĩa | Tiếng Việt tương ứng |
+|---|---|---|---|
+| <Ja t="始{はじ}める" romaji="hajimeru" /> | <Ja t="開始{かいし}する" romaji="kaishi suru" /> | bắt đầu | bắt đầu / khai thủy, khởi đầu |
+| <Ja t="速{はや}さ" romaji="hayasa" /> | <Ja t="速度{そくど}" romaji="sokudo" /> | tốc độ | độ nhanh / tốc độ |
+| <Ja t="決{き}める" romaji="kimeru" /> | <Ja t="決定{けってい}する" romaji="kettei suru" /> | quyết định | chọn, định / quyết định |
+| <Ja t="調{しら}べる" romaji="shiraberu" /> | <Ja t="調査{ちょうさ}する" romaji="chōsa suru" /> | điều tra | tìm hiểu / điều tra |
+| <Ja t="宿屋{やどや}" romaji="yadoya" /> | <Ja t="旅館{りょかん}" romaji="ryokan" /> | nhà trọ | nhà trọ / lữ quán |
+
+Kango thường dùng trong văn bản hành chính, tin tức, học thuật. Wago dùng trong hội thoại và văn chương giàu cảm xúc. Chọn sai lớp từ không làm câu sai ngữ pháp nhưng tạo cảm giác "lạc giọng", giống như nói "Tôi xin khởi đầu bữa cơm" trong bữa tối gia đình.
+
+### Từ chỉ màu 青: xanh hay lam?
+
+Như đã nêu ở phần lý thuyết, <Ja t="青{あお}" /> từng bao trùm cả màu xanh lá lẫn xanh dương. Nhiều cách dùng hiện đại vẫn giữ nghĩa rộng này:
+
+| Từ | Nghĩa | Màu thực tế |
+|---|---|---|
+| <Ja t="青信号{あおしんごう}" /> | đèn xanh | xanh lá (ngả lam) |
+| <Ja t="青葉{あおば}" /> | lá non | xanh lá |
+| <Ja t="青空{あおぞら}" /> | bầu trời xanh | xanh dương |
+| <Ja t="青二才{あおにさい}" /> | kẻ non nớt, "miệng còn hôi sữa" | (nghĩa ẩn dụ: chưa chín) |
+
+<Callout type="culture" title="Góc đối chiếu">
+"Xanh" tiếng Việt cũng có nghĩa ẩn dụ "non, chưa chín": *quả còn xanh*, *tuổi xanh*. Tiếng Anh cũng có *green* với nghĩa "thiếu kinh nghiệm" (*a green recruit*). Cả ba ngôn ngữ đều nối màu của cây cỏ non với sự non nớt: một ẩn dụ gần như phổ quát, dù ranh giới màu sắc khác nhau.
+</Callout>
+
+### Bị động "chịu thiệt": vai nghĩa đặc biệt của tiếng Nhật
+
+Tiếng Nhật có một kiểu câu bị động mà tiếng Anh không có, gọi là **bị động gián tiếp** hay **bị động chịu thiệt** (<Ja t="迷惑{めいわく}の受身{うけみ}" romaji="meiwaku no ukemi" />). Chủ ngữ không phải bị thể của hành động mà là **người bị ảnh hưởng xấu** bởi sự việc:
+
+<Gloss lang="ja" text="雨{あめ}に 降{ふ}られた" romaji="ame-ni furareta" gloss="mưa-bởi rơi.BĐ.QK" translation="(Tôi) bị mắc mưa. (nghĩa đen: bị mưa rơi)" />
+
+<Gloss lang="ja" text="隣{となり}の 人{ひと}に タバコを 吸{す}われた" romaji="tonari-no hito-ni tabako-o suwareta" gloss="bên.cạnh-của người-bởi thuốc.lá-TN hút.BĐ.QK" translation="(Tôi) bị người bên cạnh hút thuốc (làm phiền)." />
+
+Viết tắt: **BĐ** là bị động, **TN** là trợ từ tân ngữ を.
+
+Tiếng Việt có một cấu trúc rất gần: "**bị**" mang nghĩa chịu thiệt, dùng được cả với động từ nội động: "Tôi **bị** mưa ướt hết", "Nó **bị** mất ví". Tiếng Anh phải diễn đạt bằng cách khác: *I got caught in the rain*, *The person next to me smoked, which bothered me*.
 
 </LangSection>
 
@@ -92,37 +352,41 @@ Biết một từ là biết nghĩa của nó; biết một câu là biết khi 
 
 <Compare
   rows={[
-    { aspect: 'Màu xanh lá / xanh dương', vi: 'Một từ "xanh" (xanh lá cây, xanh da trời)', en: 'green / blue', ja: '緑{みどり} / 青{あお} — đèn giao thông màu xanh lá vẫn gọi là 青信号{あおしんごう}' },
-    { aspect: 'Lúa – gạo – cơm', vi: 'lúa, thóc, gạo, cơm', en: 'rice', ja: '稲{いね}, 米{こめ}, ご飯{はん}' },
+    { aspect: 'Màu xanh lá / xanh dương', vi: 'Một từ "xanh" (xanh lá cây, xanh da trời)', en: 'green / blue', ja: '緑{みどり} / 青{あお}; đèn xanh lá vẫn gọi là 青信号{あおしんごう}' },
+    { aspect: 'Lúa – gạo – cơm', vi: 'mạ, lúa, thóc, gạo, cơm', en: 'rice (thêm định ngữ khi cần)', ja: '苗{なえ}, 稲{いね}, 籾{もみ}, 米{こめ}, ご飯{はん}' },
     { aspect: 'Anh/em trai, chị/em gái', vi: 'anh, chị, em (em không phân biệt giới)', en: 'brother, sister (không phân biệt lớn/nhỏ)', ja: '兄{あに}, 姉{あね}, 弟{おとうと}, 妹{いもうと}' },
-    { aspect: 'Ẩn dụ về thời gian', vi: '', en: 'time is money', ja: '' },
+    { aspect: 'Chú, bác, cậu', vi: 'bác, chú (bên nội), cậu (bên ngoại)', en: 'uncle', ja: '伯父{おじ} / 叔父{おじ}: phân biệt trên chữ viết' },
+    { aspect: 'Ẩn dụ về thời gian', vi: 'thời gian là vàng; tiêu tốn thời gian', en: 'time is money; spend time', ja: '時{とき}は金{かね}なり; 時間{じかん}を使{つか}う' },
+    { aspect: 'Cảm xúc "nằm" ở đâu', vi: 'lòng, bụng, gan: tốt bụng, to gan', en: 'heart: kind-hearted, heartbroken', ja: '腹{はら}, 胸{むね}: 腹{はら}が立{た}つ, 腹黒{はらぐろ}い' },
+    { aspect: 'Đa nghĩa: bộ phận cơ thể', vi: 'chân: chân bàn, chân núi', en: 'foot: foot of the mountain; leg: table leg', ja: '足{あし}: 机{つくえ}の脚{あし}; 口{くち}: 入{い}り口{ぐち}' },
+    { aspect: 'Đồng nghĩa theo lớp từ', vi: 'Thuần Việt – Hán Việt: bắt đầu / khởi đầu', en: 'Anh cổ – Pháp – Latin: ask / question / interrogate', ja: '和語{わご} – 漢語{かんご}: 始{はじ}める / 開始{かいし}する' },
+    { aspect: 'Mức độ đồng âm', vi: 'Trung bình; thanh điệu và âm cuối giúp phân biệt', en: 'Có (bank, bear); chính tả đôi khi phân biệt (right / write)', ja: 'Rất nhiều, nhất là kango; kanji giúp phân biệt khi đọc' },
+    { aspect: 'Cặp động từ tác động – tự xảy ra', vi: 'Thường dùng một từ: mở cửa / cửa mở', en: 'Thường một từ: open the door / the door opened', ja: 'Hai động từ: 開{あ}ける / 開{あ}く' },
   ]}
 />
 
-<Todo>
-- Điền các ô còn trống và thêm 1–2 hàng ví dụ về đa nghĩa.
-</Todo>
-
 ## Tóm tắt
 
-<Todo>
-- 5–6 gạch đầu dòng ý chính của chương.
-</Todo>
+- Nghĩa có hai mặt: **sở chỉ** và **nghĩa khái niệm** (Frege: Sao Hôm – Sao Mai). Việt ngữ học phân tích nghĩa từ thành **biểu vật, biểu niệm, biểu thái** (Đỗ Hữu Châu).
+- Nghĩa câu được xây dựng theo **nguyên tắc tổ hợp**; **thành ngữ** là ngoại lệ. Giữa các câu có quan hệ **kéo theo, mâu thuẫn, đồng nghĩa** và có thể **mơ hồ**.
+- Từ vựng là mạng lưới các quan hệ nghĩa: **đồng nghĩa**, **trái nghĩa** (bổ sung, thang độ, quan hệ), **bao nghĩa**, **đa nghĩa** và **đồng âm**. Cả ba ngôn ngữ đều có lớp đồng nghĩa "bản ngữ – vay mượn trang trọng".
+- Mỗi ngôn ngữ chia **trường nghĩa** theo cách riêng: lúa gạo, thân tộc, màu sắc. Dạng mạnh của giả thuyết Sapir – Whorf không được ủng hộ; dạng yếu có một số bằng chứng thực nghiệm.
+- **Vai nghĩa** (tác thể, bị thể, công cụ…) không trùng với chức năng cú pháp. Tiếng Nhật phân biệt cặp động từ tác động – tự xảy ra (開ける / 開く) và có bị động chịu thiệt, gần với "bị" tiếng Việt.
+- **Ẩn dụ ý niệm** và **hoán dụ** là cơ chế nhận thức thường nhật, vừa có tính phổ quát (VUI LÀ LÊN) vừa mang dấu ấn văn hóa (tốt bụng – kind-hearted – 腹黒い).
 
 <Summary lang="en">
-<Todo>
-- Đoạn tóm tắt 3–4 câu bằng tiếng Anh.
-</Todo>
+Semantics studies meaning at the level of words and sentences. Frege distinguished **reference** from **sense**, and sentence meaning follows the **principle of compositionality**, with idioms as notable exceptions. Words are linked by relations such as synonymy, antonymy (complementary, gradable and relational), hyponymy, polysemy and homonymy, and each language carves up **semantic fields** like rice, kinship and color in its own way; research supports at most a weak version of the Sapir–Whorf hypothesis. **Thematic roles** such as agent, theme and instrument are distinct from grammatical functions, and **conceptual metaphor** and metonymy show that everyday meaning is grounded in human cognition and culture.
 </Summary>
 
 <Summary lang="ja">
-<Todo>
-- Đoạn tóm tắt 2–3 câu bằng tiếng Nhật (dùng `<Ja t="..." />`).
-</Todo>
+<Ja t="意味論{いみろん}は語{ご}と文{ぶん}の意味{いみ}を研究{けんきゅう}する分野{ぶんや}である。文{ぶん}の意味{いみ}は構成性{こうせいせい}の原理{げんり}によって部分{ぶぶん}の意味{いみ}から組{く}み立{た}てられるが、慣用句{かんようく}は例外{れいがい}である。語{ご}の間{あいだ}には同義{どうぎ}・反義{はんぎ}・上位下位{じょういかい}・多義{たぎ}・同音異義{どうおんいぎ}などの関係{かんけい}があり、稲{いね}・米{こめ}・ご飯{はん}のように、言語{げんご}ごとに世界{せかい}の切{き}り分{わ}け方{かた}が異{こと}なる。また、比喩{ひゆ}や換喩{かんゆ}は日常的{にちじょうてき}な認知{にんち}の仕組{しく}みでもある。" />
 </Summary>
 
 ## Câu hỏi thảo luận
 
-1. "Chân" trong "chân người", "chân bàn", "chân núi", "chân thành" — đâu là đa nghĩa, đâu là đồng âm? Vì sao?
-2. Việc tiếng Việt dùng một từ "xanh" cho cả blue và green có khiến người Việt nhìn màu khác đi không?
-3. Tìm 3 cặp từ thuần Việt – Hán Việt gần nghĩa và 3 cặp wago – kango tương ứng.
+1. "Chân" trong "chân người", "chân bàn", "chân núi", "chân thành": đâu là đa nghĩa, đâu là đồng âm? Vì sao?
+2. Việc tiếng Việt dùng một từ "xanh" cho cả *blue* và *green* có khiến người Việt nhìn màu khác đi không? Hãy phân biệt dạng mạnh và dạng yếu của giả thuyết Sapir – Whorf khi trả lời.
+3. Tìm 3 cặp từ thuần Việt – Hán Việt gần nghĩa và 3 cặp wago – kango tương ứng. Sắc thái khác nhau thế nào?
+4. Câu "Nam đã bỏ thuốc lá" kéo theo những câu nào? Câu "Nam đã cố bỏ thuốc lá" thì sao?
+5. Tìm 3 thành ngữ tiếng Việt có dùng bộ phận cơ thể (lòng, bụng, gan…) và tìm cách diễn đạt tương đương trong tiếng Anh hoặc tiếng Nhật. Ẩn dụ nền có giống nhau không?
+6. Vì sao tiếng Nhật có nhiều từ đồng âm hơn tiếng Việt, dù cả hai đều vay mượn nhiều từ Hán?

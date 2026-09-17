@@ -2,7 +2,6 @@ import type { GlossaryTerm } from '../types'
 
 const chapter = 'ngu-dung-hoc'
 
-// TODO(nội dung): bổ sung thêm thuật ngữ khi viết chương — xem docs/CONTENT_ROADMAP.md
 export const terms: GlossaryTerm[] = [
   {
     id: 'ngu-dung-hoc',
@@ -15,6 +14,16 @@ export const terms: GlossaryTerm[] = [
     definition: 'Phân ngành nghiên cứu cách ngữ cảnh góp phần tạo nên ý nghĩa của lời nói.',
   },
   {
+    id: 'ngu-canh',
+    chapter,
+    vi: 'Ngữ cảnh',
+    en: 'context',
+    ipaEn: 'ˈkɑːntɛkst',
+    ja: '文脈{ぶんみゃく}',
+    romaji: 'bunmyaku',
+    definition: 'Toàn bộ hoàn cảnh của phát ngôn: người nói, người nghe, thời gian, không gian, hiểu biết chung và những gì đã nói trước đó.',
+  },
+  {
     id: 'chi-xuat',
     chapter,
     vi: 'Chỉ xuất',
@@ -22,7 +31,7 @@ export const terms: GlossaryTerm[] = [
     ipaEn: 'ˈdaɪksɪs',
     ja: '直示{ちょくじ}',
     romaji: 'chokuji',
-    definition: 'Những biểu thức mà nghĩa phụ thuộc vào ngữ cảnh phát ngôn: tôi, bạn, đây, kia, hôm nay, bây giờ…',
+    definition: 'Những biểu thức mà nghĩa phụ thuộc vào ngữ cảnh phát ngôn: tôi, bạn, đây, kia, hôm nay, bây giờ, これ, あれ…',
   },
   {
     id: 'hanh-dong-ngon-tu',
@@ -33,6 +42,36 @@ export const terms: GlossaryTerm[] = [
     ja: '発話行為{はつわこうい}',
     romaji: 'hatsuwa kōi',
     definition: 'Hành động được thực hiện bằng lời nói như hỏi, hứa, ra lệnh, xin lỗi, cảm ơn.',
+  },
+  {
+    id: 'dong-tu-ngu-vi',
+    chapter,
+    vi: 'Động từ ngữ vi',
+    en: 'performative verb',
+    ipaEn: 'pərˈfɔːrmətɪv vɜːrb',
+    ja: '遂行動詞{すいこうどうし}',
+    romaji: 'suikō dōshi',
+    definition: 'Động từ mà việc nói ra nó trong điều kiện thích hợp chính là thực hiện hành động: "Tôi xin lỗi", "I promise", 宣言{せんげん}します.',
+  },
+  {
+    id: 'hanh-dong-ngon-tu-gian-tiep',
+    chapter,
+    vi: 'Hành động ngôn từ gián tiếp',
+    en: 'indirect speech act',
+    ipaEn: 'ˌɪndəˈrɛkt spiːtʃ ækt',
+    ja: '間接発話行為{かんせつはつわこうい}',
+    romaji: 'kansetsu hatsuwa kōi',
+    definition: 'Hành động ngôn từ mà hình thức câu không khớp với chức năng, ví dụ câu trần thuật "Ở đây lạnh quá nhỉ" dùng để đề nghị đóng cửa.',
+  },
+  {
+    id: 'nguyen-tac-cong-tac',
+    chapter,
+    vi: 'Nguyên tắc cộng tác',
+    en: 'cooperative principle',
+    ipaEn: 'koʊˈɑːpərətɪv ˈprɪnsəpəl',
+    ja: '協調{きょうちょう}の原理{げんり}',
+    romaji: 'kyōchō no genri',
+    definition: 'Nguyên tắc của Grice: người tham gia hội thoại đóng góp phù hợp với mục đích chung, cụ thể hóa thành bốn phương châm lượng, chất, quan hệ, cách thức.',
   },
   {
     id: 'ham-y-hoi-thoai',
@@ -52,7 +91,27 @@ export const terms: GlossaryTerm[] = [
     ipaEn: 'ˌpriːsʌpəˈzɪʃən',
     ja: '前提{ぜんてい}',
     romaji: 'zentei',
-    definition: 'Thông tin được mặc nhiên coi là đúng khi phát ngôn, ví dụ "Anh ấy đã bỏ thuốc" tiền giả định anh ấy từng hút thuốc.',
+    definition: 'Thông tin được mặc nhiên coi là đúng khi phát ngôn và vẫn còn khi phủ định câu, ví dụ "Anh ấy đã bỏ thuốc" tiền giả định anh ấy từng hút thuốc.',
+  },
+  {
+    id: 'the-dien',
+    chapter,
+    vi: 'Thể diện',
+    en: 'face',
+    ipaEn: 'feɪs',
+    ja: 'フェイス',
+    romaji: 'feisu',
+    definition: 'Hình ảnh xã hội mỗi người muốn được tôn trọng; theo Brown và Levinson gồm thể diện tích cực (được yêu mến) và thể diện tiêu cực (không bị áp đặt).',
+  },
+  {
+    id: 'lich-su',
+    chapter,
+    vi: 'Lịch sự',
+    en: 'politeness',
+    ipaEn: 'pəˈlaɪtnəs',
+    ja: 'ポライトネス',
+    romaji: 'poraitonesu',
+    definition: 'Các chiến lược và phương tiện ngôn ngữ nhằm giữ gìn thể diện và quan hệ giữa người nói và người nghe.',
   },
   {
     id: 'kinh-ngu',
@@ -63,5 +122,32 @@ export const terms: GlossaryTerm[] = [
     ja: '敬語{けいご}',
     romaji: 'keigo',
     definition: 'Hệ thống phương tiện ngôn ngữ thể hiện sự tôn trọng, khiêm nhường hoặc lịch sự đối với người nghe, người được nói đến.',
+  },
+  {
+    id: 'ton-kinh-ngu',
+    chapter,
+    vi: 'Tôn kính ngữ',
+    en: 'respectful language (sonkeigo)',
+    ja: '尊敬語{そんけいご}',
+    romaji: 'sonkeigo',
+    definition: 'Loại kính ngữ tiếng Nhật nâng hành động của người trên: いらっしゃる, 召{め}し上{あ}がる, おっしゃる, お〜になる.',
+  },
+  {
+    id: 'khiem-nhuong-ngu',
+    chapter,
+    vi: 'Khiêm nhường ngữ',
+    en: 'humble language (kenjōgo)',
+    ja: '謙譲語{けんじょうご}',
+    romaji: 'kenjōgo',
+    definition: 'Loại kính ngữ tiếng Nhật hạ hành động của mình hoặc người phe mình để tỏ lòng kính trọng: 参{まい}る, いただく, 申{もう}す, お〜する.',
+  },
+  {
+    id: 'uchi-soto',
+    chapter,
+    vi: 'Trong – ngoài (uchi – soto)',
+    en: 'in-group / out-group',
+    ja: 'ウチ・ソト',
+    romaji: 'uchi – soto',
+    definition: 'Sự phân biệt người trong nhóm và người ngoài nhóm chi phối kính ngữ tiếng Nhật: nói với khách hàng thì không dùng tôn kính ngữ cho sếp của mình.',
   },
 ]

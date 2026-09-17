@@ -7,15 +7,15 @@ Cập nhật file này mỗi khi hoàn thành một phần. Số liệu thực t
 | # | Chương (slug) | Trạng thái | Lý thuyết | Mở rộng EN | Mở rộng JA | So sánh | Tóm tắt EN/JA | Thuật ngữ | Quiz |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | Ngôn ngữ là gì? (`ban-chat-ngon-ngu`) | draft | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 12 | 10/10 |
-| 2 | Ngôn ngữ và não bộ (`ngon-ngu-va-nao-bo`) | outline | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | 5 | 3/10 |
-| 3 | Hình thái học (`hinh-thai-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 6 | 3/10 |
-| 4 | Cú pháp học (`cu-phap-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
-| 5 | Ngữ nghĩa học (`ngu-nghia-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 6 | 3/10 |
-| 6 | Ngữ dụng học (`ngu-dung-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 6 | 3/10 |
-| 7 | Ngữ âm học (`ngu-am-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 6 | 3/10 |
-| 8 | Âm vị học (`am-vi-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
-| 9 | Thụ đắc và xử lý ngôn ngữ (`thu-dac-ngon-ngu`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
-| 10 | Ngôn ngữ và xã hội (`ngon-ngu-va-xa-hoi`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
+| 2 | Ngôn ngữ và não bộ (`ngon-ngu-va-nao-bo`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 3 | Hình thái học (`hinh-thai-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 4 | Cú pháp học (`cu-phap-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 5 | Ngữ nghĩa học (`ngu-nghia-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 6 | Ngữ dụng học (`ngu-dung-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 7 | Ngữ âm học (`ngu-am-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 8 | Âm vị học (`am-vi-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 9 | Thụ đắc và xử lý ngôn ngữ (`thu-dac-ngon-ngu`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 10 | Ngôn ngữ và xã hội (`ngon-ngu-va-xa-hoi`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 11 | Lịch sử và biến đổi ngôn ngữ (`bien-doi-ngon-ngu`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
 | 12 | Chữ viết (`chu-viet`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
 

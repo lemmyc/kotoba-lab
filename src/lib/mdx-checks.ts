@@ -1,10 +1,12 @@
 import { createProcessor } from '@mdx-js/mdx'
+import { parseTree } from './tree'
 
 interface AnyNode {
   type: string
   value?: string
   name?: string | null
   children?: AnyNode[]
+  attributes?: { type: string; name?: string; value?: unknown }[]
   position?: { start: { line: number } }
 }
 
@@ -21,6 +23,7 @@ const COMMENT = /^\s*\/\*[\s\S]*\*\/\s*$/
  *   written directly in text would crash at runtime — it must go through
  *   <Ja t="言語{げんご}" /> or a component prop instead.
  * - JSX components must be ones registered in src/mdx-components.tsx.
+ * - <Tree t="…"> bracket notation must parse, so a typo fails the check instead of the page.
  */
 export function checkMdxSource(source: string, allowedComponents: string[]): MdxIssue[] {
   const issues: MdxIssue[] = []
@@ -44,6 +47,18 @@ export function checkMdxSource(source: string, allowedComponents: string[]): Mdx
     if ((node.type === 'mdxJsxFlowElement' || node.type === 'mdxJsxTextElement') && node.name && /^[A-Z]/.test(node.name)) {
       if (!allowed.has(node.name)) {
         issues.push({ line, message: `Component <${node.name}> chưa được khai báo trong src/mdx-components.tsx.` })
+      }
+      if (node.name === 'Tree') {
+        const source = node.attributes?.find((attribute) => attribute.name === 't')?.value
+        if (typeof source !== 'string') {
+          issues.push({ line, message: '<Tree> cần thuộc tính chuỗi t="[S …]".' })
+        } else {
+          try {
+            parseTree(source)
+          } catch (error) {
+            issues.push({ line, message: `<Tree> sai cú pháp: ${(error as Error).message}` })
+          }
+        }
       }
     }
     node.children?.forEach(walk)

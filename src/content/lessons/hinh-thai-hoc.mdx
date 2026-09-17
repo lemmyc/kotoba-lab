@@ -1,55 +1,173 @@
-{/* Chương 3 — KHUNG BÀI. Viết theo chuẩn của chương 1 (ban-chat-ngon-ngu.mdx); xóa <Todo> khi viết xong từng mục. */}
-
 ## Cơ sở lý thuyết
 
-Từ là đơn vị quen thuộc nhất của ngôn ngữ, nhưng "từ" được cấu tạo như thế nào lại là câu hỏi không đơn giản. Hình thái học nghiên cứu cấu trúc bên trong của từ và các quy tắc tạo từ, một lĩnh vực mà tiếng Việt, tiếng Anh và tiếng Nhật khác nhau rất rõ.
+Từ là đơn vị quen thuộc nhất của ngôn ngữ, nhưng "từ" được cấu tạo như thế nào lại là câu hỏi không đơn giản. **Hình thái học** (*morphology*) nghiên cứu cấu trúc bên trong của từ và các quy tắc tạo từ. Ở lĩnh vực này, tiếng Việt, tiếng Anh và tiếng Nhật khác nhau rất rõ.
 
 ### Từ và hình vị
 
-<Todo>
-- Khái niệm từ; tri thức của người bản ngữ về từ (từ có thật / từ có thể có / từ không thể có).
-- `<Definition>` hình vị (morpheme — 形態素) — đơn vị nhỏ nhất có nghĩa.
-- Phân tích ví dụ: "unhappiness" = un + happy + ness; "xe đạp" = xe + đạp.
-</Todo>
+Người bản ngữ biết rất nhiều điều về từ mà không cần học quy tắc:
+
+- **Từ có thật**: "xe đạp", "happiness".
+- **Từ chưa có nhưng có thể có**: nghe "cà phê muối" hay "ngủ nướng" lần đầu, người Việt vẫn hiểu ngay, vì chúng được tạo theo đúng khuôn ghép của tiếng Việt.
+- **Từ không thể có**: người nói tiếng Anh biết \*"happyun" hay \*"nesskind" là không thể, vì phụ tố đứng sai vị trí.
+
+Tri thức này có ở người nói mọi ngôn ngữ. Khi *Google* trở nên phổ biến, người nói tiếng Anh tạo ngay động từ *to google*. Người Nhật cũng tạo ra <Ja t="ググる" romaji="guguru" />: lấy グーグル, rút gọn rồi gắn đuôi động từ -る, và biến tố nó như mọi động từ khác (ググった *gugutta*, "đã tra Google"). Không ai dạy những quy tắc đó, nhưng người nói vẫn áp dụng đúng.
+
+Vậy từ được tạo nên từ những đơn vị nào?
+
+<Definition term="Hình vị" en="morpheme" ipa="ˈmɔːrfiːm" ja="形態素{けいたいそ}" romaji="keitaiso">
+Đơn vị **nhỏ nhất có nghĩa** (nghĩa từ vựng hoặc nghĩa ngữ pháp) của ngôn ngữ. Chia nhỏ hơn nữa thì chỉ còn âm, không còn nghĩa.
+</Definition>
+
+Hãy so sánh:
+
+| Từ | Số âm tiết | Hình vị | Số hình vị |
+|---|---|---|---|
+| unhappiness | 4 | un- + happy + -ness | 3 |
+| xe đạp | 2 | xe + đạp | 2 |
+| cà phê | 2 | cà phê | 1 |
+| <Ja t="食{た}べた" romaji="tabeta" /> | 3 | tabe- (ăn) + -ta (quá khứ) | 2 |
+
+Hình vị **không trùng** với âm tiết. "Cà" và "phê" đứng riêng không mang nghĩa "cà phê", nên "cà phê" chỉ là một hình vị. Ngược lại, trong "unhappiness", một âm tiết có thể chứa ranh giới giữa hai hình vị.
 
 ### Phân loại hình vị
 
-<Todo>
-- Hình vị tự do vs hình vị ràng buộc.
-- Căn tố (root) vs phụ tố (affix): tiền tố, hậu tố, trung tố, (và vì sao tiếng Việt hầu như không có phụ tố thực thụ).
-- Hình vị từ vựng (content) vs hình vị ngữ pháp (function).
-</Todo>
+**Theo khả năng đứng độc lập:**
+
+- **Hình vị tự do** (*free morpheme*): tự đứng được như một từ: "nhà", "ăn", *book*, *happy*.
+- **Hình vị ràng buộc** (*bound morpheme*): phải gắn vào hình vị khác: *un-*, *-ness*, *-ed*. Một số căn tố cũng ràng buộc, như *-ceive* trong *receive*, *perceive*. Trong tiếng Việt hiện đại, nhiều yếu tố Hán Việt như "quốc" (nước) trong "quốc gia" cũng không đứng một mình.
+
+**Theo vai trò trong từ:**
+
+<Definition term="Căn tố" en="root" ipa="ruːt" ja="語根{ごこん}" romaji="gokon">
+Hình vị mang nghĩa từ vựng chính của từ, là phần còn lại khi bỏ hết phụ tố: *happy* trong *unhappiness*.
+</Definition>
+
+- **Phụ tố** (*affix*) gắn vào căn tố, gồm **tiền tố** (*prefix*) đứng trước (*un-*, *re-*), **hậu tố** (*suffix*) đứng sau (*-ness*, *-ed*) và **trung tố** (*infix*) chen vào giữa căn tố. Trung tố có trong một số ngôn ngữ như tiếng Tagalog, nhưng không có trong ba ngôn ngữ của khóa học.
+- Tiếng Việt **hầu như không có phụ tố thực thụ**. Các yếu tố như "-hóa" (hiện đại hóa), "phi-" (phi lý), "tái-" (tái sử dụng) có vị trí cố định và tính sản sinh cao, nên một số nhà nghiên cứu gọi chúng là yếu tố *giống phụ tố*. Chúng vẫn là những âm tiết có nghĩa riêng, gốc Hán, nên việc xếp chúng vào loại phụ tố còn được bàn luận.
+- Tiếng Nhật có cả phụ tố thuần Nhật lẫn phụ tố gốc Hán. Hậu tố <Ja t="〜さ" /> biến tính từ thành danh từ (<Ja t="高{たか}さ" romaji="takasa" />, độ cao). Tiền tố お / ご thêm sắc thái lịch sự (<Ja t="お茶{ちゃ}" romaji="ocha" />). Hậu tố <Ja t="〜たち" /> chỉ số nhiều với người (<Ja t="子供{こども}たち" romaji="kodomotachi" />, bọn trẻ).
+
+<Callout type="hanviet" title="Góc Hán Việt: cùng yếu tố, khác cách nhìn">
+Nhiều "yếu tố giống phụ tố" của tiếng Việt có anh em sinh đôi trong tiếng Nhật. Ngữ pháp truyền thống Nhật Bản xếp hẳn chúng vào loại tiền tố (<Ja t="接頭辞{せっとうじ}" romaji="settōji" />) và hậu tố (<Ja t="接尾辞{せつびじ}" romaji="setsubiji" />):
+
+| Hán Việt | Tiếng Việt | Tiếng Nhật | Nghĩa |
+|---|---|---|---|
+| hóa 化 | hiện đại **hóa** | <Ja t="近代化{きんだいか}" romaji="kindaika" /> | làm cho trở thành |
+| tính 性 | **tính** võ đoán | <Ja t="恣意性{しいせい}" romaji="shiisei" /> | tính chất |
+| phi 非 | **phi** chính phủ | <Ja t="非公式{ひこうしき}" romaji="hikōshiki" /> | không, trái với |
+| tái 再 | **tái** sử dụng | <Ja t="再利用{さいりよう}" romaji="sairiyō" /> | lại, lần nữa |
+| bán 半 | **bán** tự động | <Ja t="半自動{はんじどう}" romaji="hanjidō" /> | một nửa |
+
+Lưu ý trật tự: tiếng Việt nói "tính võ đoán" (yếu tố chính đứng trước), còn tiếng Nhật nói <Ja t="恣意性{しいせい}" /> (tính chất đứng sau), giống trật tự trong tiếng Hán.
+</Callout>
+
+**Theo loại nghĩa:**
+
+- **Hình vị từ vựng** (*content morpheme*) mang nghĩa sự vật, hành động, tính chất: "nhà", "chạy", *book*.
+- **Hình vị ngữ pháp** (*function morpheme*) biểu thị quan hệ hoặc ý nghĩa ngữ pháp: "đã", "những", "của"; *the*, *of*, *-s*.
 
 ### Phái sinh và biến tố
 
-<Todo>
-- Phụ tố phái sinh: tạo từ mới, có thể đổi từ loại.
-- Phụ tố biến tố: biểu thị ý nghĩa ngữ pháp, không tạo từ mới.
-- Bảng so sánh hai loại, tiêu chí nhận biết.
-</Todo>
+Phụ tố được chia thành hai loại có chức năng rất khác nhau:
+
+<Definition term="Phụ tố phái sinh" en="derivational affix" ipa="ˌdɛrəˈveɪʃənəl ˈæfɪks" ja="派生接辞{はせいせつじ}" romaji="hasei setsuji">
+Phụ tố **tạo ra từ mới**, thường thay đổi nghĩa hoặc từ loại: *happy* (tính từ) → *happiness* (danh từ).
+</Definition>
+
+<Definition term="Phụ tố biến tố" en="inflectional affix" ipa="ɪnˈflɛkʃənəl ˈæfɪks" ja="屈折接辞{くっせつせつじ}" romaji="kussetsu setsuji">
+Phụ tố biểu thị **ý nghĩa ngữ pháp** (số, thì, ngôi…) mà không tạo ra từ mới: *book* → *books*, *walk* → *walked*.
+</Definition>
+
+| Tiêu chí | Phái sinh | Biến tố |
+|---|---|---|
+| Tạo từ mới? | Có (được ghi thành mục riêng trong từ điển) | Không (vẫn là cùng một từ) |
+| Đổi từ loại? | Có thể: *modern* → *modernize* | Không: *walk* → *walked* vẫn là động từ |
+| Loại nghĩa | Nghĩa từ vựng | Nghĩa ngữ pháp |
+| Phạm vi áp dụng | Hạn chế, có nhiều ngoại lệ (*happiness* nhưng không có \**goodity*) | Rộng, gần như mọi từ cùng loại đều nhận |
+| Vị trí | Gần căn tố hơn | Nằm ngoài phụ tố phái sinh: *modern-ize-s* |
+
+<Callout type="tip">
+Mẹo nhận biết: nếu bỏ phụ tố mà từ loại hoặc nghĩa từ vựng thay đổi thì đó là phái sinh. Nếu chỉ mất thông tin về số, thì, ngôi thì đó là biến tố.
+</Callout>
+
+Cùng một sự phân biệt nhưng mỗi ngôn ngữ thể hiện một khác:
+
+| | Phái sinh | Biến tố |
+|---|---|---|
+| **Tiếng Anh** | *teach* → *teach**er***, *kind* → *kind**ness*** | *teach* → *teach**es***, *teach**ing*** |
+| **Tiếng Nhật** | <Ja t="悲{かな}しい" romaji="kanashii" /> (buồn) → <Ja t="悲{かな}しみ" romaji="kanashimi" /> (nỗi buồn) | <Ja t="読{よ}む" romaji="yomu" /> → <Ja t="読{よ}まない" romaji="yomanai" />, <Ja t="読{よ}んだ" romaji="yonda" /> |
+| **Tiếng Việt** | (không có phụ tố; dùng ghép: "dạy" → "người dạy", "giáo viên") | (không có; dùng hư từ: "**đã** đọc", "**không** đọc") |
+
+Trong ngữ pháp truyền thống Nhật Bản, sự biến đổi đuôi của động từ và tính từ gọi là <Ja t="活用{かつよう}" romaji="katsuyō" />. Còn động từ tiếng Việt "đọc" giữ nguyên hình thức dù nghĩa là "đã đọc", "sẽ đọc" hay "không đọc".
 
 ### Các phương thức cấu tạo từ
 
-<Todo>
-- Ghép (compounding), láy (reduplication), phụ gia (affixation).
-- Chuyển loại (conversion), rút gọn (clipping), từ tắt (acronym), pha trộn (blending), tạo từ ngược (back-formation).
-- Mỗi phương thức: 1 ví dụ tiếng Việt (nếu có), 1 tiếng Anh, 1 tiếng Nhật.
-</Todo>
+Mọi ngôn ngữ đều có nhiều cách tạo từ mới. Bảng sau đối chiếu các phương thức chính:
+
+<Compare
+  caption="(hiếm gặp) nghĩa là phương thức này không phải cách tạo từ thông dụng trong ngôn ngữ đó."
+  rows={[
+    { aspect: 'Ghép (compounding)', vi: 'xe đạp, bàn ghế', en: 'blackboard, sunflower', ja: '花火{はなび} (hana + hi → hanabi)' },
+    { aspect: 'Láy / lặp (reduplication)', vi: 'long lanh, xanh xanh', en: 'hạn chế: bye-bye, zigzag', ja: '人々{ひとびと}, 時々{ときどき}' },
+    { aspect: 'Phụ gia (affixation)', vi: '(hiếm gặp) yếu tố giống phụ tố: hiện đại hóa', en: 'un-happy, kind-ness', ja: '高{たか}い → 高{たか}さ (takasa, "độ cao")' },
+    { aspect: 'Chuyển loại (conversion)', vi: 'cái cày → cày ruộng', en: 'a text → to text', ja: '遊{あそ}ぶ (asobu, chơi) → 遊{あそ}び (asobi, trò chơi)' },
+    { aspect: 'Rút gọn (clipping)', vi: '(hiếm gặp)', en: 'advertisement → ad, laboratory → lab', ja: 'スマートフォン → スマホ' },
+    { aspect: 'Từ tắt (acronym)', vi: 'UBND, THPT', en: 'NASA, laser', ja: 'NHK' },
+    { aspect: 'Pha trộn (blending)', vi: '(hiếm gặp)', en: 'smoke + fog → smog, breakfast + lunch → brunch', ja: '(hiếm gặp)' },
+    { aspect: 'Tạo từ ngược (back-formation)', vi: '(hiếm gặp)', en: 'editor → edit, television → televise', ja: '(hiếm gặp)' },
+  ]}
+/>
+
+Hai phương thức cuối thường gây nhầm lẫn:
+
+- **Pha trộn** ghép *phần đầu* của từ này với *phần cuối* của từ kia: **sm**oke + f**og** → *smog*.
+- **Tạo từ ngược** là bỏ đi một phần trông "giống phụ tố" để ra từ mới. *Editor* xuất hiện trước *edit*. Vì *-or* giống hậu tố chỉ người (như trong *actor*), người nói đã "suy ngược" ra động từ *edit*.
+
+**Thành tố chính của từ ghép đứng ở đâu?** Trong từ ghép chính phụ, một thành tố quyết định "loại" của cả từ. Ba ngôn ngữ đặt thành tố này ở hai phía khác nhau:
+
+| | Thành tố chính đứng **trước** | Thành tố chính đứng **sau** |
+|---|---|---|
+| **Tiếng Việt** | **nhà** kính, **xe** đạp, **kệ** sách | |
+| **Tiếng Anh** | | green**house**, boat**house**, book**shelf** |
+| **Tiếng Nhật** | | <Ja t="本棚{ほんだな}" romaji="hon-dana" /> (sách + **kệ**), <Ja t="花火{はなび}" romaji="hana-bi" /> (hoa + **lửa**) |
+
+Vì vậy *boathouse* là "nhà để thuyền" còn *houseboat* là "thuyền dùng làm nhà". Người Việt dịch sang tiếng Anh hay tiếng Nhật phải **đảo** trật tự: "kệ sách" → *bookshelf* → <Ja t="本棚{ほんだな}" />. Hiện tượng này liên quan đến *tham số trung tâm* ở cấp câu, sẽ được bàn ở [Chương 4](/bai-hoc/cu-phap-hoc).
 
 ### Cấu tạo từ tiếng Việt
 
-<Todo>
-- Từ đơn, từ ghép (đẳng lập, chính phụ), từ láy (láy toàn bộ, láy bộ phận).
-- Vấn đề "hình tiết" / "tiếng" — đơn vị cơ sở của tiếng Việt; lưu ý các quan điểm khác nhau trong Việt ngữ học.
-- `<Callout type="warning">`: ranh giới từ ghép – cụm từ trong tiếng Việt còn nhiều tranh luận.
-</Todo>
+Xét theo cấu tạo, từ tiếng Việt thường được chia thành ba nhóm:
+
+1. **Từ đơn**: gồm một hình vị. Phần lớn có một âm tiết ("nhà", "ăn", "đẹp"). Một số có nhiều âm tiết, thường là từ vay mượn hoặc từ mà các âm tiết không tách nghĩa được ("bù nhìn", "cà phê", "ra-đi-ô").
+2. **Từ ghép**: kết hợp các hình vị có nghĩa.
+   - **Ghép đẳng lập**: các thành tố ngang hàng, nghĩa khái quát hơn từng thành tố: "quần áo", "bàn ghế", "ăn ở".
+   - **Ghép chính phụ**: có thành tố chính và thành tố phụ, nghĩa hẹp hơn thành tố chính: "xe đạp" (một loại xe), "hoa hồng", "tàu hỏa".
+3. **Từ láy**: các âm tiết lặp lại toàn bộ hay một phần âm thanh, tạo sắc thái biểu cảm.
+   - **Láy toàn bộ**: "xanh xanh", "hồng hồng"; có khi biến đổi thanh hoặc âm cuối để dễ đọc: "đo đỏ", "đèm đẹp".
+   - **Láy bộ phận**: lặp phụ âm đầu ("long lanh", "xinh xắn") hoặc lặp vần ("lẩm bẩm", "bối rối").
+
+Đơn vị cơ sở của tiếng Việt là **tiếng**, tức âm tiết thường mang nghĩa. Các nhà Việt ngữ học nhìn đơn vị này theo những cách khác nhau:
+
+- Nguyễn Tài Cẩn (*Ngữ pháp tiếng Việt: Tiếng – Từ ghép – Đoản ngữ*, 1975) coi tiếng là hình vị của tiếng Việt, và gọi loại hình vị trùng với âm tiết này là **hình tiết**.
+- Cao Xuân Hạo cho rằng tiếng đồng thời là âm vị, hình vị và từ.
+- Một số tác giả khác chỉ coi các đơn vị một âm tiết là từ, còn đơn vị nhiều âm tiết được xem là "ngữ".
+
+<Callout type="warning">
+Ranh giới giữa **từ ghép** và **cụm từ** trong tiếng Việt còn nhiều tranh luận. "Xe đạp" rõ ràng là từ ghép: không thể nói \*"xe rất đạp". Nhưng "nhà ăn", "áo mới", "cơm rang" thì sao? Các phép thử như chen thêm yếu tố vào giữa, đảo trật tự hay xét nghĩa có còn "cộng" được không đều hữu ích, nhưng không phải lúc nào cũng cho cùng một kết quả.
+</Callout>
 
 ### Loại hình hình thái
 
-<Todo>
-- Đơn lập (isolating), chắp dính (agglutinative), hòa kết (fusional), hỗn nhập (polysynthetic).
-- Vị trí của ba ngôn ngữ; lưu ý đây là thang liên tục, không phải ô tách bạch.
-</Todo>
+Dựa vào cách các hình vị kết hợp trong từ, các nhà loại hình học phân biệt bốn kiểu ngôn ngữ:
+
+| Loại hình | Đặc điểm | Ví dụ |
+|---|---|---|
+| **Đơn lập** (*isolating*) | Từ hầu như không biến đổi hình thái; ý nghĩa ngữ pháp thể hiện bằng hư từ và trật tự từ | Tiếng Việt: "Hôm qua tôi **đã** mua **ba** quyển sách." |
+| **Chắp dính** (*agglutinative*) | Nhiều phụ tố gắn nối tiếp; mỗi phụ tố thường mang một ý nghĩa, ranh giới rõ | Tiếng Nhật: tabe-sase-rare-nakat-ta |
+| **Hòa kết** (*fusional*) | Một phụ tố gộp nhiều ý nghĩa ngữ pháp; hình thái có thể biến đổi bên trong căn tố | Tiếng Anh: *-s* trong *she walks* = ngôi 3 + số ít + hiện tại; *go* → *went* |
+| **Hỗn nhập** (*polysynthetic*) | Rất nhiều hình vị (kể cả căn tố) gộp thành một từ dài tương đương cả câu | Một số ngôn ngữ thổ dân châu Mỹ như tiếng Mohawk, tiếng Inuktitut |
+
+<Callout type="note">
+Đây là một **thang liên tục**, không phải những ô tách bạch. Tiếng Anh vẫn giữ một số biến tố hòa kết nhưng đã chuyển mạnh về phía phân tích (dùng *will*, *more*, trật tự từ). Tiếng Nhật chủ yếu chắp dính nhưng cũng có những biến đổi gộp âm ở chỗ nối (*nomu* + *-ta* → *nonda*). Hầu hết các ngôn ngữ đều mang đặc điểm của nhiều loại hình ở mức độ khác nhau.
+</Callout>
 
 ## Mở rộng: Tiếng Anh
 
@@ -57,18 +175,106 @@ Từ là đơn vị quen thuộc nhất của ngôn ngữ, nhưng "từ" đượ
 
 ### Tám hình vị biến tố của tiếng Anh
 
-<Todo>
-- Liệt kê: -s (số nhiều), -'s (sở hữu), -s (ngôi 3 số ít), -ed (quá khứ), -ing, -en (phân từ quá khứ), -er (so sánh hơn), -est (so sánh nhất).
-- Biến thể hình vị (allomorph): -s đọc [s], [z], [ɪz] → liên hệ Chương 8.
-</Todo>
+Tiếng Anh hiện đại chỉ còn **tám** hình vị biến tố, tất cả đều là hậu tố:
+
+| Hình vị | Ý nghĩa | Ví dụ |
+|---|---|---|
+| -s | số nhiều của danh từ | *two book**s*** |
+| -'s | sở hữu | Mai**'s** bag |
+| -s | ngôi 3 số ít, thì hiện tại | *she walk**s*** |
+| -ed | quá khứ | *she walk**ed*** |
+| -ing | tiếp diễn | *she is walk**ing*** |
+| -en | phân từ quá khứ | *she has eat**en*** |
+| -er | so sánh hơn | *tall**er*** |
+| -est | so sánh nhất | *tall**est*** |
+
+Một hình vị có thể có nhiều hình thức âm thanh, gọi là **biến thể hình vị** (*allomorph*). Hậu tố số nhiều *-s* có ba cách đọc, tùy âm cuối của danh từ:
+
+- <Ipa phonetic>s</Ipa> sau phụ âm vô thanh: *cats* <Ipa>kæts</Ipa>
+- <Ipa phonetic>z</Ipa> sau phụ âm hữu thanh và nguyên âm: *dogs* <Ipa>dɔːɡz</Ipa>
+- <Ipa phonetic>ɪz</Ipa> sau các âm xuýt: *buses* <Ipa>ˈbʌsɪz</Ipa>
+
+Quy tắc chọn biến thể là chuyện của âm vị học, sẽ được giải thích ở [Chương 8](/bai-hoc/am-vi-hoc).
 
 ### Phái sinh và cấu tạo từ trong tiếng Anh
 
-<Todo>
-- Phụ tố phái sinh phổ biến: un-, re-, -ness, -able, -ize…
-- Cây hình thái (morphological tree) cho "unbelievable".
-- Ví dụ pha trộn: smog, brunch; rút gọn: ad, lab; từ tắt: NASA, laser; tạo từ ngược: edit ← editor.
-</Todo>
+Một số phụ tố phái sinh phổ biến:
+
+- Tiền tố: *un-* (không: *unfair*), *re-* (lại: *rewrite*), *pre-* (trước: *preview*), *dis-* (ngược lại: *dislike*).
+- Hậu tố: *-ness* (tính từ → danh từ: *kindness*), *-able* (động từ → tính từ: *readable*), *-ize* (→ động từ: *modernize*), *-er* (→ người làm: *teacher*).
+
+Từ có nhiều hình vị có **cấu trúc thứ bậc**, không chỉ là một chuỗi phụ tố. Hãy xét *unbelievable*. Tiền tố *un-* (nghĩa "không") gắn vào **tính từ**, không gắn vào động từ: có *unfair* nhưng không có \**unbelieve*. Vì thế *-able* phải gắn vào *believe* trước, rồi *un-* mới gắn vào *believable*:
+
+<Tree t="[Adj [Af un-] [Adj [V believe] [Af -able]]]" caption="Cây hình thái của unbelievable (Af: phụ tố, Adj: tính từ, V: động từ)" />
+
+Cấu trúc thứ bậc còn giải thích được hiện tượng **mơ hồ**. *Unlockable* có hai nghĩa ứng với hai cây:
+
+<Tree t="[Adj [Af un-] [Adj [V lock] [Af -able]]]" caption="Nghĩa 1: không thể khóa được (un- + lockable)" />
+
+<Tree t="[Adj [V [Af un-] [V lock]] [Af -able]]" caption="Nghĩa 2: có thể mở khóa được (unlock + -able)" />
+
+Ở nghĩa 2, *un-* là một tiền tố khác, gắn vào động từ với nghĩa "làm ngược lại" (*unlock*, *untie*).
+
+Tiếng Anh tạo từ mới liên tục bằng các phương thức đã nêu:
+
+- Pha trộn: *smog* (smoke + fog), *brunch* (breakfast + lunch), *motel* (motor + hotel)
+- Rút gọn: *ad*, *lab*, *phone* (telephone), *flu* (influenza)
+- Từ tắt: *NASA* (đọc như một từ), *laser* (**l**ight **a**mplification by **s**timulated **e**mission of **r**adiation, nay viết như từ thường)
+- Tạo từ ngược: *edit* ← *editor*, *televise* ← *television*
+- Chuyển loại: *to google*, *to text*, *a must*
+
+### Biến tố bất quy tắc
+
+Không phải biến tố nào cũng là một hậu tố gắn thêm vào. Tiếng Anh còn giữ nhiều dạng **bất quy tắc**, dấu vết của giai đoạn tiếng Anh cổ giàu biến tố hơn:
+
+| Kiểu | Ví dụ | Giải thích |
+|---|---|---|
+| Đổi nguyên âm trong gốc | *foot* → *feet*, *mouse* → *mice*, *sing* → *sang* → *sung* | Ý nghĩa ngữ pháp nằm ngay trong sự thay đổi nguyên âm |
+| Thay gốc hoàn toàn (*suppletion*) | *go* → *went*, *good* → *better* → *best* | Dạng mới không có quan hệ âm thanh với gốc |
+| Hậu tố cổ | *child* → *children*, *ox* → *oxen* | Hậu tố số nhiều *-en* nay không còn sản sinh |
+| Biến tố "zero" | *sheep* → *sheep*, *cut* → *cut* | Hình thức không đổi, ý nghĩa ngữ pháp vẫn có |
+
+Trẻ em bản ngữ thường nói \**goed*, \**foots* trong một giai đoạn. Đó là dấu hiệu trẻ đã rút ra được quy tắc thêm *-ed*, *-s* và áp dụng quá rộng. Hiện tượng này được bàn kỹ ở [Chương 9](/bai-hoc/thu-dac-ngon-ngu).
+
+### Căn tố gốc Latin và Hy Lạp
+
+Một phần rất lớn từ vựng tiếng Anh, nhất là từ học thuật, có nguồn gốc Pháp, Latin hoặc Hy Lạp. Nhiều từ được dựng từ **căn tố ràng buộc** không đứng một mình được. Nhận ra chúng giúp đoán nghĩa từ mới, tương tự cách người Việt đoán nghĩa từ Hán Việt:
+
+| Căn tố | Nghĩa | Ví dụ |
+|---|---|---|
+| *port* | mang, chở | *transport*, *import*, *portable* |
+| *dict* | nói | *predict*, *dictionary*, *contradict* |
+| *tele-* | xa | *telephone*, *television*, *telescope* |
+| *bio-* | sự sống | *biology*, *biography* |
+| *-logy* | môn học | *biology*, *geology*, *psychology* |
+| *-graph* | viết, ghi | *photograph*, *autograph* |
+
+<Callout type="hanviet" title="Ba ngôn ngữ, ba kho hình vị học thuật">
+*Telephone* = *tele* (xa) + *phone* (âm thanh), còn "điện thoại" = *điện* + *thoại* (lời nói), và tiếng Nhật <Ja t="電話{でんわ}" romaji="denwa" /> dùng đúng hai chữ Hán ấy. Tiếng Anh dựng thuật ngữ bằng hình vị Latin – Hy Lạp; tiếng Việt và tiếng Nhật dựng bằng hình vị Hán. Ba ngôn ngữ đều có một lớp từ "học thuật" vay từ một ngôn ngữ cổ điển có uy tín.
+</Callout>
+
+### Từ ghép tiếng Anh: trọng âm và cách viết
+
+Từ ghép tiếng Anh có ba cách viết: liền (*notebook*), có gạch nối (*well-known*) và tách rời (*ice cream*). Cách viết không cho biết chắc chắn đó có phải từ ghép hay không. **Trọng âm** thường là dấu hiệu tốt hơn:
+
+- a <Speak lang="en">greenhouse</Speak> (trọng âm ở *green*): nhà kính
+- a green <Speak lang="en">house</Speak> (trọng âm ở *house*): một ngôi nhà màu xanh
+- a <Speak lang="en">blackboard</Speak> (trọng âm ở *black*): bảng đen, có thể có màu xanh
+- a black <Speak lang="en">board</Speak> (trọng âm ở *board*): một tấm ván màu đen
+
+Nghĩa của từ ghép cũng **không phải lúc nào cũng là tổng** nghĩa các thành tố. *Hot dog* không phải con chó, *blackmail* không phải thư màu đen. Tiếng Việt cũng vậy: "áo dài" không chỉ là "áo có thân dài", "mắt cá" (chân) chẳng phải mắt cũng chẳng phải cá.
+
+### Tính sản sinh của phụ tố
+
+Các phụ tố khác nhau về **tính sản sinh** (*productivity*), tức khả năng tạo từ mới:
+
+- *-ness* rất sản sinh: gần như tính từ nào cũng nhận được, kể cả tính từ ghép mới (*user-friendliness*).
+- *-th* (*warmth*, *length*, *depth*) hầu như không còn tạo từ mới; người nói tự nhiên dùng *coolness* chứ không tạo ra một danh từ mới với *-th*.
+- Một từ có sẵn có thể **chặn** việc tạo từ mới cùng nghĩa: đã có *glory* nên không dùng \**gloriosity*, dù *curious* → *curiosity* hoàn toàn bình thường.
+
+<Callout type="tip" title="Khó khăn của người Việt">
+Vì tiếng Việt không có biến tố, người Việt học tiếng Anh rất hay **bỏ sót** hậu tố: \**She walk to school yesterday*, \**two book*. Âm cuối cũng góp phần: cụm phụ âm như [kts] trong *acts* không có trong tiếng Việt. Luyện nghe và phát âm rõ âm cuối (xem [Chương 7](/bai-hoc/ngu-am-hoc)) giúp người học "nhớ" các hậu tố tốt hơn.
+</Callout>
 
 </LangSection>
 
@@ -78,25 +284,105 @@ Từ là đơn vị quen thuộc nhất của ngôn ngữ, nhưng "từ" đượ
 
 ### Tính chắp dính của động từ tiếng Nhật
 
-<Todo>
-- Phân tích bằng `<Gloss>`: <Ja t="食{た}べ-させ-られ-なかった" /> (tabe-sase-rare-nakat-ta).
-- Các hình vị: gây khiến させ, bị động られ, phủ định ない, quá khứ た, lịch sự ます.
-</Todo>
+Động từ tiếng Nhật là ví dụ tiêu biểu của loại hình chắp dính: các hình vị ngữ pháp được gắn **nối tiếp** vào gốc, mỗi hình vị một ý nghĩa.
+
+<Gloss lang="ja" text="食{た}べ させ られ なかっ た" romaji="tabe sase rare nakat ta" gloss="ăn GK BĐ PĐ QK" translation="(đã) không bị bắt ăn" />
+
+Viết tắt trong dòng chú giải: **GK** là gây khiến (*causative*), **BĐ** là bị động, **PĐ** là phủ định, **QK** là quá khứ.
+
+Từ gốc <Ja t="食{た}べる" romaji="taberu" /> (ăn), ta có thể "xây" dần từng tầng:
+
+| Dạng | Cấu tạo | Nghĩa |
+|---|---|---|
+| <Ja t="食{た}べる" /> | tabe-ru | ăn |
+| <Ja t="食{た}べさせる" /> | tabe-sase-ru | bắt / cho (ai) ăn |
+| <Ja t="食{た}べさせられる" /> | tabe-sase-rare-ru | bị bắt ăn |
+| <Ja t="食{た}べさせられない" /> | tabe-sase-rare-nai | không bị bắt ăn |
+| <Ja t="食{た}べさせられなかった" /> | tabe-sase-rare-nakat-ta | đã không bị bắt ăn |
+| <Ja t="食{た}べさせられました" /> | tabe-sase-rare-mashi-ta | đã bị bắt ăn (lịch sự) |
+
+Tiếng Việt diễn đạt cùng ý nghĩa bằng các **từ riêng** ("đã", "không", "bị", "bắt"), trật tự lại gần như ngược với tiếng Nhật. Tiếng Nhật đi từ gốc ra ngoài: *ăn → bắt → bị → không → đã*. Tiếng Việt đọc từ trái sang phải: "*đã không bị bắt ăn*".
+
+<Callout type="note" title="Hình vị hay trợ động từ?">
+Ngữ pháp nhà trường Nhật Bản (<Ja t="学校文法{がっこうぶんぽう}" romaji="gakkō bunpō" />) gọi させる, られる, ない, た là **trợ động từ** (<Ja t="助動詞{じょどうし}" romaji="jodōshi" />), tức những "từ" đi sau động từ. Nhiều nhà ngôn ngữ học hiện đại lại phân tích chúng là **hậu tố** gắn vào gốc, vì chúng không đứng một mình được và không tách khỏi động từ. Cách gọi khác nhau, nhưng hai cách phân tích đều thừa nhận chúng là các hình vị gắn nối tiếp.
+</Callout>
+
+### Biến tố của tính từ
+
+Khác với tiếng Việt và tiếng Anh, **tính từ tiếng Nhật cũng biến tố** theo thì và khẳng định/phủ định. Tính từ đuôi い như <Ja t="高{たか}い" romaji="takai" /> (cao, đắt) biến đổi trực tiếp:
+
+| Dạng | Cấu tạo | Nghĩa |
+|---|---|---|
+| <Ja t="高{たか}い" /> | taka-i | cao / đắt |
+| <Ja t="高{たか}くない" /> | taka-ku-na-i | không cao |
+| <Ja t="高{たか}かった" /> | taka-kat-ta | đã cao |
+| <Ja t="高{たか}くなかった" /> | taka-ku-nakat-ta | đã không cao |
+| <Ja t="高{たか}さ" /> | taka-sa | độ cao (phái sinh → danh từ) |
+
+Tính từ đuôi な như <Ja t="静{しず}か" romaji="shizuka" /> (yên tĩnh) thì không tự biến tố. Thì và phủ định nằm ở hệ từ đi kèm: <Ja t="静{しず}かだ" />, <Ja t="静{しず}かだった" />, <Ja t="静{しず}かではない" />. Nhóm này hoạt động gần giống danh từ.
+
+Tiếng Việt nói "đã cao", "không cao" bằng hư từ. Tiếng Anh cần động từ *be*: *was high*, *is not high*. Riêng tiếng Nhật gắn thẳng các ý nghĩa ấy vào tính từ.
 
 ### Lớp từ vựng và cấu tạo từ
 
-<Todo>
-- Ba lớp từ: <Ja t="和語{わご}" /> (wago), <Ja t="漢語{かんご}" /> (kango), <Ja t="外来語{がいらいご}" /> (gairaigo).
-- Từ ghép: <Ja t="花火{はなび}" /> (hana + hi → hanabi, liên hệ 連濁 ở Chương 8), 複合動詞 (<Ja t="飛{と}び出{だ}す" />).
-- Rút gọn: スマホ (smartphone), パソコン (personal computer).
-- Tiền tố lịch sự お / ご (お茶, ご飯).
-</Todo>
+Từ vựng tiếng Nhật thường được chia thành ba lớp chính theo nguồn gốc:
+
+- <Ja t="和語{わご}" romaji="wago" />: từ thuần Nhật, như <Ja t="山{やま}" romaji="yama" />, <Ja t="決{き}まり" romaji="kimari" />.
+- <Ja t="漢語{かんご}" romaji="kango" />: từ gốc Hán, như <Ja t="規則{きそく}" romaji="kisoku" />, <Ja t="山脈{さんみゃく}" romaji="sanmyaku" />.
+- <Ja t="外来語{がいらいご}" romaji="gairaigo" />: từ vay mượn chủ yếu từ các ngôn ngữ phương Tây, viết bằng katakana, như ルール (*rūru*).
+
+Ba từ <Ja t="決{き}まり" />, <Ja t="規則{きそく}" /> và ルール đều có nghĩa "quy tắc", nhưng sắc thái và phạm vi dùng khác nhau. Ngoài ra còn có **từ lai** (<Ja t="混種語{こんしゅご}" romaji="konshugo" />) kết hợp các lớp, ví dụ <Ja t="歯{は}ブラシ" romaji="haburashi" /> (bàn chải đánh răng) gồm từ thuần Nhật 歯 cộng từ vay mượn ブラシ.
+
+Các phương thức cấu tạo từ tiêu biểu:
+
+- **Ghép danh từ**: <Ja t="花{はな}" romaji="hana" /> + <Ja t="火{ひ}" romaji="hi" /> → <Ja t="花火{はなび}" romaji="hanabi" /> (pháo hoa). Chú ý *h* → *b*: đây là hiện tượng <Ja t="連濁{れんだく}" romaji="rendaku" />, được giải thích ở [Chương 8](/bai-hoc/am-vi-hoc).
+- **Động từ ghép** (<Ja t="複合動詞{ふくごうどうし}" romaji="fukugō dōshi" />): <Ja t="飛{と}ぶ" romaji="tobu" /> (bay, nhảy) + <Ja t="出{だ}す" romaji="dasu" /> (đưa ra) → <Ja t="飛{と}び出{だ}す" romaji="tobidasu" /> (lao ra).
+- **Rút gọn**, rất phổ biến với từ ngoại lai dài: スマートフォン → スマホ (*sumaho*), パーソナルコンピューター → パソコン (*pasokon*). Xem thêm ở mục từ vay mượn bên dưới.
+- **Tiền tố lịch sự** お / ご: <Ja t="お茶{ちゃ}" romaji="ocha" />, <Ja t="ご飯{はん}" romaji="gohan" />. Nhìn chung お đi với từ thuần Nhật, ご đi với từ Hán, nhưng có ngoại lệ (<Ja t="お電話{でんわ}" romaji="odenwa" />).
+- **Hậu tố phái sinh**: <Ja t="高{たか}い" romaji="takai" /> (cao) → <Ja t="高{たか}さ" romaji="takasa" /> (độ cao); <Ja t="経済{けいざい}" romaji="keizai" /> (kinh tế) → <Ja t="経済的{けいざいてき}" romaji="keizaiteki" /> (mang tính kinh tế).
+
+<Callout type="hanviet">
+Hậu tố <Ja t="〜的{てき}" /> tương ứng với "**đích**" trong Hán Việt, nhưng tiếng Việt thường dịch là "*mang tính*" hoặc "*có tính*": <Ja t="経済的{けいざいてき}" /> = mang tính kinh tế. Tương tự, <Ja t="〜化{か}" /> tương ứng với "**hóa**": <Ja t="近代化{きんだいか}" /> = cận đại hóa, hiện đại hóa.
+</Callout>
+
+### Hình vị Hán – Nhật trong từ ghép chữ Hán
+
+Phần lớn từ Hán – Nhật (<Ja t="漢語{かんご}" />) gồm hai chữ Hán, mỗi chữ là một hình vị ràng buộc có nghĩa, giống hệt yếu tố Hán Việt. Nắm được một hình vị là mở ra cả một "gia đình" từ:
+
+| Hình vị | Hán Việt | Từ ghép tiếng Nhật | Tiếng Việt tương ứng |
+|---|---|---|---|
+| 語 (go) | ngữ | <Ja t="言語{げんご}" romaji="gengo" />, <Ja t="英語{えいご}" romaji="eigo" />, <Ja t="語学{ごがく}" romaji="gogaku" /> | ngôn ngữ, Anh ngữ, ngữ học (việc học ngoại ngữ) |
+| 学 (gaku) | học | <Ja t="大学{だいがく}" romaji="daigaku" />, <Ja t="学者{がくしゃ}" romaji="gakusha" />, <Ja t="言語学{げんごがく}" romaji="gengogaku" /> | đại học, học giả, ngôn ngữ học |
+| 者 (sha) | giả | <Ja t="記者{きしゃ}" romaji="kisha" />, <Ja t="読者{どくしゃ}" romaji="dokusha" />, <Ja t="学者{がくしゃ}" romaji="gakusha" /> | ký giả (nhà báo), độc giả, học giả |
+
+<Callout type="warning" title="Bạn giả (false friends)">
+Cùng hình vị Hán nhưng nghĩa có thể lệch. <Ja t="学生{がくせい}" romaji="gakusei" /> (học sinh) trong tiếng Nhật thường chỉ **sinh viên đại học**; học sinh phổ thông là <Ja t="生徒{せいと}" romaji="seito" />. <Ja t="勉強{べんきょう}" romaji="benkyō" /> (miễn cưỡng) nghĩa là **học tập**, không phải "miễn cưỡng". Đoán nghĩa qua Hán Việt rất hữu ích nhưng luôn cần kiểm tra lại.
+</Callout>
+
+### Từ vay mượn: rút gọn và "tiếng Anh kiểu Nhật"
+
+Tiếng Nhật không chỉ mượn từ mà còn **tái cấu tạo** chúng theo quy tắc riêng:
+
+- **Rút gọn, thường còn bốn mora**: kiểu hay gặp nhất là giữ hai mora đầu của mỗi thành tố. リモートコントロール → リモコン (*rimokon*, điều khiển từ xa), エアコンディショナー → エアコン (*eakon*, điều hòa), ポケットモンスター → ポケモン (*Pokemon*). Cũng có khi chỉ giữ phần đầu của từ: コンビニエンスストア → コンビニ (*konbini*, cửa hàng tiện lợi).
+- **Tiếng Anh kiểu Nhật** (<Ja t="和製英語{わせいえいご}" romaji="wasei eigo" />): các từ ghép bằng hình vị tiếng Anh nhưng tạo ra tại Nhật, người nói tiếng Anh không dùng: サラリーマン (*sararīman*, nhân viên văn phòng), ガソリンスタンド (*gasorin sutando*, cây xăng).
+- **Động từ hóa từ vay mượn**: gắn đuôi る để biến danh từ ngoại lai thành động từ, rồi biến tố bình thường. サボる (*saboru*, trốn việc/trốn học, từ tiếng Pháp *sabotage*), メモる (*memoru*, ghi chép), ググる (*guguru*, tra Google).
+
+<Callout type="culture" title="Góc đối chiếu">
+Tiếng Việt thường **dịch nghĩa** bằng yếu tố sẵn có ("điều hòa", "cửa hàng tiện lợi") hoặc **phiên âm** giữ nguyên hình thức ("ti vi", "xích lô"), nhưng ít khi gắn phụ tố để đổi từ loại. Tiếng Nhật thì biến ngay từ ngoại lai thành động từ có biến tố, nhờ bản chất chắp dính.
+</Callout>
 
 ### Lặp từ trong tiếng Nhật
 
-<Todo>
-- <Ja t="人々{ひとびと}" />, <Ja t="山々{やまやま}" />, <Ja t="時々{ときどき}" /> — so sánh với từ láy tiếng Việt.
-</Todo>
+Tiếng Nhật dùng **lặp từ** (<Ja t="畳語{じょうご}" romaji="jōgo" />) để diễn đạt số nhiều, sự lặp lại hoặc tính đa dạng. Trong văn viết, phần lặp thường được thay bằng ký hiệu 々:
+
+- <Ja t="人々{ひとびと}" romaji="hitobito" />: mọi người, nhiều người (*hito* → *bito*, lại có rendaku)
+- <Ja t="山々{やまやま}" romaji="yamayama" />: những ngọn núi
+- <Ja t="時々{ときどき}" romaji="tokidoki" />: thỉnh thoảng
+- <Ja t="色々{いろいろ}" romaji="iroiro" />: nhiều loại, đủ thứ
+
+<Callout type="culture" title="Góc đối chiếu">
+Lặp từ tiếng Nhật giống **láy toàn bộ** tiếng Việt ở chỗ lặp nguyên gốc từ, nhưng khác về chức năng. <Ja t="山々{やまやま}" /> nhấn mạnh *số nhiều*, trong khi "xanh xanh", "hồng hồng" của tiếng Việt thường làm *giảm nhẹ* mức độ. Cả hai ngôn ngữ đều giàu từ tượng thanh – tượng hình lặp lại (キラキラ ≈ "lấp lánh"), như đã thấy ở [Chương 1](/bai-hoc/ban-chat-ngon-ngu).
+</Callout>
 
 </LangSection>
 
@@ -105,33 +391,36 @@ Từ là đơn vị quen thuộc nhất của ngôn ngữ, nhưng "từ" đượ
 <Compare
   rows={[
     { aspect: 'Loại hình hình thái', vi: 'Đơn lập', en: 'Hòa kết (xu hướng phân tích)', ja: 'Chắp dính' },
+    { aspect: 'Phụ tố biến tố', vi: 'Không có; dùng hư từ và trật tự từ', en: '8 hậu tố biến tố', ja: 'Nhiều hình vị ngữ pháp gắn nối tiếp sau gốc động từ, tính từ' },
     { aspect: 'Số nhiều danh từ', vi: 'Hư từ đứng trước: những, các', en: 'Hậu tố -s (bắt buộc)', ja: 'Thường không đánh dấu; -たち với người' },
     { aspect: 'Thì quá khứ', vi: 'Hư từ "đã" (không bắt buộc)', en: 'Hậu tố -ed / biến đổi gốc (went)', ja: 'Hậu tố -た' },
-    { aspect: 'Lặp / láy', vi: 'Từ láy rất phong phú', en: '', ja: '人々{ひとびと}, 時々{ときどき}' },
-    { aspect: 'Rút gọn từ', vi: '', en: 'ad, lab, phone', ja: 'スマホ, パソコン' },
+    { aspect: 'Lặp / láy', vi: 'Từ láy rất phong phú (láy toàn bộ, láy bộ phận)', en: 'Hạn chế: bye-bye, zigzag', ja: '人々{ひとびと}, 時々{ときどき}; từ tượng thanh – tượng hình lặp' },
+    { aspect: 'Rút gọn từ', vi: 'Hiếm; thường dùng từ viết tắt: UBND, THPT', en: 'ad, lab, phone', ja: 'スマホ, パソコン' },
+    { aspect: 'Lớp từ vựng theo nguồn gốc', vi: 'Thuần Việt, Hán Việt, vay mượn phương Tây', en: 'Gốc German; vay mượn Pháp, Latin, Hy Lạp', ja: '和語{わご}, 漢語{かんご}, 外来語{がいらいご}' },
+    { aspect: 'Hình vị dựng thuật ngữ', vi: 'Hán Việt: điện thoại, ngôn ngữ học', en: 'Latin – Hy Lạp: telephone, linguistics', ja: '漢語{かんご}: 電話{でんわ}, 言語学{げんごがく}' },
+    { aspect: 'Thành tố chính trong từ ghép', vi: 'Đứng trước: kệ sách, nhà kính', en: 'Đứng sau: bookshelf, greenhouse', ja: 'Đứng sau: 本棚{ほんだな}' },
+    { aspect: 'Tính từ có biến tố?', vi: 'Không: "đã cao", "không cao"', en: 'Chỉ so sánh: taller, tallest', ja: 'Có: 高{たか}くない, 高{たか}かった' },
+    { aspect: 'Động từ hóa từ vay mượn', vi: 'Dùng trực tiếp, không thêm phụ tố: "check mail"', en: 'Chuyển loại: to google', ja: 'Gắn đuôi る: ググる, サボる' },
   ]}
 />
 
-<Todo>
-- Rà soát và điền các ô còn trống.
-</Todo>
-
 ## Tóm tắt
 
-<Todo>
-- 5–6 gạch đầu dòng ý chính của chương.
-</Todo>
+- **Hình vị** là đơn vị nhỏ nhất có nghĩa. Hình vị không trùng với âm tiết: "cà phê" có hai âm tiết nhưng chỉ một hình vị.
+- Hình vị được chia thành **tự do** / **ràng buộc**, **căn tố** / **phụ tố**, **từ vựng** / **ngữ pháp**.
+- **Phụ tố phái sinh** tạo từ mới và có thể đổi từ loại. **Phụ tố biến tố** chỉ thêm ý nghĩa ngữ pháp.
+- Các phương thức cấu tạo từ chính là ghép, láy, phụ gia, chuyển loại, rút gọn, từ tắt, pha trộn và tạo từ ngược. Mỗi ngôn ngữ ưa chuộng những phương thức khác nhau.
+- Tiếng Việt cấu tạo từ chủ yếu bằng **ghép** và **láy**. Ranh giới từ ghép – cụm từ và bản chất của "tiếng" vẫn còn được bàn luận.
+- Trong từ ghép chính phụ, thành tố chính của tiếng Việt đứng **trước** (kệ sách), của tiếng Anh và tiếng Nhật đứng **sau** (*bookshelf*, 本棚).
+- Tiếng Anh dựng thuật ngữ bằng hình vị Latin – Hy Lạp, tiếng Việt và tiếng Nhật bằng hình vị Hán. Tiếng Nhật còn tái cấu tạo từ vay mượn (リモコン, ググる).
+- Về loại hình, tiếng Việt **đơn lập**, tiếng Anh **hòa kết** nhưng thiên về phân tích, tiếng Nhật **chắp dính**. Đây là các điểm trên một thang liên tục.
 
 <Summary lang="en">
-<Todo>
-- Đoạn tóm tắt 3–4 câu bằng tiếng Anh.
-</Todo>
+Morphology studies the internal structure of words. Its basic unit is the **morpheme**, the smallest meaningful unit, which may be free or bound, a root or an affix. Derivational affixes create new words, while inflectional affixes add grammatical information such as number or tense. Languages build words by compounding, reduplication, affixation, conversion, clipping, acronyms, blending and back-formation, and they differ typologically: Vietnamese is isolating, English is fusional with a strong analytic tendency, and Japanese is agglutinative.
 </Summary>
 
 <Summary lang="ja">
-<Todo>
-- Đoạn tóm tắt 2–3 câu bằng tiếng Nhật (dùng `<Ja t="..." />`).
-</Todo>
+<Ja t="形態論{けいたいろん}は語{ご}の内部構造{ないぶこうぞう}を研究{けんきゅう}する分野{ぶんや}で、その最小単位{さいしょうたんい}は形態素{けいたいそ}である。接辞{せつじ}には新{あたら}しい語{ご}を作{つく}る派生接辞{はせいせつじ}と、文法的{ぶんぽうてき}な意味{いみ}を表{あらわ}す屈折接辞{くっせつせつじ}がある。類型論的{るいけいろんてき}には、ベトナム語{ご}は孤立語{こりつご}、英語{えいご}は屈折語{くっせつご}、日本語{にほんご}は膠着語{こうちゃくご}の性格{せいかく}が強{つよ}い。" />
 </Summary>
 
 ## Câu hỏi thảo luận
@@ -139,3 +428,7 @@ Từ là đơn vị quen thuộc nhất của ngôn ngữ, nhưng "từ" đượ
 1. Vì sao nói tiếng Việt "hầu như không có phụ tố"? Các yếu tố như "sự", "cuộc", "tính" (sự thật, cuộc sống, tính võ đoán) có phải phụ tố không?
 2. Tiếng Anh tạo từ mới hằng năm bằng những phương thức nào? Tìm 3 ví dụ gần đây.
 3. Phân tích động từ tiếng Nhật <Ja t="読{よ}ませられました" /> thành các hình vị và nêu nghĩa của từng hình vị.
+4. Các từ "xe đạp", "nhà ăn", "áo mới" là từ ghép hay cụm từ? Hãy dùng ít nhất hai phép thử để lập luận.
+5. Vẽ hai cây hình thái cho từ *undoable* ứng với hai nghĩa "không thể làm được" và "có thể hoàn tác được".
+6. Tìm 5 từ Hán – Nhật có thể đoán nghĩa qua Hán Việt và 2 "bạn giả" (cùng chữ Hán nhưng khác nghĩa). Vì sao hiện tượng bạn giả xuất hiện?
+7. Tiếng Việt mượn "check", "share", "like" và dùng như động từ ("share bài"), còn tiếng Nhật tạo シェアする, ググる. Sự khác biệt này phản ánh đặc điểm loại hình nào của hai ngôn ngữ?

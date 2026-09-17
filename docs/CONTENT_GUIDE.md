@@ -31,6 +31,8 @@ Các phần *Mục tiêu bài học*, *Thuật ngữ chính*, *Đọc thêm*, *Q
 - Giảng bằng **tiếng Việt**, câu rõ ràng, xưng hô trung tính ("bạn", "chúng ta").
 - Thuật ngữ lần đầu xuất hiện: **in đậm**, kèm tiếng Anh trong ngoặc, *in nghiêng*: **tính võ đoán** (*arbitrariness*). Thuật ngữ quan trọng thì dùng `<Definition>`.
 - Ví dụ ưu tiên thứ tự: tiếng Việt → tiếng Anh → tiếng Nhật.
+- **Lồng ghép ba ngôn ngữ ngay trong phần lý thuyết.** Mỗi mục `###` của *Cơ sở lý thuyết* nên có ví dụ tiếng Anh và tiếng Nhật bên cạnh tiếng Việt, không để dành hết cho phần mở rộng.
+- **Phần mở rộng phải có chiều sâu**: mỗi phần *Mở rộng: Tiếng Anh / Tiếng Nhật* nên có từ 4 mục `###` trở lên, đi vào hiện tượng đặc thù của ngôn ngữ đó, khó khăn của người Việt khi học và góc Hán Việt (với tiếng Nhật).
 - Phần mở rộng tiếng Anh/Nhật **vẫn giảng bằng tiếng Việt**, chỉ ví dụ viết bằng ngôn ngữ gốc. Riêng `<Summary lang="en|ja">` viết hẳn bằng tiếng Anh/Nhật.
 - **Không bịa** số liệu, trích dẫn, ví dụ "của bệnh nhân" hay năm xuất bản. Chưa chắc thì ghi `<Todo>` kèm "cần kiểm chứng".
 - Quy ước: dấu `\*` trước câu sai ngữ pháp (hoặc dùng `<Ex bad>`); IPA theo giọng Mỹ (General American); romaji theo hệ **Hepburn có dấu trường âm** (tōgoron, kenjōgo); âm mũi trước nguyên âm viết `n'` (on'inron).
@@ -82,7 +84,7 @@ Các từ trong `text`, `romaji`, `gloss` cách nhau bằng dấu cách. Nếu s
 <Gloss lang="ja" text="私{わたし}は 本{ほん}を 読{よ}む" romaji="watashi-wa hon-o yomu" gloss="tôi-CĐ sách-TN đọc" translation="Tôi đọc sách." />
 <Gloss lang="ja" bad text="…" />   ← có dấu * (sai ngữ pháp)
 ```
-Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を), **CN** (chủ ngữ が), **QK** (quá khứ), **PĐ** (phủ định), **LS** (lịch sự ます). Giải thích viết tắt ngay dưới ví dụ đầu tiên của chương.
+Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を), **CN** (chủ ngữ が), **QK** (quá khứ), **PĐ** (phủ định), **LS** (lịch sự ます), **NV** (nghi vấn か), **GK** (gây khiến させ), **BĐ** (bị động られ). Từ gồm nhiều chữ tiếng Việt trong dòng chú giải thì nối bằng dấu chấm (`hôm.qua`, `đọc.QK`). Giải thích viết tắt ngay dưới ví dụ đầu tiên của chương.
 
 ### `<Compare>`: bảng so sánh ba ngôn ngữ
 ```mdx
@@ -94,6 +96,33 @@ Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を),
   ]}
 />
 ```
+Trong ô dùng được furigana và `**đậm**` (ví dụ để đánh dấu trung tâm của cụm). Markdown khác như `*nghiêng*` hay liên kết không được xử lý.
+
+### `<Tree>`: cây cú pháp, cây hình thái
+Viết bằng ký hiệu ngoặc vuông có nhãn. Sau nhãn, các chữ liền nhau gộp thành một lá; ngoặc lồng bên trong là nút con.
+```mdx
+<Tree t="[S [NP Tôi] [VP [V ăn] [NP cơm]]]" caption="(tùy chọn)" />
+<Tree t="[PP [P with] [^NP the telescope]]" />     ← "^" vẽ tam giác (cụm không phân tích tiếp)
+<Tree t="[VP [NP 本{ほん}を|hon-o] [V 読{よ}む|yomu]]" />  ← romaji sau "|"; furigana trong cây bị bỏ qua
+<Tree t="[Âm_tiết [Âm_đầu h] [Vần oàng]]" />         ← nhãn là một cụm liền, "_" hiển thị thành dấu cách
+```
+Ngoặc không cân hoặc thiếu nhãn sẽ bị `check:content` báo lỗi. Không dùng dạng furigana `[cụm]{đọc}` trong cây, vì dấu `[` bị hiểu là nút mới.
+
+### `<ToneChart>`: đường nét thanh điệu
+`<ToneChart />` vẽ 6 thanh tiếng Việt (Hà Nội) trên thang 5 bậc, kèm chú thích về các biến thể trong tài liệu. Có thể truyền bộ khác:
+```mdx
+<ToneChart caption="…" data={[{ name: 'sắc', example: 'má', chao: '35', points: [3, 5] }, { name: 'nặng', example: 'mạ', chao: '3ˀ2ʔ', points: [3, 2], glottalAt: 1, duration: 0.6 }]} />
+```
+`points` là các bậc cao độ (1–5) cách đều theo thời gian; `glottalAt` (0–1) là vị trí thanh hầu hóa; `duration` (0–1) là độ dài tương đối.
+
+### `<BrainDiagram>` và `<VocalTract>`: sơ đồ giải phẫu đơn giản hóa
+Đánh số và có chú giải bên dưới. `highlight` làm mờ các phần không liên quan.
+```mdx
+<BrainDiagram highlight={['broca', 'wernicke', 'bo-cung']} />
+<VocalTract highlight={['loi', 'ngac-mem']} caption="Vị trí cấu âm của [t] và [k]" />
+```
+- `BrainDiagram`: `broca`, `wernicke`, `bo-cung`, `vo-van-dong`, `vo-thinh-giac`
+- `VocalTract`: `moi`, `rang`, `loi`, `ngac-cung`, `ngac-mem`, `luoi-con`, `dau-luoi`, `than-luoi`, `yet-hau`, `thanh-hau`, `khoang-mui`, `khoang-mieng`
 
 ### `<Summary lang="en|ja">`: tóm tắt bằng ngôn ngữ đích
 Với tiếng Nhật, bọc cả đoạn trong `<Ja t="…" />` để có furigana.
