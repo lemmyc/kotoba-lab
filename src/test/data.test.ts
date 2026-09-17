@@ -39,6 +39,12 @@ describe('mdx checks', () => {
     expect(issues.map((issue) => issue.message).join('\n')).toMatch(/Unknown/)
   })
 
+  it('flags <Tree> bracket notation that does not parse', () => {
+    const issues = checkMdxSource('<Tree t="[S [NP Tôi] [VP ăn]" />', registered)
+    expect(issues.map((issue) => issue.message).join('\n')).toMatch(/Tree> sai cú pháp/)
+    expect(checkMdxSource('<Tree t="[S [NP Tôi] [VP ăn]]" />', registered)).toEqual([])
+  })
+
   it('allows comments and furigana inside component props', () => {
     expect(checkMdxSource('{/* ghi chú */}\n\n<Ja t="言語{げんご}" />', registered)).toEqual([])
   })

@@ -95,6 +95,31 @@ Viết tắt thống nhất: **CĐ** (chủ đề は), **TN** (tân ngữ を),
 />
 ```
 
+### `<Tree>`: cây cú pháp, cây hình thái
+Viết bằng ký hiệu ngoặc vuông có nhãn. Sau nhãn, các chữ liền nhau gộp thành một lá; ngoặc lồng bên trong là nút con.
+```mdx
+<Tree t="[S [NP Tôi] [VP [V ăn] [NP cơm]]]" caption="(tùy chọn)" />
+<Tree t="[PP [P with] [^NP the telescope]]" />     ← "^" vẽ tam giác (cụm không phân tích tiếp)
+<Tree t="[VP [NP 本{ほん}を|hon-o] [V 読{よ}む|yomu]]" />  ← romaji sau "|"; furigana trong cây bị bỏ qua
+```
+Ngoặc không cân hoặc thiếu nhãn sẽ bị `check:content` báo lỗi. Không dùng dạng furigana `[cụm]{đọc}` trong cây, vì dấu `[` bị hiểu là nút mới.
+
+### `<ToneChart>`: đường nét thanh điệu
+`<ToneChart />` vẽ 6 thanh tiếng Việt (Hà Nội) trên thang 5 bậc, kèm chú thích về các biến thể trong tài liệu. Có thể truyền bộ khác:
+```mdx
+<ToneChart caption="…" data={[{ name: 'sắc', example: 'má', chao: '35', points: [3, 5] }, { name: 'nặng', example: 'mạ', chao: '3ˀ2ʔ', points: [3, 2], glottalAt: 1, duration: 0.6 }]} />
+```
+`points` là các bậc cao độ (1–5) cách đều theo thời gian; `glottalAt` (0–1) là vị trí thanh hầu hóa; `duration` (0–1) là độ dài tương đối.
+
+### `<BrainDiagram>` và `<VocalTract>`: sơ đồ giải phẫu đơn giản hóa
+Đánh số và có chú giải bên dưới. `highlight` làm mờ các phần không liên quan.
+```mdx
+<BrainDiagram highlight={['broca', 'wernicke', 'bo-cung']} />
+<VocalTract highlight={['loi', 'ngac-mem']} caption="Vị trí cấu âm của [t] và [k]" />
+```
+- `BrainDiagram`: `broca`, `wernicke`, `bo-cung`, `vo-van-dong`, `vo-thinh-giac`
+- `VocalTract`: `moi`, `rang`, `loi`, `ngac-cung`, `ngac-mem`, `luoi-con`, `dau-luoi`, `than-luoi`, `yet-hau`, `thanh-hau`, `khoang-mui`, `khoang-mieng`
+
 ### `<Summary lang="en|ja">`: tóm tắt bằng ngôn ngữ đích
 Với tiếng Nhật, bọc cả đoạn trong `<Ja t="…" />` để có furigana.
 
