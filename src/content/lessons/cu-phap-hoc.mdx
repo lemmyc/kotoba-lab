@@ -1,0 +1,156 @@
+{/* Chương 4 — KHUNG BÀI. Viết theo chuẩn của chương 1 (ban-chat-ngon-ngu.mdx); xóa <Todo> khi viết xong từng mục. */}
+
+## Cơ sở lý thuyết
+
+Câu không phải là một chuỗi từ xếp liền nhau mà là một cấu trúc có thứ bậc. Cú pháp học nghiên cứu những quy tắc cho phép ta ghép từ thành cụm từ, cụm từ thành câu, và giải thích vì sao tiếng Việt nói "Tôi ăn cơm" còn tiếng Nhật lại nói "Tôi cơm ăn".
+
+### Tri thức cú pháp
+
+<Todo>
+- Người bản ngữ biết: câu đúng/sai ngữ pháp, trật tự từ, quan hệ giữa các thành phần, câu mơ hồ, câu đồng nghĩa khác cấu trúc.
+- Nhắc lại ví dụ "Colorless green ideas…" (Chương 1) và ví dụ tiếng Việt.
+</Todo>
+
+### Thành tố và phép thử thành tố
+
+<Todo>
+- `<Definition>` thành tố (constituent — 構成素).
+- Phép thử: thay thế (bằng đại từ), di chuyển, trả lời câu hỏi, đặt liên từ.
+- Ví dụ tiếng Việt: "[Cô giáo mới của lớp tôi] [đã về quê]".
+</Todo>
+
+### Phạm trù cú pháp
+
+<Todo>
+- Phạm trù từ vựng: danh từ (N), động từ (V), tính từ (Adj), giới từ (P)…
+- Phạm trù cụm từ: NP, VP, PP, AP; câu (S).
+- Lưu ý đặc thù tiếng Việt: loại từ, tính từ hoạt động như vị từ.
+</Todo>
+
+### Quy tắc cấu trúc cụm từ và cây cú pháp
+
+<Todo>
+- Quy tắc viết lại: S → NP VP; NP → (Det) N; VP → V NP…
+- Vẽ cây cú pháp (cần component sơ đồ cây — có thể dùng khối mã hoặc bổ sung component `Tree` sau).
+- Ví dụ song song: "Tôi ăn cơm" / "I eat rice".
+</Todo>
+
+### Trung tâm, bổ ngữ và tham số trung tâm
+
+<Todo>
+- `<Definition>` trung tâm (head — 主要部).
+- Ngôn ngữ trung tâm đứng đầu (head-initial) vs trung tâm đứng cuối (head-final).
+- Hệ quả dây chuyền: vị trí động từ – tân ngữ, giới từ – hậu giới từ, danh từ – mệnh đề quan hệ.
+</Todo>
+
+### Tính đệ quy
+
+<Todo>
+- `<Definition>` đệ quy (recursion — 再帰性).
+- Ví dụ: "Nam nghĩ rằng Lan biết rằng Minh nói rằng…"; "the cat that chased the rat that ate the cheese".
+</Todo>
+
+### Mơ hồ cấu trúc
+
+<Todo>
+- "The boy saw the man with the telescope" — hai cây cú pháp.
+- Ví dụ tiếng Việt: "Con gà rán" hay "con gà rán" (cụm danh từ vs câu)?; "Nhà ông ấy mới xây".
+</Todo>
+
+### Cú pháp tiếng Việt: một số nét đặc trưng
+
+<Todo>
+- Trật tự SVO, định ngữ đứng sau danh từ ("nhà đẹp", "sách của tôi").
+- Cấu trúc chủ đề – thuyết (topic – comment): "Cơm, tôi ăn rồi."
+- Câu hỏi: từ để hỏi giữ nguyên vị trí ("Anh ăn gì?"), tiểu từ "không", "chưa".
+</Todo>
+
+## Mở rộng: Tiếng Anh
+
+<LangSection lang="en">
+
+### Quy tắc cấu trúc cụm từ tiếng Anh
+
+<Todo>
+- S → NP VP; NP → Det (Adj) N (PP); VP → V (NP) (PP); PP → P NP.
+- Cây cú pháp cho "The student read a book in the library".
+</Todo>
+
+### Câu hỏi và sự di chuyển
+
+<Todo>
+- Đảo trợ động từ (subject–auxiliary inversion): "You can swim" → "Can you swim?".
+- Chèn "do" (do-support).
+- Di chuyển từ để hỏi (wh-movement): "What did you eat?" — so sánh với "Anh ăn gì?".
+</Todo>
+
+</LangSection>
+
+## Mở rộng: Tiếng Nhật
+
+<LangSection lang="ja">
+
+### Trật tự SOV và tính trung tâm đứng cuối
+
+<Todo>
+- `<Gloss>` cho: <Ja t="私{わたし}は" /> <Ja t="昨日{きのう}" /> <Ja t="図書館{としょかん}で" /> <Ja t="本{ほん}を" /> <Ja t="読{よ}んだ" />.
+- Hậu giới từ (trợ từ) thay cho giới từ: 図書館で = "ở thư viện".
+- Mệnh đề quan hệ đứng trước danh từ: <Ja t="昨日{きのう}買{か}った本{ほん}" /> ("quyển sách [đã mua hôm qua]").
+</Todo>
+
+### Trợ từ は, が, を, に
+
+<Todo>
+- Chức năng cơ bản và các cặp dễ nhầm (は vs が).
+- Đảo trật tự tham tố (scrambling) nhờ trợ từ — liên hệ ví dụ Chương 1.
+</Todo>
+
+### Câu hỏi và lược chủ ngữ
+
+<Todo>
+- Tiểu từ か cuối câu; từ để hỏi giữ nguyên vị trí: <Ja t="何{なに}を食{た}べましたか" />.
+- Lược bỏ chủ ngữ/tân ngữ khi đã rõ trong ngữ cảnh (pro-drop) — so sánh với tiếng Việt.
+</Todo>
+
+</LangSection>
+
+## So sánh Việt – Anh – Nhật
+
+<Compare
+  rows={[
+    { aspect: 'Trật tự cơ bản', vi: 'SVO', en: 'SVO', ja: 'SOV' },
+    { aspect: 'Vị trí tính từ', vi: 'Sau danh từ: nhà đẹp', en: 'Trước danh từ: a beautiful house', ja: 'Trước danh từ: きれいな家{いえ}' },
+    { aspect: 'Mệnh đề quan hệ', vi: 'Sau danh từ: sách [mà tôi mua]', en: 'Sau danh từ: the book [that I bought]', ja: 'Trước danh từ: [私{わたし}が買{か}った]本{ほん}' },
+    { aspect: 'Giới từ / hậu giới từ', vi: 'Giới từ: ở Hà Nội', en: 'Giới từ: in Tokyo', ja: 'Hậu giới từ (trợ từ): 東京{とうきょう}で' },
+    { aspect: 'Vị trí từ để hỏi', vi: 'Giữ nguyên: Anh ăn gì?', en: 'Đưa lên đầu: What did you eat?', ja: 'Giữ nguyên: 何{なに}を食{た}べましたか' },
+    { aspect: 'Lược chủ ngữ', vi: '', en: 'Hầu như bắt buộc có chủ ngữ', ja: 'Rất phổ biến' },
+  ]}
+/>
+
+<Todo>
+- Rà soát ô "Lược chủ ngữ" tiếng Việt và bổ sung hàng về cấu trúc chủ đề.
+</Todo>
+
+## Tóm tắt
+
+<Todo>
+- 5–6 gạch đầu dòng ý chính của chương.
+</Todo>
+
+<Summary lang="en">
+<Todo>
+- Đoạn tóm tắt 3–4 câu bằng tiếng Anh.
+</Todo>
+</Summary>
+
+<Summary lang="ja">
+<Todo>
+- Đoạn tóm tắt 2–3 câu bằng tiếng Nhật (dùng `<Ja t="..." />`).
+</Todo>
+</Summary>
+
+## Câu hỏi thảo luận
+
+1. Dùng các phép thử thành tố để chứng minh "quyển sách mới của tôi" là một thành tố trong câu "Quyển sách mới của tôi bị mất rồi".
+2. Vì sao người Việt học tiếng Nhật thường thấy mệnh đề quan hệ khó hơn người Nhật học tiếng Việt thấy? (Gợi ý: tham số trung tâm.)
+3. Tìm một câu tiếng Việt mơ hồ về cấu trúc và vẽ hai cây cú pháp tương ứng.

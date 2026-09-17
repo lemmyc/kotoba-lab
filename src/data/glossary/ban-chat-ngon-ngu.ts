@@ -1,0 +1,134 @@
+import type { GlossaryTerm } from '../types'
+
+const chapter = 'ban-chat-ngon-ngu'
+
+export const terms: GlossaryTerm[] = [
+  {
+    id: 'ngon-ngu',
+    chapter,
+    vi: 'Ngôn ngữ',
+    en: 'language',
+    ipaEn: 'ˈlæŋɡwɪdʒ',
+    ja: '言語{げんご}',
+    romaji: 'gengo',
+    definition:
+      'Hệ thống tín hiệu đặc biệt, là phương tiện giao tiếp quan trọng nhất và là công cụ tư duy của con người; tồn tại dưới dạng nói, dạng ký hiệu và được ghi lại bằng chữ viết.',
+  },
+  {
+    id: 'ngon-ngu-hoc',
+    chapter,
+    vi: 'Ngôn ngữ học',
+    en: 'linguistics',
+    ipaEn: 'lɪŋˈɡwɪstɪks',
+    ja: '言語学{げんごがく}',
+    romaji: 'gengogaku',
+    definition: 'Khoa học nghiên cứu ngôn ngữ loài người: cấu trúc, cách sử dụng, cách thụ đắc và sự biến đổi của ngôn ngữ.',
+  },
+  {
+    id: 'tin-hieu-ngon-ngu',
+    chapter,
+    vi: 'Tín hiệu ngôn ngữ',
+    en: 'linguistic sign',
+    ipaEn: 'lɪŋˈɡwɪstɪk saɪn',
+    ja: '言語記号{げんごきごう}',
+    romaji: 'gengo kigō',
+    definition:
+      'Theo Saussure, là thực thể hai mặt gắn kết cái biểu đạt (hình thức âm thanh) với cái được biểu đạt (khái niệm).',
+  },
+  {
+    id: 'tinh-vo-doan',
+    chapter,
+    vi: 'Tính võ đoán',
+    en: 'arbitrariness',
+    ipaEn: 'ˈɑːrbətrerinəs',
+    ja: '恣意性{しいせい}',
+    romaji: 'shiisei',
+    definition:
+      'Đặc điểm không có mối liên hệ tự nhiên, tất yếu giữa hình thức âm thanh của một từ và ý nghĩa mà nó biểu thị.',
+  },
+  {
+    id: 'tinh-sang-tao',
+    chapter,
+    vi: 'Tính sáng tạo (tính năng sản)',
+    en: 'productivity (creativity)',
+    ipaEn: 'ˌproʊdʌkˈtɪvəti',
+    ja: '生産性{せいさんせい}',
+    romaji: 'seisansei',
+    definition:
+      'Khả năng dùng một số hữu hạn đơn vị và quy tắc để tạo ra và hiểu vô số câu mới chưa từng nghe trước đó.',
+  },
+  {
+    id: 'tinh-chuyen-di',
+    chapter,
+    vi: 'Tính chuyển di',
+    en: 'displacement',
+    ipaEn: 'dɪsˈpleɪsmənt',
+    ja: '転位性{てんいせい}',
+    romaji: "ten'isei",
+    definition:
+      'Khả năng nói về những sự vật, sự việc không có mặt tại thời điểm và nơi giao tiếp: quá khứ, tương lai, điều tưởng tượng.',
+  },
+  {
+    id: 'tinh-hai-binh-dien',
+    chapter,
+    vi: 'Tính hai bình diện (cấu trúc kép)',
+    en: 'duality of patterning',
+    ipaEn: 'duˈæləti əv ˈpætərnɪŋ',
+    ja: '二重性{にじゅうせい}',
+    romaji: 'nijūsei',
+    definition:
+      'Ngôn ngữ được tổ chức ở hai tầng: các âm tự thân vô nghĩa kết hợp thành những đơn vị có nghĩa (hình vị, từ).',
+  },
+  {
+    id: 'nang-luc-ngon-ngu',
+    chapter,
+    vi: 'Năng lực ngôn ngữ',
+    en: 'linguistic competence',
+    ipaEn: 'lɪŋˈɡwɪstɪk ˈkɑːmpətəns',
+    ja: '言語能力{げんごのうりょく}',
+    romaji: 'gengo nōryoku',
+    definition: 'Tri thức ngầm, vô thức mà người bản ngữ có về hệ thống âm, từ và quy tắc ngữ pháp của ngôn ngữ mình.',
+  },
+  {
+    id: 'hieu-nang-ngon-ngu',
+    chapter,
+    vi: 'Hiệu năng ngôn ngữ (sử dụng ngôn ngữ)',
+    en: 'linguistic performance',
+    ipaEn: 'lɪŋˈɡwɪstɪk pərˈfɔːrməns',
+    ja: '言語運用{げんごうんよう}',
+    romaji: "gengo un'yō",
+    definition:
+      'Việc vận dụng năng lực ngôn ngữ trong nói và hiểu thực tế; chịu ảnh hưởng của trí nhớ, sự mệt mỏi, cảm xúc nên có thể mắc lỗi.',
+  },
+  {
+    id: 'ngu-phap-mieu-ta',
+    chapter,
+    vi: 'Ngữ pháp miêu tả',
+    en: 'descriptive grammar',
+    ipaEn: 'dɪˈskrɪptɪv ˈɡræmər',
+    ja: '記述文法{きじゅつぶんぽう}',
+    romaji: 'kijutsu bunpō',
+    definition: 'Mô hình ngữ pháp mô tả cách người bản ngữ thực sự nói và hiểu, không phán xét đúng – sai theo chuẩn mực.',
+  },
+  {
+    id: 'ngu-phap-quy-pham',
+    chapter,
+    vi: 'Ngữ pháp quy phạm',
+    en: 'prescriptive grammar',
+    ipaEn: 'prɪˈskrɪptɪv ˈɡræmər',
+    ja: '規範文法{きはんぶんぽう}',
+    romaji: 'kihan bunpō',
+    definition: 'Tập hợp các quy tắc quy định người ta "nên" nói hoặc viết như thế nào, thường dựa trên chuẩn mực xã hội.',
+  },
+  {
+    id: 'ngon-ngu-ky-hieu',
+    chapter,
+    vi: 'Ngôn ngữ ký hiệu',
+    en: 'sign language',
+    ipaEn: 'ˈsaɪn ˌlæŋɡwɪdʒ',
+    ja: '手話{しゅわ}',
+    romaji: 'shuwa',
+    definition:
+      'Ngôn ngữ tự nhiên sử dụng kênh thị giác – cử động (tay, nét mặt, tư thế), có đầy đủ hệ thống ngữ pháp như ngôn ngữ nói.',
+  },
+]

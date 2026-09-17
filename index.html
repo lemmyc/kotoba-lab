@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi" data-furigana="on">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="description"
+      content="Kotoba Lab — học Nhập môn Ngôn ngữ học (Introduction to Language) bằng tiếng Việt, mở rộng sang tiếng Anh và tiếng Nhật."
+    />
+    <meta property="og:title" content="Kotoba Lab — Nhập môn Ngôn ngữ học" />
+    <meta
+      property="og:description"
+      content="Hiểu ngôn ngữ qua ba lăng kính: Việt · Anh · Nhật. Bài giảng, thuật ngữ, quiz và flashcard."
+    />
+    <meta property="og:type" content="website" />
+    <title>Kotoba Lab — Nhập môn Ngôn ngữ học</title>
+    <script>
+      // Apply saved theme + furigana preference before first paint (keep in sync with src/lib/preferences.ts).
+      ;(function () {
+        var root = document.documentElement
+        try {
+          var prefs = JSON.parse(localStorage.getItem('kotoba-lab:prefs') || '{}')
+          var theme = prefs.theme || 'system'
+          var dark =
+            theme === 'dark' ||
+            (theme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          root.classList.toggle('dark', dark)
+          root.style.colorScheme = dark ? 'dark' : 'light'
+          root.dataset.furigana = prefs.furigana === false ? 'off' : 'on'
+        } catch (e) {
+          root.dataset.furigana = 'on'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Kotoba Lab cần bật JavaScript để hoạt động.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

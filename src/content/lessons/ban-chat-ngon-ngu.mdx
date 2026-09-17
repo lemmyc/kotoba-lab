@@ -1,0 +1,286 @@
+{/* Chương 1 — CHƯƠNG MẪU. Dùng làm chuẩn văn phong và cách dùng component cho các chương khác. */}
+
+## Cơ sở lý thuyết
+
+Chúng ta dùng ngôn ngữ mỗi ngày mà hiếm khi dừng lại hỏi: *ngôn ngữ thực chất là gì?* Chương này đặt nền móng cho cả khóa học: định nghĩa ngôn ngữ, chỉ ra những gì một người "biết" khi biết một ngôn ngữ, và phân biệt ngôn ngữ loài người với các hệ thống giao tiếp khác.
+
+### Ngôn ngữ là gì?
+
+<Definition term="Ngôn ngữ" en="language" ipa="ˈlæŋɡwɪdʒ" ja="言語{げんご}" romaji="gengo">
+Ngôn ngữ là một **hệ thống tín hiệu đặc biệt**, là phương tiện giao tiếp quan trọng nhất và là công cụ tư duy của con người.
+</Definition>
+
+Định nghĩa này có ba ý quan trọng:
+
+- **Hệ thống**: ngôn ngữ không phải một danh sách từ rời rạc mà là một cấu trúc có tổ chức, gồm các đơn vị (âm, hình vị, từ, câu) và quy tắc kết hợp chúng.
+- **Tín hiệu**: mỗi đơn vị có nghĩa là sự gắn kết giữa một hình thức và một nội dung.
+- **Giao tiếp và tư duy**: ngôn ngữ vừa dùng để trao đổi thông tin, vừa giúp ta sắp xếp, lưu giữ suy nghĩ.
+
+Hiện nay trên thế giới có khoảng **hơn 7.000 ngôn ngữ** đang được sử dụng. Ngôn ngữ tồn tại trước hết ở **dạng nói** (hoặc dạng ký hiệu); chữ viết ra đời muộn hơn rất nhiều và chỉ là phương tiện ghi lại ngôn ngữ. Nhiều ngôn ngữ đến nay vẫn chưa có chữ viết.
+
+<Callout type="note">
+Mọi đứa trẻ bình thường đều học nói một cách tự nhiên, nhưng phải được *dạy* mới biết đọc và viết. Đó là một lý do khiến ngôn ngữ học coi lời nói là dạng cơ bản của ngôn ngữ.
+</Callout>
+
+### Tín hiệu ngôn ngữ và tính võ đoán
+
+Nhà ngôn ngữ học Thụy Sĩ **Ferdinand de Saussure** (1857–1913) mô tả tín hiệu ngôn ngữ là một thực thể hai mặt:
+
+- **Cái biểu đạt** (*signifiant*): hình ảnh âm thanh, ví dụ chuỗi âm /kəj/ của từ "cây".
+- **Cái được biểu đạt** (*signifié*): khái niệm mà chuỗi âm ấy gợi ra, tức "loài thực vật có thân, rễ, lá".
+
+Mối liên hệ giữa hai mặt này là **võ đoán** (*arbitrary*): không có lý do tự nhiên nào buộc khái niệm "cây" phải được gọi bằng âm "cây". Bằng chứng rõ nhất là mỗi ngôn ngữ gọi một khác:
+
+<Compare
+  rows={[
+    { aspect: 'Loài thực vật có thân gỗ', vi: 'cây', en: 'tree', ja: '木{き} (ki)' },
+    { aspect: 'Loài vật nuôi biết sủa', vi: 'chó', en: 'dog', ja: '犬{いぬ} (inu)' },
+    { aspect: 'Nước', vi: 'nước', en: 'water', ja: '水{みず} (mizu)' },
+  ]}
+/>
+
+Ngay cả **từ tượng thanh**, loại từ mô phỏng âm thanh tự nhiên, cũng mang dấu ấn quy ước. Tiếng chó sủa là "gâu gâu" trong tiếng Việt, "woof" trong tiếng Anh và ワンワン (*wan wan*) trong tiếng Nhật. Âm thanh thực tế giống nhau, nhưng mỗi cộng đồng "nghe" và mô phỏng theo hệ thống âm của ngôn ngữ mình.
+
+<Callout type="tip">
+Tính võ đoán giải thích vì sao học từ vựng ngoại ngữ đòi hỏi ghi nhớ: không thể "suy ra" nghĩa của một từ hoàn toàn mới chỉ từ âm thanh của nó.
+</Callout>
+
+### Tri thức ngôn ngữ: ta biết gì khi biết một ngôn ngữ?
+
+Khi nói "tôi biết tiếng Việt", bạn đang sở hữu một khối tri thức khổng lồ, phần lớn là **vô thức**:
+
+1. **Tri thức về âm**: bạn biết âm nào thuộc tiếng Việt và âm nào kết hợp được với nhau. Người Việt thấy "*xtrăng*" không giống một từ tiếng Việt, vì âm tiết tiếng Việt không bắt đầu bằng cụm phụ âm như vậy.
+2. **Tri thức về từ**: bạn biết hàng chục nghìn cặp hình thức – ý nghĩa, và biết cách tạo từ mới ("xe" + "đạp" → "xe đạp").
+3. **Tri thức về câu**: bạn phân biệt được câu đúng và câu sai ngữ pháp dù chưa ai dạy quy tắc.
+
+<Ex>Tôi ăn cơm.</Ex>
+<Ex bad>Tôi cơm ăn.</Ex>
+<Ex bad note="sai trật tự: số từ phải đứng trước loại từ">Con ba mèo.</Ex>
+<Ex>Ba con mèo.</Ex>
+
+Trong ngôn ngữ học, dấu sao (\*) đặt trước một câu cho biết câu đó **không đúng ngữ pháp** đối với người bản ngữ.
+
+4. **Tính sáng tạo**: quan trọng nhất, bạn có thể nói và hiểu **vô số câu mới** chưa từng nghe. Câu "Con mèo tam thể nhà bà Tư vừa trèo lên nóc tủ lạnh" có lẽ chưa ai từng nói, nhưng bạn hiểu ngay. Từ một số hữu hạn từ và quy tắc, người nói tạo ra số câu không giới hạn.
+
+### Năng lực và hiệu năng ngôn ngữ
+
+Noam Chomsky (1965) phân biệt hai khái niệm:
+
+- **Năng lực ngôn ngữ** (*linguistic competence*): tri thức ngầm của người bản ngữ về hệ thống ngôn ngữ.
+- **Hiệu năng ngôn ngữ** (*linguistic performance*): việc sử dụng tri thức đó trong nói – nghe thực tế.
+
+Khi ta nói nhịu, ngập ngừng, quên từ hay bỏ dở câu vì mệt mỏi, hồi hộp, đó là giới hạn của *hiệu năng*, không có nghĩa là ta không "biết" tiếng mẹ đẻ. Ngữ pháp mà nhà ngôn ngữ học muốn mô tả chính là *năng lực* nằm phía sau những lời nói không hoàn hảo ấy.
+
+<Callout type="example" title="Ví dụ: nói nhịu">
+Một người định nói "*đi chợ mua cá*" nhưng buột miệng thành "*đi cá mua chợ*" rồi tự sửa lại ngay. Việc tự nhận ra lỗi cho thấy năng lực ngôn ngữ vẫn nguyên vẹn; lỗi nằm ở khâu hiệu năng.
+</Callout>
+
+### Ngữ pháp: miêu tả hay quy phạm?
+
+Từ "ngữ pháp" được dùng theo nhiều nghĩa khác nhau:
+
+| Loại ngữ pháp | Nội dung | Ví dụ |
+|---|---|---|
+| **Ngữ pháp tâm lý** (*mental grammar*) | Hệ thống quy tắc vô thức trong đầu người bản ngữ | Biết "ba con mèo" đúng, "con ba mèo" sai |
+| **Ngữ pháp miêu tả** (*descriptive grammar*) | Mô hình do nhà ngôn ngữ học xây dựng để mô tả ngữ pháp tâm lý | "Trong tiếng Việt, số từ đứng trước loại từ và danh từ" |
+| **Ngữ pháp quy phạm** (*prescriptive grammar*) | Các quy định về cách nói/viết "nên" hay "không nên" | "Không được kết thúc câu tiếng Anh bằng giới từ" |
+
+Ngôn ngữ học hiện đại là khoa học **miêu tả**: nó ghi nhận và giải thích cách con người *thực sự* nói, thay vì phán xét. Theo quan điểm này, mọi phương ngữ đều là những hệ thống có quy tắc chặt chẽ; không có ngôn ngữ hay phương ngữ nào "nguyên thủy" hay "kém logic" hơn ngôn ngữ khác.
+
+<Callout type="warning">
+Miêu tả không có nghĩa là "sao cũng được". Chuẩn mực vẫn cần thiết trong giáo dục, văn bản hành chính, xuất bản… Điều cần nhớ là chuẩn mực là **quy ước xã hội**, còn tính đúng ngữ pháp là **tri thức của người bản ngữ**.
+</Callout>
+
+### Các đặc điểm thiết kế của ngôn ngữ loài người
+
+Năm 1960, nhà ngôn ngữ học Mỹ **Charles Hockett** đề xuất một danh sách các "đặc điểm thiết kế" (*design features*) để so sánh ngôn ngữ loài người với hệ thống giao tiếp của động vật. Một số đặc điểm tiêu biểu:
+
+| Đặc điểm | Giải thích | Ví dụ |
+|---|---|---|
+| **Tính võ đoán** | Âm và nghĩa không có liên hệ tự nhiên | cây / tree / 木 |
+| **Tính sáng tạo** (năng sản) | Tạo và hiểu vô số phát ngôn mới | Câu bạn chưa từng nghe vẫn hiểu được |
+| **Tính chuyển di** | Nói về điều không có ở đây, bây giờ | Kể chuyện thời khủng long, bàn kế hoạch năm sau |
+| **Tính hai bình diện** | Âm vô nghĩa → kết hợp thành đơn vị có nghĩa | /b/ + /a/ + thanh huyền → "bà" |
+| **Tính rời rạc** | Các đơn vị âm tách bạch nhau | "ba" và "ma" là hai từ khác nhau, không có âm "nửa b nửa m" |
+| **Truyền thụ văn hóa** | Ngôn ngữ cụ thể được học từ cộng đồng, không di truyền | Trẻ Việt lớn lên ở Nhật nói tiếng Nhật như người bản ngữ |
+
+### Ngôn ngữ loài người và giao tiếp của động vật
+
+Nhiều loài vật có hệ thống giao tiếp tinh vi:
+
+- **Ong mật** "nhảy múa" để báo hướng và khoảng cách đến nguồn mật. Hệ thống này có tính chuyển di (nói về nơi xa) nhưng chỉ truyền đạt được một loại thông tin.
+- **Khỉ vervet** có các tiếng kêu báo động khác nhau cho báo, đại bàng và rắn, nhưng không thể kết hợp chúng thành "câu" mới.
+- **Tinh tinh và bonobo** được dạy ký hiệu tay hoặc bảng biểu tượng có thể học hàng trăm ký hiệu, nhưng chưa có bằng chứng thuyết phục rằng chúng tạo ra cú pháp phức tạp và sáng tạo như trẻ em.
+
+Điểm khác biệt cốt lõi: chỉ ngôn ngữ loài người kết hợp *đầy đủ* tính sáng tạo, tính hai bình diện và tính chuyển di.
+
+### Ngôn ngữ ký hiệu
+
+<Definition term="Ngôn ngữ ký hiệu" en="sign language" ja="手話{しゅわ}" romaji="shuwa">
+Ngôn ngữ tự nhiên sử dụng kênh thị giác – cử động (bàn tay, nét mặt, tư thế), có đầy đủ hệ thống ngữ pháp như ngôn ngữ nói.
+</Definition>
+
+Ngôn ngữ ký hiệu **không phải** là tập hợp cử chỉ minh họa, cũng không phải "đánh vần tiếng nói bằng tay". Ngôn ngữ ký hiệu Mỹ (ASL), ngôn ngữ ký hiệu Nhật Bản hay các ngôn ngữ ký hiệu của cộng đồng người Điếc Việt Nam (như ở Hà Nội, Hải Phòng, TP. Hồ Chí Minh) đều có cấu trúc riêng. Trẻ Điếc được tiếp xúc sớm thụ đắc chúng theo các giai đoạn tương tự trẻ nghe được học tiếng nói. Điều này cho thấy năng lực ngôn ngữ không gắn riêng với âm thanh.
+
+### Ba ngôn ngữ trong khóa học: chân dung nhanh
+
+Mọi ngôn ngữ đều có chung những nét phổ quát (có nguyên âm và phụ âm, phân biệt danh từ – động từ, có cách hỏi, cách phủ định…), nhưng lại khác nhau rất nhiều về loại hình. Ba ngôn ngữ của Kotoba Lab là một bộ ba đối chiếu thú vị:
+
+<Compare
+  caption="Số liệu người nói là ước tính và thay đổi theo nguồn."
+  rows={[
+    { aspect: 'Họ ngôn ngữ', vi: 'Nam Á (nhánh Việt – Mường)', en: 'Ấn – Âu (nhánh German)', ja: 'Ngữ hệ Nhật Bản (Japonic)' },
+    { aspect: 'Loại hình hình thái', vi: 'Đơn lập: từ không biến đổi hình thái', en: 'Hòa kết (biến tố), nhưng đã phân tích hóa nhiều', ja: 'Chắp dính: gắn nối tiếp phụ tố vào gốc' },
+    { aspect: 'Trật tự từ cơ bản', vi: 'SVO', en: 'SVO', ja: 'SOV' },
+    { aspect: 'Âm điệu', vi: '6 thanh điệu (phương ngữ Bắc)', en: 'Trọng âm (stress)', ja: 'Trọng âm cao độ (pitch accent)' },
+    { aspect: 'Chữ viết', vi: 'Chữ Quốc ngữ (chữ Latin có dấu)', en: 'Chữ Latin', ja: '漢字{かんじ} + ひらがな + カタカナ' },
+    { aspect: 'Người nói tiếng mẹ đẻ', vi: 'khoảng 85 triệu', en: 'khoảng 380 triệu (hơn 1 tỉ người dùng tính cả L2)', ja: 'khoảng 120 triệu' },
+  ]}
+/>
+
+## Mở rộng: Tiếng Anh
+
+<LangSection lang="en">
+
+### Tính võ đoán trong tiếng Anh
+
+Tiếng Anh cho thấy rõ sự lệch pha giữa âm và nghĩa:
+
+- **Đồng âm khác nghĩa**: <Speak lang="en">two</Speak>, <Speak lang="en">too</Speak>, <Speak lang="en">to</Speak> đều đọc là <Ipa>tuː</Ipa>.
+- **Từ tượng thanh cũng mang tính quy ước**: gà trống gáy <Speak lang="en">cock-a-doodle-doo</Speak>, trong khi tiếng Việt là "ò ó o" và tiếng Nhật là コケコッコー (*kokekokkō*).
+
+### Phán đoán ngữ pháp và câu nổi tiếng của Chomsky
+
+Người nói tiếng Anh có thể phán đoán tính ngữ pháp ngay cả với câu vô nghĩa:
+
+<Ex note="đúng ngữ pháp nhưng nghĩa phi lý">Colorless green ideas sleep furiously.</Ex>
+<Ex bad>Furiously sleep ideas green colorless.</Ex>
+
+Câu thứ nhất (Chomsky, 1957) có cấu trúc hoàn hảo: tính từ + tính từ + danh từ + động từ + trạng từ. Ví dụ này cho thấy **tính ngữ pháp độc lập tương đối với ý nghĩa**, và tri thức cú pháp là một phần riêng của năng lực ngôn ngữ.
+
+<Ex>She likes me.</Ex>
+<Ex bad>Me likes she.</Ex>
+
+### Quy phạm và thực tế trong tiếng Anh
+
+Nhiều "luật" quen thuộc trong sách ngữ pháp là quy phạm và thường bị người bản ngữ vi phạm một cách tự nhiên:
+
+| Quy tắc quy phạm | Cách nói thực tế phổ biến |
+|---|---|
+| Không kết thúc câu bằng giới từ | *Who are you talking **to**?* |
+| Không tách động từ nguyên mẫu (*split infinitive*) | *to **boldly** go* (Star Trek) |
+| Dùng *It is I* thay cho *It's me* | *It's me.* |
+| *They* chỉ dùng cho số nhiều | *Someone left **their** umbrella.* (*singular they*) |
+
+Nhiều quy tắc trong số này được các nhà ngữ pháp thế kỷ 18 đặt ra, một phần dựa trên hình mẫu tiếng Latin, chứ không phản ánh cách tiếng Anh vận hành.
+
+### Từ vựng chuyên ngành
+
+- <Speak lang="en">linguistics</Speak> <Ipa>lɪŋˈɡwɪstɪks</Ipa>: ngôn ngữ học
+- <Speak lang="en">arbitrariness</Speak> <Ipa>ˈɑːrbətrerinəs</Ipa>: tính võ đoán
+- <Speak lang="en">displacement</Speak> <Ipa>dɪsˈpleɪsmənt</Ipa>: tính chuyển di
+- <Speak lang="en">competence</Speak> / <Speak lang="en">performance</Speak>: năng lực / hiệu năng
+- <Speak lang="en">descriptive</Speak> / <Speak lang="en">prescriptive grammar</Speak>: ngữ pháp miêu tả / quy phạm
+
+</LangSection>
+
+## Mở rộng: Tiếng Nhật
+
+<LangSection lang="ja">
+
+### Tính võ đoán và kho từ tượng thanh – tượng hình
+
+Tiếng Nhật nổi tiếng với kho **オノマトペ** (*onomatope*) phong phú, gồm hai nhóm chính:
+
+- <Ja t="擬音語{ぎおんご}" romaji="giongo" />: mô phỏng âm thanh, như ワンワン (chó sủa), ドンドン (tiếng gõ thình thịch).
+- <Ja t="擬態語{ぎたいご}" romaji="gitaigo" />: gợi tả trạng thái, cảm giác không có âm thanh, như キラキラ (*kirakira*, lấp lánh), ドキドキ (*dokidoki*, tim đập rộn ràng).
+
+<Callout type="culture" title="Góc đối chiếu">
+Nhóm <Ja t="擬態語{ぎたいご}" /> rất gần với **từ láy tượng hình** của tiếng Việt: キラキラ ≈ "lấp lánh", ドキドキ ≈ "thình thịch", ふわふわ ≈ "mềm mại, bồng bềnh". Cả hai ngôn ngữ đều dùng sự lặp lại âm thanh để gợi hình ảnh, nhưng *cách* lặp lại thì mỗi ngôn ngữ một khác. Đây lại là một biểu hiện của tính quy ước.
+</Callout>
+
+### Phán đoán ngữ pháp: vai trò của trợ từ
+
+Người Nhật biết ngay câu nào tự nhiên, câu nào sai, nhờ tri thức về **trợ từ** và **trật tự từ**:
+
+<Gloss lang="ja" text="私{わたし}は 本{ほん}を 読{よ}む" romaji="watashi-wa hon-o yomu" gloss="tôi-CĐ sách-TN đọc" translation="Tôi đọc sách." />
+
+Viết tắt trong dòng chú giải: **CĐ** là trợ từ chủ đề は, **TN** là trợ từ tân ngữ を.
+
+<Gloss lang="ja" text="本{ほん}を 私{わたし}は 読{よ}む" romaji="hon-o watashi-wa yomu" gloss="sách-TN tôi-CĐ đọc" translation="Sách thì tôi đọc. (vẫn đúng: trợ từ giữ nguyên vai trò)" />
+
+<Gloss lang="ja" bad text="私{わたし}は 本{ほん}を 読{よ}むだ" romaji="watashi-wa hon-o yomu-da" gloss="tôi-CĐ sách-TN đọc-LÀ" translation="(sai: だ không đi trực tiếp sau động từ thể từ điển)" />
+
+Nhờ trợ từ đánh dấu vai trò, tiếng Nhật cho phép **đảo trật tự các tham tố** trước động từ, nhưng động từ vẫn phải đứng cuối câu. Không ai dạy trẻ em Nhật những quy tắc này một cách tường minh; đó là năng lực ngôn ngữ.
+
+### Quy phạm và thực tế: ら抜き言葉
+
+Ví dụ nổi tiếng về xung đột giữa quy phạm và thực tế trong tiếng Nhật là <Ja t="ら抜{ぬ}き言葉{ことば}" romaji="ra-nuki kotoba" />, tức hiện tượng lược âm ら ở thể khả năng của động từ:
+
+| Thể khả năng theo chuẩn | Dạng "ra-nuki" phổ biến trong khẩu ngữ | Nghĩa |
+|---|---|---|
+| 見られる (*mirareru*) | 見れる (*mireru*) | có thể nhìn thấy |
+| 食べられる (*taberareru*) | 食べれる (*tabereru*) | có thể ăn |
+| 来られる (*korareru*) | 来れる (*koreru*) | có thể đến |
+
+Dạng rút gọn rất phổ biến, nhất là ở giới trẻ, nhưng thường bị coi là "không chuẩn" trong văn viết trang trọng. Nhìn theo lối miêu tả, ra-nuki có lý do hệ thống: nó giúp phân biệt nghĩa *khả năng* với nghĩa *bị động/tôn kính* vốn cùng dùng đuôi られる.
+
+### Ngôn ngữ ký hiệu Nhật Bản
+
+Ở Nhật, người ta phân biệt:
+
+- <Ja t="日本手話{にほんしゅわ}" romaji="Nihon shuwa" />: **Ngôn ngữ ký hiệu Nhật Bản**, một ngôn ngữ độc lập có ngữ pháp riêng, được cộng đồng người Điếc sử dụng.
+- <Ja t="日本語対応手話{にほんごたいおうしゅわ}" romaji="Nihongo taiō shuwa" />: **ký hiệu theo tiếng Nhật**, dùng ký hiệu nhưng bám theo ngữ pháp tiếng Nhật nói.
+
+Sự phân biệt này minh họa đúng luận điểm ở phần lý thuyết: ngôn ngữ ký hiệu là ngôn ngữ thực thụ, không phải bản sao của tiếng nói.
+
+### Từ vựng chuyên ngành
+
+<Callout type="hanviet">
+Rất nhiều thuật ngữ ngôn ngữ học tiếng Nhật là từ Hán, nên người Việt có thể đoán nghĩa qua âm Hán Việt:
+- <Ja t="言語学{げんごがく}" romaji="gengogaku" />: **ngôn ngữ học**
+- <Ja t="言語能力{げんごのうりょく}" romaji="gengo nōryoku" />: ngôn ngữ **năng lực**, tức năng lực ngôn ngữ
+- <Ja t="規範文法{きはんぶんぽう}" romaji="kihan bunpō" />: **quy phạm văn pháp**, tức ngữ pháp quy phạm
+- <Ja t="記述文法{きじゅつぶんぽう}" romaji="kijutsu bunpō" />: **ký thuật** (ghi chép, miêu tả) **văn pháp**, tức ngữ pháp miêu tả
+- <Ja t="恣意性{しいせい}" romaji="shiisei" />: **tứ ý tính**, tức tính võ đoán
+</Callout>
+
+</LangSection>
+
+## So sánh Việt – Anh – Nhật
+
+<Compare
+  rows={[
+    { aspect: 'Từ chỉ "ngôn ngữ"', vi: 'ngôn ngữ (Hán Việt 言語), tiếng, lời', en: 'language (qua tiếng Pháp cổ langage, gốc Latin lingua "cái lưỡi")', ja: '言語{げんご} (gengo), 言葉{ことば} (kotoba)' },
+    { aspect: 'Tiếng chó sủa', vi: 'gâu gâu', en: 'woof, bow-wow', ja: 'ワンワン (wan wan)' },
+    { aspect: 'Tiếng gà gáy', vi: 'ò ó o', en: 'cock-a-doodle-doo', ja: 'コケコッコー (kokekokkō)' },
+    { aspect: 'Từ gợi tả trạng thái', vi: 'từ láy: lấp lánh, thình thịch', en: 'hạn chế: twinkle, zigzag', ja: '擬態語{ぎたいご}: キラキラ, ドキドキ' },
+    { aspect: 'Tranh luận quy phạm tiêu biểu', vi: 'viết "i" hay "y" (kĩ thuật / kỹ thuật)', en: 'split infinitive, singular they', ja: 'ら抜{ぬ}き言葉{ことば}: 見{み}れる / 見{み}られる' },
+    { aspect: 'Ngôn ngữ ký hiệu', vi: 'các ngôn ngữ ký hiệu Hà Nội, Hải Phòng, TP.HCM', en: 'ASL (Mỹ), BSL (Anh)…', ja: '日本手話{にほんしゅわ} (JSL)' },
+  ]}
+/>
+
+## Tóm tắt
+
+- Ngôn ngữ là **hệ thống tín hiệu** dùng để giao tiếp và tư duy; dạng nói (hoặc ký hiệu) là dạng cơ bản.
+- Tín hiệu ngôn ngữ gồm **cái biểu đạt** và **cái được biểu đạt**, gắn với nhau một cách **võ đoán**.
+- Biết một ngôn ngữ là có tri thức vô thức về âm, từ, câu và khả năng **sáng tạo** vô số câu mới.
+- Phân biệt **năng lực** (tri thức) với **hiệu năng** (sử dụng); **ngữ pháp miêu tả** với **ngữ pháp quy phạm**.
+- Ngôn ngữ loài người có các đặc điểm thiết kế như tính sáng tạo, tính chuyển di, tính hai bình diện, những điều mà hệ thống giao tiếp của động vật không có đầy đủ.
+- Ngôn ngữ ký hiệu là ngôn ngữ tự nhiên đầy đủ.
+
+<Summary lang="en">
+Language is a system of arbitrary signs that serves as humans' primary means of communication and a tool for thought. Every speaker has unconscious knowledge — **linguistic competence** — of the sounds, words and sentence rules of their language, which allows them to produce and understand an unlimited number of new sentences. Linguists **describe** how people actually speak rather than **prescribe** how they should speak, and they treat all languages, dialects and sign languages as fully rule-governed systems.
+</Summary>
+
+<Summary lang="ja">
+<Ja t="言語{げんご}とは、恣意的{しいてき}な記号{きごう}の体系{たいけい}であり、人間{にんげん}のコミュニケーションと思考{しこう}の道具{どうぐ}である。話者{わしゃ}は無意識{むいしき}のうちに音{おと}・語{ご}・文{ぶん}の規則{きそく}を知{し}っており（言語能力{げんごのうりょく}）、聞{き}いたことのない文{ぶん}も無限{むげん}に作{つく}り出{だ}すことができる。言語学{げんごがく}は規範{きはん}を押{お}し付{つ}けるのではなく、実際{じっさい}の言語{げんご}を記述{きじゅつ}する学問{がくもん}である。" />
+</Summary>
+
+## Câu hỏi thảo luận
+
+1. Tìm 5 từ tượng thanh trong tiếng Việt và đối chiếu với tiếng Anh, tiếng Nhật. Kết quả nói gì về tính võ đoán của tín hiệu ngôn ngữ?
+2. Vì sao cần phân biệt năng lực và hiệu năng khi nghiên cứu lỗi nói nhịu hoặc lời nói của trẻ em?
+3. Hãy nêu một quy tắc "quy phạm" bạn từng được dạy trong tiếng Việt. Nhà ngôn ngữ học miêu tả sẽ nhìn nhận quy tắc đó thế nào?
+4. Theo bạn, loài vật có "ngôn ngữ" không? Hãy lập luận dựa trên các đặc điểm thiết kế của Hockett.
+5. Vì sao ví dụ <Ja t="日本手話{にほんしゅわ}" /> và <Ja t="日本語対応手話{にほんごたいおうしゅわ}" /> lại quan trọng đối với quan niệm "ngôn ngữ ký hiệu là ngôn ngữ thực thụ"?
