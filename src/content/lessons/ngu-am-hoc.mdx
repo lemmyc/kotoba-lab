@@ -1,83 +1,263 @@
-{/* Chương 7 — KHUNG BÀI. Viết theo chuẩn của chương 1 (ban-chat-ngon-ngu.mdx); xóa <Todo> khi viết xong từng mục. */}
-
 ## Cơ sở lý thuyết
 
-Âm thanh là chất liệu của ngôn ngữ nói. Ngữ âm học mô tả cách con người tạo ra, truyền đi và nghe được âm thanh lời nói, đồng thời cung cấp một bộ ký hiệu chung (IPA) để ghi lại âm của mọi ngôn ngữ, từ thanh điệu tiếng Việt đến trọng âm cao độ tiếng Nhật.
+Âm thanh là chất liệu của ngôn ngữ nói. **Ngữ âm học** (*phonetics*) mô tả cách con người tạo ra, truyền đi và nghe được âm thanh lời nói. Nó cũng cung cấp một bộ ký hiệu chung (IPA) để ghi lại âm của mọi ngôn ngữ, từ thanh điệu tiếng Việt đến trọng âm cao độ tiếng Nhật.
 
 ### Ba phân ngành của ngữ âm học
 
-<Todo>
-- Ngữ âm học cấu âm (articulatory), âm học (acoustic), thính giác (auditory).
-- Khóa học tập trung vào ngữ âm học cấu âm.
-</Todo>
+Một âm lời nói đi qua ba "chặng", ứng với ba phân ngành:
+
+| Phân ngành | Nghiên cứu | Câu hỏi tiêu biểu |
+|---|---|---|
+| **Ngữ âm học cấu âm** (*articulatory phonetics*) | Cách bộ máy phát âm tạo ra âm | Lưỡi đặt ở đâu khi nói "t"? |
+| **Ngữ âm học âm học** (*acoustic phonetics*) | Đặc tính vật lý của sóng âm: tần số, cường độ, trường độ | Thanh sắc và thanh huyền khác nhau thế nào trên phổ đồ? |
+| **Ngữ âm học thính giác** (*auditory phonetics*) | Cách tai và não tiếp nhận âm | Vì sao người Nhật khó nghe phân biệt *r* và *l*? |
+
+Khóa học tập trung vào **ngữ âm học cấu âm**, vì nó trực quan nhất: bạn có thể tự cảm nhận vị trí lưỡi, môi, dây thanh khi phát âm.
+
+<Callout type="hanviet">
+Thuật ngữ tiếng Nhật rất gần Hán Việt: <Ja t="音声学{おんせいがく}" romaji="onseigaku" /> là **âm thanh học** (ngữ âm học), <Ja t="母音{ぼいん}" romaji="boin" /> là **mẫu âm** (nguyên âm), <Ja t="子音{しいん}" romaji="shiin" /> là **tử âm** (phụ âm), <Ja t="声調{せいちょう}" romaji="seichō" /> là **thanh điệu**.
+</Callout>
 
 ### Bảng chữ cái ngữ âm quốc tế (IPA)
 
-<Todo>
-- Vì sao cần IPA: chữ viết không phản ánh đúng âm (ví dụ "gh", "ng", "ngh" tiếng Việt; "ough" tiếng Anh).
-- Quy ước /…/ (âm vị) và […] (ngữ âm) — liên hệ Chương 8; dùng `<Ipa>` và `<Ipa phonetic>`.
-- Liên kết bảng IPA tương tác (xem Tài liệu tham khảo).
-</Todo>
+Chữ viết của cả ba ngôn ngữ đều **không phản ánh trung thành** cách phát âm:
+
+- **Tiếng Việt**: cùng âm /ɣ/ được viết "g" (ga) hoặc "gh" (ghi); cùng âm /ŋ/ viết "ng" (nga) hoặc "ngh" (nghe). Ở phương ngữ Hà Nội, "d", "gi", "r" đều đọc là /z/.
+- **Tiếng Anh**: tổ hợp *ough* đọc khác nhau trong *though* <Ipa>ðoʊ</Ipa>, *through* <Ipa>θruː</Ipa>, *tough* <Ipa>tʌf</Ipa>, *cough* <Ipa>kɔːf</Ipa>.
+- **Tiếng Nhật**: chữ は đọc *wa* khi là trợ từ; <Ja t="東京{とうきょう}" /> viết とうきょう nhưng đọc [toːkjoː], âm う ở đây chỉ kéo dài nguyên âm.
+
+Vì vậy, Hội Ngữ âm Quốc tế (thành lập năm 1886) xây dựng **Bảng chữ cái ngữ âm quốc tế** (*International Phonetic Alphabet*, IPA), theo nguyên tắc *mỗi ký hiệu ứng với một âm, mỗi âm chỉ có một ký hiệu*.
+
+<Callout type="note" title="Hai loại ngoặc">
+- **/…/**: phiên âm **âm vị** (mức trừu tượng, chỉ ghi những khác biệt có chức năng phân biệt nghĩa): *pin* <Ipa>pɪn</Ipa>.
+- **[…]**: phiên âm **ngữ âm** (ghi chi tiết cách phát âm thực tế): *pin* <Ipa phonetic>pʰɪn</Ipa>, có bật hơi.
+
+Sự phân biệt âm vị – ngữ âm được giải thích kỹ ở [Chương 8](/bai-hoc/am-vi-hoc). Bảng IPA tương tác có trong mục *Đọc thêm* cuối bài.
+</Callout>
 
 ### Bộ máy phát âm
 
-<Todo>
-- Phổi, thanh quản (dây thanh), khoang miệng, khoang mũi, lưỡi, môi, răng, ngạc.
-- Gợi ý: hình minh họa mặt cắt bộ máy phát âm (bổ sung component hình sau).
-</Todo>
+Lời nói được tạo ra từ **luồng hơi đi ra từ phổi**. Trên đường đi, luồng hơi được "nhào nặn" bởi các bộ phận:
+
+<VocalTract />
+
+- **Phổi** tạo luồng hơi.
+- **Thanh hầu** chứa **dây thanh**. Dây thanh rung thì âm là **hữu thanh** ([b], [d], [v], mọi nguyên âm); không rung thì âm là **vô thanh** ([p], [t], [f]). Đặt tay lên cổ khi nói "vvvv" rồi "ffff" để cảm nhận sự khác biệt.
+- **Yết hầu**, **khoang miệng** và **khoang mũi** là các "hộp cộng hưởng". Khi **ngạc mềm** hạ xuống, hơi đi qua mũi và tạo ra âm mũi như [m], [n], [ŋ].
+- **Lưỡi**, **môi**, **răng**, **lợi**, **ngạc cứng**, **ngạc mềm**, **lưỡi con** là các bộ phận tạo ra chỗ cản trở, quyết định vị trí cấu âm của phụ âm.
 
 ### Phụ âm
 
-<Todo>
-- `<Definition>` vị trí cấu âm, phương thức cấu âm (đã có trong glossary).
-- Vị trí: môi – môi, môi – răng, răng, lợi, ngạc cứng, ngạc mềm, thanh hầu.
-- Phương thức: tắc, xát, tắc xát, mũi, bên, rung/vỗ, tiếp cận.
-- Thanh tính: vô thanh / hữu thanh; bật hơi.
-- Bảng phụ âm đầu tiếng Việt (phương ngữ Hà Nội) — ghi nguồn.
-</Todo>
+Phụ âm được tạo ra khi luồng hơi **bị cản trở** ở đâu đó trong bộ máy phát âm. Mỗi phụ âm được mô tả bằng ba tiêu chí.
+
+<Definition term="Vị trí cấu âm" en="place of articulation" ipa="pleɪs əv ɑːrˌtɪkjəˈleɪʃən" ja="調音点{ちょうおんてん}" romaji="chōonten">
+**Nơi** luồng hơi bị cản trở: hai môi, môi và răng, lợi, ngạc cứng, ngạc mềm, thanh hầu…
+</Definition>
+
+<Definition term="Phương thức cấu âm" en="manner of articulation" ipa="ˈmænər əv ɑːrˌtɪkjəˈleɪʃən" ja="調音法{ちょうおんほう}" romaji="chōonhō">
+**Cách** luồng hơi bị cản trở: chặn hoàn toàn (tắc), để lọt qua khe hẹp (xát), cho đi qua mũi (mũi)…
+</Definition>
+
+Tiêu chí thứ ba là **thanh tính**: hữu thanh hay vô thanh. Một số ngôn ngữ còn phân biệt **bật hơi** (một luồng hơi mạnh bật ra sau âm tắc).
+
+**Vị trí cấu âm**, kèm ví dụ trong ba ngôn ngữ:
+
+| Vị trí | IPA | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|---|
+| Môi – môi | [p b m] | **b**a, **m**a | **p**en, **b**ed, **m**an | **m**ado (<Ja t="窓{まど}" />), **b**ara |
+| Môi – răng | [f v] | **ph**a, **v**a | **f**an, **v**an | (không có; ふ là âm xát **môi – môi** [ɸ]) |
+| Răng (lưỡi giữa răng) | [θ ð] | (không có) | **th**ink, **th**is | (không có) |
+| Lợi | [t d n s z l] | **t**a, **n**a, **l**a | **t**ea, **d**og, **s**ea | **t**a, **n**a, **s**a |
+| Ngạc cứng | [ɲ ɕ j] | **nh**a | **y**es | **sh**i [ɕi], **y**a |
+| Ngạc mềm | [k ɡ ŋ x ɣ] | **c**a, **ng**a, **kh**a, **g**a | **c**at, **g**o, si**ng** | **k**a, **g**a |
+| Thanh hầu | [h ʔ] | **h**a | **h**at | **h**a |
+
+**Phương thức cấu âm:**
+
+| Phương thức | Cách tạo | Ví dụ |
+|---|---|---|
+| **Tắc** (*stop*) | Chặn hoàn toàn luồng hơi rồi bật ra | [p t k b d] |
+| **Xát** (*fricative*) | Để hơi lọt qua khe hẹp, tạo tiếng cọ xát | [f v s z x h] |
+| **Tắc xát** (*affricate*) | Tắc rồi chuyển thành xát | *ch*urch [tʃ], <Ja t="ち" /> [tɕi], <Ja t="つ" /> [tsɯ] |
+| **Mũi** (*nasal*) | Chặn miệng, hơi đi qua mũi | [m n ɲ ŋ] |
+| **Bên** (*lateral*) | Hơi đi qua hai bên lưỡi | [l] |
+| **Rung / vỗ** (*trill / tap*) | Đầu lưỡi rung nhiều lần hoặc vỗ nhanh một lần | [r] rung; [ɾ] vỗ như ら của tiếng Nhật |
+| **Tiếp cận** (*approximant*) | Khe hở rộng, gần như nguyên âm | [j w ɹ]: *y*es, *w*e, *r*ed |
+
+**Phụ âm đầu tiếng Việt (phương ngữ Hà Nội).** Theo mô tả của Kirby (2011), phương ngữ Hà Nội có 19 âm vị phụ âm, trong đó /p/ gần như chỉ xuất hiện ở đầu từ vay mượn ("pin", "pa-nô"). Các nguồn khác nhau có thể cho con số khác. Lý do thường là có tính riêng các âm uốn lưỡi tr, s, r (vẫn phân biệt trong chính tả và ở nhiều phương ngữ) hay không, và có tính /p/ hay không.
+
+| | Môi | Lợi / răng | Ngạc cứng | Ngạc mềm | Thanh hầu |
+|---|---|---|---|---|---|
+| **Tắc vô thanh** | (p) | t, th [tʰ] (bật hơi) | ch, tr [tɕ] | c/k/q [k] | |
+| **Tắc hút vào** (*implosive*) | b [ɓ] | đ [ɗ] | | | |
+| **Mũi** | m | n | nh [ɲ] | ng/ngh [ŋ] | |
+| **Xát vô thanh** | ph [f] | x, s [s] | | kh [x] | h |
+| **Xát hữu thanh** | v | d, gi, r [z] | | g/gh [ɣ] | |
+| **Bên** | | l | | | |
+
+<Callout type="culture" title="Góc đối chiếu">
+- **Âm tắc hút vào** [ɓ] (b) và [ɗ] (đ) của tiếng Việt được tạo ra khi thanh hầu hạ xuống, kéo không khí vào trong lúc bật âm. Tiếng Anh và tiếng Nhật không có loại âm này.
+- Tiếng Việt phân biệt **t** – **th** bằng **bật hơi**: "tai" [taːj] khác "thai" [tʰaːj]. Tiếng Anh và tiếng Nhật cũng có âm bật hơi trong thực tế phát âm nhưng không dùng bật hơi để phân biệt nghĩa.
+- Tiếng Anh có [θ ð] (*think*, *this*), cả tiếng Việt lẫn tiếng Nhật đều không có. Vì vậy người Việt hay đọc thành [t]/[d] hoặc [th], còn người Nhật hay đọc thành [s]/[z].
+</Callout>
 
 ### Nguyên âm
 
-<Todo>
-- Tiêu chí: độ cao của lưỡi, vị trí trước – sau, tròn môi.
-- Nguyên âm đơn và nguyên âm đôi; hình thang nguyên âm.
-- Hệ nguyên âm tiếng Việt: 11 nguyên âm đơn, 3 nguyên âm đôi (theo quan điểm phổ biến — ghi nguồn).
-</Todo>
+Khác với phụ âm, nguyên âm được tạo ra khi luồng hơi đi qua **tự do**, không bị cản trở. Chất lượng nguyên âm phụ thuộc vào hình dạng khoang miệng, được mô tả bằng ba tiêu chí:
+
+1. **Độ cao của lưỡi**: cao ([i], [u]), vừa ([e], [o]), thấp ([a]). Nói "i – a" và cảm nhận hàm dưới hạ xuống.
+2. **Vị trí trước – sau của lưỡi**: trước ([i], [e]), giữa ([ə]), sau ([u], [o]). Nói "i – u" và cảm nhận lưỡi lùi về sau.
+3. **Độ tròn môi**: tròn ([u], [o]) hay không tròn ([i], [ɯ]). Tiếng Việt phân biệt "u" [u] (tròn môi) với "ư" [ɯ] (không tròn môi) cùng độ cao, cùng vị trí sau.
+
+Các nguyên âm thường được xếp trên **hình thang nguyên âm**, một sơ đồ phỏng theo khoang miệng nhìn nghiêng:
+
+| | Trước | Giữa | Sau (không tròn) | Sau (tròn) |
+|---|---|---|---|---|
+| **Cao** | i [i] | | ư [ɯ] | u [u] |
+| **Vừa – cao** | ê [e] | | ơ [ɤ], â [ə̆] (ngắn) | ô [o] |
+| **Vừa – thấp** | e [ɛ] | | | o [ɔ] |
+| **Thấp** | | a [aː], ă [ă] (ngắn) | | |
+
+*(Nguyên âm tiếng Việt viết theo chữ Quốc ngữ, IPA trong ngoặc vuông.)*
+
+**Hệ nguyên âm tiếng Việt.** Các giáo trình Việt ngữ học phổ biến thường tính **11 nguyên âm đơn** (9 nguyên âm có chất lượng khác nhau, cộng 2 nguyên âm ngắn ă, â) và **3 nguyên âm đôi**: iê/ia, ươ/ưa, uô/ua. Mô tả của Kirby (2011) cũng cho kết quả tương tự: 9 chất lượng nguyên âm đơn, 2 nguyên âm ngắn chỉ xuất hiện trong âm tiết có âm cuối, và 3 nguyên âm đôi.
+
+| Ngôn ngữ | Nguyên âm đơn | Nguyên âm đôi | Ghi chú |
+|---|---|---|---|
+| Tiếng Việt | 11 (tính cả ă, â) | 3: iê, ươ, uô | Phân biệt u/ư, o/ơ, a/ă |
+| Tiếng Anh (Mỹ) | khoảng 11–12, tùy cách phân tích | [aɪ aʊ ɔɪ], thường tính cả [eɪ oʊ] | Có cặp căng – lơi: *sheep* [i] / *ship* [ɪ] |
+| Tiếng Nhật | 5: a, i, u, e, o | (không có nguyên âm đôi thực thụ, chỉ là chuỗi nguyên âm) | Phân biệt ngắn – dài |
 
 ### Âm tiết và các đặc trưng siêu đoạn tính
 
-<Todo>
-- Trường độ, trọng âm, cao độ, ngữ điệu.
-- Nhịp điệu: theo trọng âm (tiếng Anh), theo âm tiết (tiếng Việt, gần đúng), theo mora (tiếng Nhật).
-</Todo>
+Các thuộc tính trải dài trên nhiều âm, gọi là **đặc trưng siêu đoạn tính** (*suprasegmental features*), bao gồm:
+
+| Đặc trưng | Bản chất | Tiếng Việt | Tiếng Anh | Tiếng Nhật |
+|---|---|---|---|---|
+| **Trường độ** (*length*) | Độ dài của âm | "ăn" (ă ngắn) – "an" (a dài) | không phân biệt nghĩa bằng độ dài đơn thuần | <Ja t="おばさん" /> (cô, dì) – <Ja t="おばあさん" /> (bà) |
+| **Trọng âm** (*stress*) | Âm tiết được nhấn mạnh: to hơn, dài hơn, cao hơn | không có trọng âm từ phân biệt nghĩa | **RE**cord (n.) – re**CORD** (v.) | không dùng trọng âm cường độ |
+| **Cao độ** (*pitch*) | Độ cao của giọng | thanh điệu trên từng âm tiết | ngữ điệu câu | trọng âm cao độ trong từ: <Ja t="雨{あめ}" /> – <Ja t="飴{あめ}" /> |
+| **Ngữ điệu** (*intonation*) | Đường nét cao độ của cả câu | chịu ràng buộc bởi thanh điệu; dùng thêm tiểu từ "à, hả" | *You're coming?* (lên giọng) | <Ja t="行{い}く？" /> (lên giọng) |
+
+**Nhịp điệu.** Theo cách phân loại truyền thống, ngôn ngữ được chia thành:
+
+- **Nhịp theo trọng âm** (*stress-timed*), như tiếng Anh: khoảng cách giữa các âm tiết mang trọng âm có xu hướng đều nhau, các âm tiết không nhấn bị "nén" lại.
+- **Nhịp theo âm tiết** (*syllable-timed*), gần đúng với tiếng Việt: mỗi âm tiết chiếm thời gian tương đối đều nhau.
+- **Nhịp theo mora** (*mora-timed*), như tiếng Nhật: mỗi **mora** (đơn vị nhịp nhỏ hơn âm tiết) có độ dài tương đối đều nhau.
+
+<Callout type="warning">
+Các nghiên cứu đo đạc hiện đại cho thấy sự phân loại này **không tuyệt đối**: không ngôn ngữ nào có khoảng thời gian thật sự đều nhau. Nên xem đây là **xu hướng** giúp giải thích cảm giác nhịp khác nhau, chứ không phải quy luật vật lý chính xác.
+</Callout>
+
+So sánh cách đếm âm tiết và mora:
+
+| Từ | Âm tiết | Mora |
+|---|---|---|
+| <Ja t="日本{にほん}" romaji="ni-ho-n" /> | 2 (ni-hon) | 3 (ni-ho-n) |
+| <Ja t="東京{とうきょう}" romaji="to-o-kyo-o" /> | 2 (tō-kyō) | 4 (to-o-kyo-o) |
+| <Ja t="切手{きって}" romaji="ki-t-te" /> | 2 (kit-te) | 3 (ki-t-te) |
+
+Thơ haiku 5 – 7 – 5 của Nhật được đếm theo **mora**, không phải âm tiết. Thơ lục bát tiếng Việt đếm theo **âm tiết** (tiếng). Thơ tiếng Anh truyền thống đếm theo **nhịp trọng âm** (ví dụ *iambic pentameter*: năm nhịp nhẹ – nặng).
 
 ### Thanh điệu tiếng Việt
 
-<Todo>
-- `<Definition>` thanh điệu (tone — 声調).
-- 6 thanh: ngang, huyền, sắc, hỏi, ngã, nặng — ví dụ ma, mà, má, mả, mã, mạ (dùng `<Speak lang="vi">`).
-- Mô tả đường nét cao độ và đặc điểm thanh hầu hóa (ngã, nặng) ở phương ngữ Bắc.
-- Khác biệt phương ngữ: miền Trung, miền Nam không phân biệt hỏi – ngã.
-- Gợi ý: component biểu đồ đường nét thanh điệu (ToneChart) — bổ sung sau.
-</Todo>
+<Definition term="Thanh điệu" en="tone" ipa="toʊn" ja="声調{せいちょう}" romaji="seichō">
+Sự biến đổi **cao độ** (và ở một số thanh là cả **chất giọng**) trong âm tiết, có chức năng **khu biệt nghĩa** của từ.
+</Definition>
+
+Tiếng Việt phương ngữ Bắc có **6 thanh**. Cùng một chuỗi âm "ma" mang sáu nghĩa khác nhau:
+
+| Thanh | Dấu | Ví dụ | Nghĩa | Mô tả ngắn |
+|---|---|---|---|---|
+| ngang | (không dấu) | <Speak lang="vi">ma</Speak> | con ma | bằng, ở độ cao trung bình |
+| huyền | ◌̀ | <Speak lang="vi">mà</Speak> | nhưng mà | thấp, đi xuống nhẹ |
+| sắc | ◌́ | <Speak lang="vi">má</Speak> | mẹ; gò má | đi lên |
+| hỏi | ◌̉ | <Speak lang="vi">mả</Speak> | mồ mả | đi xuống rồi lên (gãy) |
+| ngã | ◌̃ | <Speak lang="vi">mã</Speak> | ngựa (Hán Việt); mã số | đi lên, có đoạn **thanh hầu hóa** (tắc nghẽn) ở giữa |
+| nặng | ◌̣ | <Speak lang="vi">mạ</Speak> | cây lúa non | thấp, ngắn, **thanh hầu hóa** ở cuối |
+
+<ToneChart />
+
+Hai thanh ngã và nặng không chỉ khác về cao độ mà còn khác về **chất giọng** (*phonation*): dây thanh bị siết lại, tạo cảm giác "gãy" hoặc "nghẹn". Vì vậy thanh điệu tiếng Việt không chỉ là "giai điệu".
+
+**Khác biệt phương ngữ.** Ở nhiều phương ngữ miền Trung và miền Nam, thanh **hỏi** và thanh **ngã** không còn phân biệt: "mả" và "mã" được phát âm giống nhau. Vì vậy, người nói các phương ngữ này dễ nhầm dấu hỏi – ngã khi viết. Đó không phải "phát âm sai": họ phát âm đúng theo hệ thống âm của phương ngữ mình, còn chính tả lại phản ánh sự phân biệt vẫn còn ở phương ngữ Bắc.
+
+<Callout type="culture" title="Thanh điệu, trọng âm hay trọng âm cao độ?">
+- **Tiếng Việt**: mỗi **âm tiết** có thanh riêng. Đổi thanh của một âm tiết là đổi từ.
+- **Tiếng Nhật**: cao độ cũng phân biệt nghĩa, nhưng tính trên **cả từ**, qua vị trí cao độ "rơi xuống". Đây là **trọng âm cao độ** (xem phần mở rộng tiếng Nhật).
+- **Tiếng Anh**: dùng **trọng âm cường độ**. Cao độ chủ yếu tạo ngữ điệu câu (hỏi, ngạc nhiên), không làm đổi nghĩa từ vựng.
+
+Thanh điệu rất phổ biến trên thế giới: trong mẫu 527 ngôn ngữ của WALS (Maddieson), 220 ngôn ngữ, tức khoảng 4 trên 10, có thanh điệu. Trong đó có tiếng Hán, tiếng Thái và nhiều ngôn ngữ châu Phi.
+</Callout>
 
 ## Mở rộng: Tiếng Anh
 
 <LangSection lang="en">
 
-### Hệ thống âm tiếng Anh
+### Phụ âm tiếng Anh và những âm "khó" với người Việt
 
-<Todo>
-- Các âm khó với người Việt: /θ/, /ð/ (think, this); /ʃ/ – /s/; phụ âm cuối và cụm phụ âm (asked /æskt/).
-- Hiện tượng bật hơi [pʰ] – [p] (pin – spin), âm schwa /ə/.
-</Todo>
+Tiếng Anh (giọng Mỹ) có khoảng 24 âm vị phụ âm. Một số âm tiếng Việt không có hoặc có nhưng phân bố khác:
 
-### Trọng âm từ và nhịp điệu
+| Âm | Ví dụ | Khó khăn thường gặp của người Việt |
+|---|---|---|
+| [θ] / [ð] | <Speak lang="en">think</Speak>, <Speak lang="en">this</Speak> | Thay bằng [tʰ] hoặc [t], [d]: "think" → "thinh" |
+| [ʃ] / [s] | <Speak lang="en">ship</Speak> / <Speak lang="en">sip</Speak> | Lẫn lộn vì phương ngữ Bắc không phân biệt s – x |
+| [ʒ] / [dʒ] | <Speak lang="en">measure</Speak>, <Speak lang="en">judge</Speak> | Đọc thành [z] như "d, gi" |
+| [ɹ] / [l] | <Speak lang="en">right</Speak> / <Speak lang="en">light</Speak> | Ở đầu từ ít khó, ở cuối từ hay mất: *feel*, *car* |
+| [p] ở đầu từ | <Speak lang="en">pen</Speak> | Dễ đọc thành [ɓ] ("b" tiếng Việt) |
 
-<Todo>
-- Trọng âm phân biệt từ loại: REcord (danh từ) – reCORD (động từ).
-- Nhịp theo trọng âm và hiện tượng nguyên âm yếu hóa.
-</Todo>
+**Phụ âm cuối và cụm phụ âm** là thử thách lớn nhất. Âm tiết tiếng Việt chỉ có tối đa **một** phụ âm cuối, và các phụ âm cuối -p, -t, -c **không bật ra** ([p̚ t̚ k̚]). Tiếng Anh thì cho phép cả cụm phụ âm cuối:
+
+- *asked* <Ipa>æskt</Ipa>: ba phụ âm cuối [skt]
+- *texts* <Ipa>tɛksts</Ipa>: bốn phụ âm cuối [ksts]
+- *strengths* <Ipa>strɛŋkθs</Ipa>: ba phụ âm đầu và bốn phụ âm cuối
+
+**Bật hơi.** Âm tắc vô thanh [p t k] ở đầu âm tiết mang trọng âm được bật hơi: *pin* <Ipa phonetic>pʰɪn</Ipa>. Sau [s] thì không: *spin* <Ipa phonetic>spɪn</Ipa>. Người nói tiếng Anh không nhận ra đây là hai âm khác nhau, dù tiếng Việt coi [t] và [tʰ] là hai âm vị riêng.
+
+### Nguyên âm căng – lơi và âm schwa
+
+Tiếng Anh phân biệt các cặp nguyên âm gần nhau, gọi là **căng** (*tense*) và **lơi** (*lax*). Tiếng Việt và tiếng Nhật không có sự đối lập này:
+
+| Căng | Lơi | Cặp tối thiểu |
+|---|---|---|
+| [i] | [ɪ] | <Speak lang="en">sheep</Speak> – <Speak lang="en">ship</Speak>, <Speak lang="en">leave</Speak> – <Speak lang="en">live</Speak> |
+| [u] | [ʊ] | <Speak lang="en">pool</Speak> – <Speak lang="en">pull</Speak>, <Speak lang="en">Luke</Speak> – <Speak lang="en">look</Speak> |
+| [eɪ] | [ɛ] | <Speak lang="en">late</Speak> – <Speak lang="en">let</Speak> |
+
+**Âm schwa** [ə] là nguyên âm phổ biến nhất trong tiếng Anh. Nó xuất hiện ở hầu hết âm tiết **không mang trọng âm**, bất kể chữ viết là gì: **a**bout, tak**e**n, penc**i**l, lem**o**n, s**u**pply.
+
+### Trọng âm từ
+
+Trọng âm tiếng Anh có thể **phân biệt từ loại**:
+
+| Danh từ (trọng âm đầu) | Động từ (trọng âm sau) |
+|---|---|
+| **RE**cord <Ipa>ˈrɛkərd</Ipa> | re**CORD** <Ipa>rɪˈkɔːrd</Ipa> |
+| **PRE**sent <Ipa>ˈprɛzənt</Ipa> | pre**SENT** <Ipa>prɪˈzɛnt</Ipa> |
+| **OB**ject <Ipa>ˈɑːbdʒɛkt</Ipa> | ob**JECT** <Ipa>əbˈdʒɛkt</Ipa> |
+
+Trọng âm còn làm **thay đổi nguyên âm**. Khi trọng âm dịch chuyển, nguyên âm ở âm tiết mất trọng âm bị **yếu hóa** thành schwa:
+
+- **PHO**tograph <Ipa>ˈfoʊtəɡræf</Ipa>
+- pho**TO**graphy <Ipa>fəˈtɑːɡrəfi</Ipa>
+- photo**GRA**phic <Ipa>ˌfoʊtəˈɡræfɪk</Ipa>
+
+Cùng một chữ *o* đầu tiên, lúc đọc [oʊ], lúc đọc [ə]. Đây là lý do chính tả tiếng Anh giữ nguyên chữ viết dù phát âm thay đổi (xem [Chương 12](/bai-hoc/chu-viet)).
+
+### Nhịp điệu và dạng yếu
+
+Vì nhịp theo trọng âm, các **từ chức năng** không được nhấn thường bị đọc ở **dạng yếu** (*weak form*):
+
+| Từ | Dạng mạnh (khi nhấn) | Dạng yếu (trong câu) | Ví dụ |
+|---|---|---|---|
+| *can* | [kæn] | [kən] | I **can** go. → [aɪ kən ˈɡoʊ] |
+| *to* | [tuː] | [tə] | I want **to** eat. |
+| *and* | [ænd] | [ən], [n] | rock **and** roll → *rock 'n' roll* |
+| *of* | [ʌv] | [əv], [ə] | a cup **of** tea → *a cuppa tea* |
+
+<Callout type="tip" title="Khó khăn của người Việt">
+Người Việt quen với nhịp theo âm tiết thường **đọc rõ đều từng từ**. Kết quả là tiếng Anh nghe "gập ghềnh". Họ cũng hay **bỏ âm cuối** và **thêm thanh điệu** vào từ tiếng Anh. Luyện nghe dạng yếu, nhấn đúng trọng âm và giữ âm cuối là ba việc cải thiện độ rõ ràng nhanh nhất.
+</Callout>
 
 </LangSection>
 
@@ -85,61 +265,120 @@
 
 <LangSection lang="ja">
 
-### Nguyên âm và mora
+### Năm nguyên âm và độ dài
 
-<Todo>
-- 5 nguyên âm: a, i, u, e, o; /u/ không tròn môi [ɯ].
-- Mora: âm mũi ん, âm ngắt っ, nguyên âm dài — mỗi thứ chiếm một mora.
-- Vô thanh hóa nguyên âm cao: です [desɯ̥].
-</Todo>
+Tiếng Nhật chỉ có **5 nguyên âm**: あ [a], い [i], う [ɯ], え [e], お [o].
+
+- う là nguyên âm sau, cao, **không tròn môi** (hoặc tròn rất ít), gần với "ư" của tiếng Việt hơn là "u": <Ja t="寿司{すし}" romaji="sushi" /> [sɯɕi].
+- **Độ dài phân biệt nghĩa**: nguyên âm dài chiếm **hai mora**.
+
+| Ngắn | Dài | |
+|---|---|---|
+| <Ja t="おばさん" romaji="obasan" /> (cô, dì) | <Ja t="おばあさん" romaji="obāsan" /> (bà) | a / aa |
+| <Ja t="ゆき" romaji="yuki" /> (<Ja t="雪{ゆき}" />, tuyết) | <Ja t="ゆうき" romaji="yūki" /> (<Ja t="勇気{ゆうき}" />, dũng khí) | u / uu |
+| <Ja t="ここ" romaji="koko" /> (chỗ này) | <Ja t="こうこう" romaji="kōkō" /> (<Ja t="高校{こうこう}" />, trường cấp 3) | o / oo |
+
+**Vô thanh hóa nguyên âm.** Các nguyên âm cao [i] và [ɯ] nằm giữa hai phụ âm vô thanh hoặc ở cuối câu sau phụ âm vô thanh thường bị **vô thanh hóa** (gần như "nuốt" mất): です <Ipa phonetic>desɯ̥</Ipa> nghe như "des", <Ja t="好{す}き" /> <Ipa phonetic>sɯ̥ki</Ipa> nghe như "ski".
+
+### Mora: âm mũi ん, âm ngắt っ và trường âm
+
+<Definition term="Mora" en="mora" ipa="ˈmɔːrə" ja="拍{はく}" romaji="haku">
+Đơn vị **nhịp** của tiếng Nhật, về cơ bản ứng với **một chữ kana**. Mỗi mora có độ dài tương đối bằng nhau.
+</Definition>
+
+Ngoài các mora thông thường (か, き, きゃ…), có ba loại mora **đặc biệt**:
+
+| Loại | Chữ | Ví dụ | Mora |
+|---|---|---|---|
+| **Âm mũi** (<Ja t="撥音{はつおん}" romaji="hatsuon" />) | ん | <Ja t="本{ほん}" romaji="hon" /> | ho-n = 2 |
+| **Âm ngắt / phụ âm kép** (<Ja t="促音{そくおん}" romaji="sokuon" />) | っ | <Ja t="切手{きって}" romaji="kitte" /> | ki-t-te = 3 |
+| **Trường âm** (<Ja t="長音{ちょうおん}" romaji="chōon" />) | ー, う, い… | <Ja t="コーヒー" romaji="kōhī" /> | ko-o-hi-i = 4 |
+
+Âm っ và ん có độ dài của một mora trọn vẹn. <Ja t="来{き}て" romaji="kite" /> (hãy đến) và <Ja t="切{き}って" romaji="kitte" /> (hãy cắt) chỉ khác nhau ở một **khoảng lặng** trước [t].
+
+Âm ん biến đổi theo âm đứng sau: [m] trước [p b m] (<Ja t="散歩{さんぽ}" romaji="sanpo" /> [sampo]), [n] trước [t d n] (<Ja t="本当{ほんとう}" romaji="hontō" />), [ŋ] trước [k ɡ] (<Ja t="銀行{ぎんこう}" romaji="ginkō" />), và [ɴ] ở cuối từ (<Ja t="本{ほん}" /> [hoɴ]). Tiếng Việt viết m, n, ng riêng biệt, còn tiếng Nhật chỉ viết một chữ ん.
 
 ### Trọng âm cao độ
 
-<Todo>
-- `<Definition>` trọng âm cao độ (pitch accent — 高低アクセント).
-- Ví dụ phương ngữ Tokyo: <Ja t="箸{はし}" /> HA-shi (cao – thấp), <Ja t="橋{はし}" /> ha-SHI (thấp – cao), <Ja t="端{はし}" /> ha-shi (thấp – cao, không hạ sau trợ từ).
-- Lưu ý: cách mô tả cần kiểm chứng với từ điển trọng âm (ví dụ NHK) trước khi viết.
-</Todo>
+<Definition term="Trọng âm cao độ" en="pitch accent" ipa="pɪtʃ ˈæksɛnt" ja="高低{こうてい}アクセント" romaji="kōtei akusento">
+Hệ thống dùng **vị trí cao độ hạ xuống** (từ cao sang thấp) trong từ để phân biệt nghĩa. Chỉ có hai mức: cao (H) và thấp (L).
+</Definition>
+
+Trong tiếng Nhật chuẩn (dựa trên phương ngữ Tokyo), điều quan trọng không phải từng mora cao hay thấp, mà là **cao độ rơi xuống sau mora nào**. Hãy xem ba từ đều đọc *hashi*, kèm trợ từ が phía sau:
+
+| Từ | Nghĩa | Cao độ (ha – shi – ga) | Kiểu trọng âm |
+|---|---|---|---|
+| <Ja t="箸{はし}" /> | đũa | **H** – L – L | rơi sau mora 1 (<Ja t="頭高型{あたまだかがた}" romaji="atamadaka" />) |
+| <Ja t="橋{はし}" /> | cầu | L – **H** – L | rơi sau mora 2, tức ngay trước trợ từ (<Ja t="尾高型{おだかがた}" romaji="odaka" />) |
+| <Ja t="端{はし}" /> | mép, rìa | L – H – H | không rơi (<Ja t="平板型{へいばんがた}" romaji="heiban" />) |
+
+Khi nói riêng từ, 橋 và 端 nghe gần như giống nhau (L – H). Chỉ khi thêm trợ từ mới thấy khác biệt: sau 橋 cao độ rơi xuống, sau 端 thì giữ nguyên. Cặp quen thuộc khác là <Ja t="雨{あめ}" /> (mưa, H – L) và <Ja t="飴{あめ}" /> (kẹo, L – H).
+
+<Callout type="note">
+Hệ thống trọng âm cao độ khác nhau đáng kể giữa các vùng. Chẳng hạn, phương ngữ Kansai có hệ thống khác với Tokyo, còn một số phương ngữ ở Kyūshū và Tōhoku gần như không phân biệt nghĩa bằng trọng âm. Từ điển trọng âm của NHK là tài liệu tham khảo chuẩn cho giọng Tokyo.
+</Callout>
+
+**So với thanh điệu tiếng Việt:**
+
+| | Thanh điệu tiếng Việt | Trọng âm cao độ tiếng Nhật |
+|---|---|---|
+| Đơn vị mang cao độ | Từng âm tiết | Cả từ (vị trí rơi) |
+| Số lựa chọn | 6 thanh cho mỗi âm tiết | Với từ n mora, tối đa n + 1 kiểu |
+| Đường nét | Nhiều loại: bằng, lên, xuống, gãy, thanh hầu hóa | Chỉ cao / thấp |
+| Chữ viết thể hiện? | Có (dấu thanh) | Không |
+| Nói sai thì sao? | Thường thành từ khác, khó hiểu | Nghe "lơ lớ" nhưng thường vẫn hiểu nhờ ngữ cảnh |
 
 ### Phụ âm đáng chú ý
 
-<Todo>
-- /r/ là âm vỗ [ɾ]; ふ [ɸɯ]; し [ɕi], ち [tɕi], つ [tsɯ].
-</Todo>
+| Âm | IPA | Ví dụ | Ghi chú |
+|---|---|---|---|
+| ら行 | [ɾ] | <Ja t="ラーメン" romaji="rāmen" /> | Âm **vỗ**: đầu lưỡi chạm lợi rất nhanh một lần. Nằm giữa "r" và "l", nên người Nhật khó phân biệt *right* / *light*. |
+| ふ | [ɸɯ] | <Ja t="富士山{ふじさん}" romaji="Fujisan" /> | Xát **môi – môi** (thổi hơi qua hai môi), không phải [f] môi – răng |
+| し | [ɕi] | <Ja t="寿司{すし}" romaji="sushi" /> | Xát ngạc cứng, gần "x" nhưng mặt lưỡi nâng cao |
+| ち | [tɕi] | <Ja t="地図{ちず}" romaji="chizu" /> | Tắc xát, gần "ch" tiếng Việt |
+| つ | [tsɯ] | <Ja t="津波{つなみ}" romaji="tsunami" /> | Tắc xát lợi: tiếng Việt và tiếng Anh không có ở đầu từ |
+| が (giữa từ) | [ɡ] ~ [ŋ] | <Ja t="鏡{かがみ}" romaji="kagami" /> | Một số người nói (nhất là thế hệ lớn tuổi) đọc が giữa từ thành âm mũi [ŋ] (<Ja t="鼻濁音{びだくおん}" romaji="bidakuon" />) |
+
+<Callout type="tip" title="Khó khăn của người Việt">
+- **Trường âm và âm ngắt**: người Việt dễ nói <Ja t="おばあさん" /> thành "obasan" hoặc <Ja t="切手{きって}" /> thành "kite", vì tiếng Việt không đếm nhịp theo mora. Hãy vỗ tay theo từng mora khi luyện.
+- **Thêm thanh điệu**: người Việt có xu hướng gán thanh cho từng âm tiết tiếng Nhật. Trọng âm tiếng Nhật chỉ có cao – thấp và phải nghe **cả từ**.
+- **Lợi thế**: tiếng Việt có âm "ư" [ɯ], rất gần う tiếng Nhật, và âm "ch" gần ち. Người Việt phát âm các âm này tự nhiên hơn nhiều người học phương Tây.
+</Callout>
 
 </LangSection>
 
 ## So sánh Việt – Anh – Nhật
 
 <Compare
+  caption="Số nguyên âm, phụ âm là con số gần đúng; mỗi nguồn có thể tính khác nhau tùy cách phân tích và phương ngữ."
   rows={[
-    { aspect: 'Đặc trưng âm điệu', vi: 'Thanh điệu (6 thanh)', en: 'Trọng âm (stress)', ja: 'Trọng âm cao độ' },
-    { aspect: 'Nhịp điệu', vi: 'Theo âm tiết', en: 'Theo trọng âm', ja: 'Theo mora' },
-    { aspect: 'Số nguyên âm đơn', vi: '', en: '', ja: '5' },
-    { aspect: 'Phụ âm cuối âm tiết', vi: '-p, -t, -c/-ch, -m, -n, -ng/-nh (và bán nguyên âm)', en: 'Nhiều, có cụm phụ âm cuối', ja: 'Chỉ ん và っ' },
+    { aspect: 'Đặc trưng âm điệu', vi: 'Thanh điệu (6 thanh ở phương ngữ Bắc)', en: 'Trọng âm cường độ (stress)', ja: 'Trọng âm cao độ (cao – thấp)' },
+    { aspect: 'Nhịp điệu (xu hướng)', vi: 'Theo âm tiết', en: 'Theo trọng âm', ja: 'Theo mora' },
+    { aspect: 'Số nguyên âm đơn', vi: '11 (tính cả ă, â ngắn), 3 nguyên âm đôi', en: 'khoảng 11–12 (giọng Mỹ, tùy cách phân tích)', ja: '5 (phân biệt ngắn – dài)' },
+    { aspect: 'Số phụ âm', vi: '19 âm vị (Hà Nội, theo Kirby 2011)', en: 'khoảng 24', ja: 'khoảng 14–15, cộng mora đặc biệt ん, っ' },
+    { aspect: 'Phụ âm cuối âm tiết', vi: '-p, -t, -c/-ch, -m, -n, -ng/-nh (và bán nguyên âm); âm tắc không bật hơi', en: 'Nhiều, có cụm phụ âm cuối: asked, texts', ja: 'Chỉ ん và っ' },
+    { aspect: 'Âm đặc trưng', vi: 'Âm tắc hút vào [ɓ ɗ]; t – th phân biệt bằng bật hơi', en: '[θ ð] (think, this); nguyên âm căng – lơi', ja: 'Âm vỗ [ɾ]; ふ [ɸ]; mora đặc biệt ん, っ' },
+    { aspect: 'Âm "ư" [ɯ]', vi: 'Có: ư', en: 'Không có', ja: 'Gần: う' },
+    { aspect: 'Độ dài phân biệt nghĩa', vi: 'Hạn chế: an – ăn', en: 'Đi kèm chất lượng (sheep – ship)', ja: 'Rất quan trọng: おばさん – おばあさん' },
+    { aspect: 'Cao độ phân biệt nghĩa', vi: 'Có, trên từng âm tiết: ma – má', en: 'Không (chỉ ngữ điệu câu)', ja: 'Có, trên cả từ: 箸{はし} – 橋{はし}' },
   ]}
 />
 
-<Todo>
-- Điền số nguyên âm đơn tiếng Việt, tiếng Anh (ghi rõ theo giọng nào và nguồn nào).
-</Todo>
-
 ## Tóm tắt
 
-<Todo>
-- 5–6 gạch đầu dòng ý chính của chương.
-</Todo>
+- **Ngữ âm học** gồm ba phân ngành: cấu âm, âm học và thính giác. **IPA** cung cấp mỗi âm một ký hiệu, khắc phục sự lệch pha giữa chữ viết và phát âm ở cả ba ngôn ngữ.
+- **Phụ âm** được mô tả theo **vị trí cấu âm**, **phương thức cấu âm** và **thanh tính**. Tiếng Việt có âm tắc hút vào [ɓ ɗ] và phân biệt bật hơi; tiếng Anh có [θ ð]; tiếng Nhật có âm vỗ [ɾ] và [ɸ].
+- **Nguyên âm** được mô tả theo độ cao, vị trí trước – sau và độ tròn môi. Tiếng Việt có 11 nguyên âm đơn (tính cả ă, â) và 3 nguyên âm đôi, tiếng Nhật chỉ có 5 nguyên âm nhưng phân biệt ngắn – dài.
+- Các **đặc trưng siêu đoạn tính** gồm trường độ, trọng âm, cao độ và ngữ điệu. Tiếng Việt dùng **thanh điệu** trên từng âm tiết, tiếng Anh dùng **trọng âm**, tiếng Nhật dùng **trọng âm cao độ** trên cả từ.
+- Sáu thanh tiếng Việt khác nhau cả về **đường nét cao độ** lẫn **chất giọng** (ngã, nặng thanh hầu hóa). Nhiều phương ngữ Trung, Nam không phân biệt hỏi – ngã.
+- Nhịp điệu có xu hướng theo trọng âm (Anh), theo âm tiết (Việt) và theo **mora** (Nhật). Hiểu điều này giúp người Việt khắc phục lỗi bỏ âm cuối, đọc đều từng từ tiếng Anh, hay bỏ trường âm và っ trong tiếng Nhật.
 
 <Summary lang="en">
-<Todo>
-- Đoạn tóm tắt 3–4 câu bằng tiếng Anh.
-</Todo>
+Phonetics studies how speech sounds are produced, transmitted and perceived, and the **International Phonetic Alphabet** gives each sound a unique symbol. Consonants are described by place of articulation, manner of articulation and voicing, while vowels are described by tongue height, backness and lip rounding. Languages use pitch and prominence in very different ways: Vietnamese has six lexical **tones** carried by each syllable, English uses word **stress** that can change vowel quality, and Japanese uses a word-level **pitch accent** in which the location of a pitch drop distinguishes words such as *hashi* "chopsticks" and *hashi* "bridge". Their rhythms also differ, tending to be stress-timed (English), syllable-timed (Vietnamese) and mora-timed (Japanese).
 </Summary>
 
 <Summary lang="ja">
-<Todo>
-- Đoạn tóm tắt 2–3 câu bằng tiếng Nhật (dùng `<Ja t="..." />`).
-</Todo>
+<Ja t="音声学{おんせいがく}は言語音{げんごおん}がどのように作{つく}られ、伝{つた}わり、聞{き}き取{と}られるかを研究{けんきゅう}する分野{ぶんや}であり、国際音声記号{こくさいおんせいきごう}（IPA）で音{おと}を正確{せいかく}に記述{きじゅつ}する。子音{しいん}は調音点{ちょうおんてん}・調音法{ちょうおんほう}・有声{ゆうせい}か無声{むせい}かで、母音{ぼいん}は舌{した}の高{たか}さ・前後{ぜんご}・唇{くちびる}の丸{まる}めで分類{ぶんるい}される。ベトナム語{ご}は音節{おんせつ}ごとに六{むっ}つの声調{せいちょう}を持{も}ち、英語{えいご}は強勢{きょうせい}アクセント、日本語{にほんご}は語{ご}単位{たんい}の高低{こうてい}アクセントを用{もち}いる。" />
 </Summary>
 
 ## Câu hỏi thảo luận
@@ -147,3 +386,6 @@
 1. Vì sao người Việt nói tiếng Anh hay bỏ âm cuối (ví dụ "fine" nghe như "fai")? Hãy giải thích bằng kiến thức ngữ âm.
 2. Thanh điệu tiếng Việt và trọng âm cao độ tiếng Nhật giống và khác nhau ở điểm nào?
 3. Ghi phiên âm IPA cho tên của bạn theo cách đọc tiếng Việt.
+4. Đặt tay lên cổ và lần lượt phát âm "ta – đa", "pa – ba" (kiểu tiếng Anh), *fan – van*. Bạn cảm nhận được gì? Tiêu chí nào của phụ âm đang thay đổi?
+5. Đếm số âm tiết và số mora của các từ: <Ja t="新幹線{しんかんせん}" />, <Ja t="北海道{ほっかいどう}" />, <Ja t="コンピューター" />. Vì sao người Việt thường nói những từ này "ngắn" hơn người Nhật?
+6. Người miền Nam và người miền Bắc phát âm "mả" và "mã" khác nhau thế nào? Điều đó có ảnh hưởng gì đến việc học chính tả dấu hỏi – ngã?

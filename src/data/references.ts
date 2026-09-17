@@ -162,6 +162,16 @@ export const references: Reference[] = [
     note: 'Mô tả tiếng Việt bằng tiếng Anh; hữu ích khi đối chiếu thuật ngữ.',
   },
   {
+    id: 'kirby-2011',
+    authors: 'Kirby, J. P.',
+    year: 2011,
+    title: 'Vietnamese (Hanoi Vietnamese). Journal of the International Phonetic Association, 41(3), 381–392',
+    focus: 'vi',
+    kind: 'article',
+    note: 'Mô tả ngữ âm phương ngữ Hà Nội theo chuẩn "Illustrations of the IPA": phụ âm, nguyên âm, thanh điệu.',
+    chapters: ['ngu-am-hoc', 'am-vi-hoc'],
+  },
+  {
     id: 'haudricourt-1954',
     authors: 'Haudricourt, A.-G.',
     year: 1954,
@@ -231,6 +241,7 @@ export const references: Reference[] = [
     kind: 'online',
     url: 'https://wals.info',
     note: 'Bản đồ đặc điểm loại hình (trật tự từ, thanh điệu…) của hàng nghìn ngôn ngữ.',
+    chapters: ['cu-phap-hoc', 'ngu-am-hoc'],
   },
   {
     id: 'glottolog',
