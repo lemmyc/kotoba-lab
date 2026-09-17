@@ -10,7 +10,7 @@ Cập nhật file này mỗi khi hoàn thành một phần. Số liệu thực t
 | 2 | Ngôn ngữ và não bộ (`ngon-ngu-va-nao-bo`) | outline | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | 5 | 3/10 |
 | 3 | Hình thái học (`hinh-thai-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 4 | Cú pháp học (`cu-phap-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
-| 5 | Ngữ nghĩa học (`ngu-nghia-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 6 | 3/10 |
+| 5 | Ngữ nghĩa học (`ngu-nghia-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 6 | Ngữ dụng học (`ngu-dung-hoc`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 6 | 3/10 |
 | 7 | Ngữ âm học (`ngu-am-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 8 | Âm vị học (`am-vi-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
