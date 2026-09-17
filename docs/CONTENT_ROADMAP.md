@@ -7,7 +7,7 @@ Cập nhật file này mỗi khi hoàn thành một phần. Số liệu thực t
 | # | Chương (slug) | Trạng thái | Lý thuyết | Mở rộng EN | Mở rộng JA | So sánh | Tóm tắt EN/JA | Thuật ngữ | Quiz |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | Ngôn ngữ là gì? (`ban-chat-ngon-ngu`) | draft | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 12 | 10/10 |
-| 2 | Ngôn ngữ và não bộ (`ngon-ngu-va-nao-bo`) | outline | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | 5 | 3/10 |
+| 2 | Ngôn ngữ và não bộ (`ngon-ngu-va-nao-bo`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 3 | Hình thái học (`hinh-thai-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 4 | Cú pháp học (`cu-phap-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 5 | Ngữ nghĩa học (`ngu-nghia-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
