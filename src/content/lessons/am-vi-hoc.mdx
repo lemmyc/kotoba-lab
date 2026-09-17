@@ -1,59 +1,181 @@
-{/* Chương 8 — KHUNG BÀI. Viết theo chuẩn của chương 1 (ban-chat-ngon-ngu.mdx); xóa <Todo> khi viết xong từng mục. */}
-
 ## Cơ sở lý thuyết
 
-Người Nhật khó phân biệt "light" và "right", người Việt dễ đọc "fine" thành "phai". Những hiện tượng đó không do "tai kém" mà do mỗi ngôn ngữ tổ chức âm thanh thành một **hệ thống** khác nhau. Âm vị học nghiên cứu chính hệ thống ấy.
+Người Nhật khó phân biệt "light" và "right", người Việt dễ đọc "fine" thành "phai". Những hiện tượng đó không do "tai kém" mà do mỗi ngôn ngữ tổ chức âm thanh thành một **hệ thống** khác nhau. **Âm vị học** (*phonology*) nghiên cứu chính hệ thống ấy.
 
 ### Âm tố và âm vị
 
-<Todo>
-- Ngữ âm học (âm cụ thể) vs âm vị học (hệ thống chức năng).
-- `<Definition>` âm vị (phoneme — 音素); quy ước /…/ và […].
-</Todo>
+[Chương 7](/bai-hoc/ngu-am-hoc) mô tả âm thanh như những thực thể vật lý. Âm vị học đặt một câu hỏi khác: *trong một ngôn ngữ cụ thể, khác biệt âm thanh nào là **quan trọng** (làm đổi nghĩa), khác biệt nào thì **không**?*
+
+| | Ngữ âm học | Âm vị học |
+|---|---|---|
+| Đối tượng | Âm cụ thể, có thể đo đạc (**âm tố**) | Hệ thống các đơn vị có chức năng (**âm vị**) |
+| Câu hỏi | Âm này được tạo ra thế nào? | Âm này có phân biệt nghĩa không? Nó kết hợp với âm khác theo quy tắc nào? |
+| Ký hiệu | […] | /…/ |
+| Phạm vi | Chung cho mọi ngôn ngữ | Riêng cho từng ngôn ngữ |
+
+<Definition term="Âm vị" en="phoneme" ipa="ˈfoʊniːm" ja="音素{おんそ}" romaji="onso">
+Đơn vị âm thanh **nhỏ nhất có chức năng khu biệt nghĩa** trong một ngôn ngữ cụ thể. Âm vị là một đơn vị trừu tượng trong tâm trí người nói; mỗi lần phát âm, nó được hiện thực thành một âm tố cụ thể.
+</Definition>
+
+Một ví dụ cho thấy âm vị mang tính **riêng của từng ngôn ngữ**: [l] và [r] là hai âm khác nhau về mặt ngữ âm.
+
+- Trong tiếng Anh, chúng là **hai âm vị**, vì *light* và *right* là hai từ khác nhau.
+- Trong tiếng Nhật, chúng chỉ là **những cách phát âm của cùng một âm vị** (thường ghi /r/, phát âm là âm vỗ [ɾ], đôi khi gần [l]). Không có cặp từ tiếng Nhật nào phân biệt nhờ [l] – [r]. Vì vậy tai người Nhật không được "huấn luyện" để chú ý đến khác biệt này.
+- Trong tiếng Việt, "lá" và "rá" là hai từ khác nhau, nên /l/ và âm viết bằng "r" là hai âm vị. Ở Hà Nội, "r" được đọc là [z], nên khác biệt thực tế là [l] – [z].
 
 ### Cặp tối thiểu
 
-<Todo>
-- `<Definition>` cặp tối thiểu (minimal pair — 最小対).
-- Ví dụ tiếng Việt: ba – bà (thanh), ba – ma (phụ âm đầu), ban – bang (âm cuối).
-</Todo>
+<Definition term="Cặp tối thiểu" en="minimal pair" ipa="ˈmɪnəməl pɛr" ja="最小対{さいしょうつい}" romaji="saishōtsui">
+Hai từ **khác nghĩa** chỉ khác nhau ở **một âm** tại cùng một vị trí. Cặp tối thiểu là phép thử cơ bản để chứng minh hai âm là hai âm vị khác nhau.
+</Definition>
+
+| Ngôn ngữ | Cặp tối thiểu | Âm vị được chứng minh |
+|---|---|---|
+| Tiếng Việt | **b**a – **m**a | /ɓ/ – /m/ (phụ âm đầu) |
+| | ba – b**à** | thanh ngang – thanh huyền |
+| | ba**n** – ba**ng** | /n/ – /ŋ/ (âm cuối) |
+| | **t**ai – **th**ai | /t/ – /tʰ/ (bật hơi) |
+| | b**u** – b**ư** | /u/ – /ɯ/ (tròn môi) |
+| Tiếng Anh | **l**ight – **r**ight | /l/ – /r/ |
+| | **th**ink – **s**ink | /θ/ – /s/ |
+| | sh**ee**p – sh**i**p | /i/ – /ɪ/ |
+| Tiếng Nhật | <Ja t="来{き}て" romaji="kite" /> – <Ja t="切{き}って" romaji="kitte" /> | có / không có mora っ |
+| | <Ja t="おばさん" romaji="obasan" /> – <Ja t="おばあさん" romaji="obāsan" /> | nguyên âm ngắn – dài |
+| | <Ja t="柿{かき}" romaji="kaki" /> – <Ja t="鍵{かぎ}" romaji="kagi" /> | /k/ – /ɡ/ (thanh tính) |
+
+<Callout type="tip">
+Cặp tối thiểu là công cụ luyện phát âm rất hiệu quả. Người Việt học tiếng Anh nên luyện *ship – sheep*, *think – sink*, *light – right*. Người Việt học tiếng Nhật nên luyện *kite – kitte*, *obasan – obāsan*: đó đều là những khác biệt mà tiếng Việt không dùng để phân biệt nghĩa.
+</Callout>
 
 ### Biến thể âm vị và phân bố bổ sung
 
-<Todo>
-- `<Definition>` biến thể âm vị (allophone — 異音).
-- Phân bố bổ sung vs biến đổi tự do.
-- Ví dụ tiếng Anh [pʰ] – [p]; ví dụ tiếng Nhật ん đồng hóa theo phụ âm sau.
-</Todo>
+<Definition term="Biến thể âm vị" en="allophone" ipa="ˈæləfoʊn" ja="異音{いおん}" romaji="ion">
+Các cách hiện thực khác nhau của **cùng một âm vị**. Thay biến thể này bằng biến thể khác chỉ làm lời nói nghe "lạ", không làm đổi nghĩa.
+</Definition>
+
+Các biến thể của một âm vị thường phân bố theo hai kiểu:
+
+- **Phân bố bổ sung** (*complementary distribution*): mỗi biến thể chỉ xuất hiện trong một môi trường riêng, không bao giờ "giẫm chân" lên nhau.
+- **Biến đổi tự do** (*free variation*): các biến thể thay thế cho nhau trong cùng môi trường mà không có quy luật, ví dụ *economics* đọc [ˌɛkə-] hay [ˌiːkə-].
+
+Ví dụ về **phân bố bổ sung** trong ba ngôn ngữ:
+
+| Ngôn ngữ | Âm vị | Biến thể và môi trường |
+|---|---|---|
+| Tiếng Anh | /p/ | [pʰ] ở đầu âm tiết mang trọng âm (*pin*); [p] sau /s/ (*spin*); [p̚] không bật ra ở cuối từ (*stop*) |
+| Tiếng Nhật | /N/ (ん) | [m] trước [p b m] (<Ja t="散歩{さんぽ}" />); [n] trước [t d n] (<Ja t="本当{ほんとう}" />); [ŋ] trước [k ɡ] (<Ja t="銀行{ぎんこう}" />); [ɴ] cuối từ (<Ja t="本{ほん}" />) |
+| Tiếng Việt | âm cuối /ŋ/, /k/ | Nhiều phân tích coi **-nh**, **-ch** là biến thể của /ŋ/, /k/ sau nguyên âm hàng trước. Sau i, ê chỉ gặp -nh, -ch (*tính*, *ếch*), không bao giờ gặp \*-ing, \*-ic; còn sau u, ô, o chỉ gặp -ng, -c (*cung*, *cốc*) |
+
+<Callout type="culture" title="Cùng hai âm, ba cách nhìn">
+Âm [t] và [tʰ] tồn tại trong cả tiếng Việt lẫn tiếng Anh, nhưng vai trò khác hẳn:
+- **Tiếng Việt**: hai **âm vị** riêng ("tai" – "thai"). Người Việt nghe rõ khác biệt.
+- **Tiếng Anh**: hai **biến thể** của /t/ (*top* [tʰ] – *stop* [t]). Người Anh thường không nhận ra mình phát âm khác nhau.
+- **Tiếng Nhật**: bật hơi không có vai trò phân biệt nghĩa. Người Nhật cũng ít chú ý đến nó.
+
+Hệ thống âm vị của tiếng mẹ đẻ như một "bộ lọc" quyết định ta **nghe thấy** gì.
+</Callout>
 
 ### Nét khu biệt
 
-<Todo>
-- Khái niệm nét khu biệt (distinctive features): [±hữu thanh], [±mũi], [±liên tục]…
-- Lớp tự nhiên của âm.
-</Todo>
+Âm vị không phải là đơn vị "không thể chia nhỏ". Mỗi âm vị là một **tập hợp các nét khu biệt** (*distinctive features*), thường được viết dưới dạng nhị phân [±]:
+
+| Nét | Ý nghĩa | [+] | [−] |
+|---|---|---|---|
+| [±hữu thanh] (*voice*) | Dây thanh rung | b, d, ɡ, v, z | p, t, k, f, s |
+| [±mũi] (*nasal*) | Hơi đi qua mũi | m, n, ŋ | b, d, ɡ |
+| [±liên tục] (*continuant*) | Luồng hơi không bị chặn hoàn toàn | f, s, v, z, l | p, t, k, m, n |
+| [±vang] (*sonorant*) | Âm vang: mũi, bên, tiếp cận, nguyên âm | m, n, l, r, j, w | p, s, b, z |
+| [±xuýt] (*sibilant*) | Tiếng xát rít mạnh | s, z, ʃ, ʒ, tʃ, dʒ | f, v, θ, ð |
+
+Những âm có chung một hoặc vài nét tạo thành một **lớp tự nhiên** (*natural class*). Quy tắc âm vị học thường tác động lên cả lớp tự nhiên chứ không lên từng âm rời rạc:
+
+- **Tiếng Anh**: hậu tố số nhiều đọc [ɪz] sau **mọi âm [+xuýt]**: *buses*, *roses*, *wishes*, *churches*, *judges*.
+- **Tiếng Nhật**: <Ja t="連濁{れんだく}" romaji="rendaku" /> biến **mọi phụ âm tắc/xát vô thanh** ở đầu thành tố sau thành hữu thanh: k → ɡ, s → z, t → d, h → b.
+- **Tiếng Việt**: chỉ các **âm cuối tắc vô thanh** [p t k] mới giới hạn thanh điệu (xem mục âm tiết tiếng Việt).
 
 ### Quy tắc âm vị học
 
-<Todo>
-- Đồng hóa, dị hóa, lược âm, thêm âm, đảo âm.
-- Cách viết quy tắc: A → B / C __ D.
-</Todo>
+Quy tắc âm vị học mô tả cách âm vị thay đổi trong một môi trường nhất định. Cách viết chuẩn:
+
+```
+A → B / C __ D
+"A biến thành B khi đứng sau C và trước D"
+```
+
+Các loại quy tắc phổ biến:
+
+| Loại | Bản chất | Ví dụ |
+|---|---|---|
+| **Đồng hóa** (*assimilation*) | Âm trở nên giống âm bên cạnh | Anh: *in-* + *possible* → *impossible*; *ten bikes* [tɛm baɪks]. Nhật: ん → [m] trước [p]: <Ja t="散歩{さんぽ}" /> [sampo] |
+| **Dị hóa** (*dissimilation*) | Âm trở nên khác âm bên cạnh để dễ phát âm | Anh: hậu tố gốc Latin *-al* đổi thành *-ar* khi gốc đã có [l]: *annual*, nhưng *solar*, *lunar* |
+| **Lược âm** (*deletion*) | Âm bị bỏ đi | Anh: *sign* [saɪn] (mất [ɡ]) nhưng *signature* [ˈsɪɡnətʃɚ]. Nhật: <Ja t="です" /> [des] (nguyên âm vô thanh hóa gần như mất). Việt: "hai mươi mốt" → "hăm mốt" |
+| **Thêm âm** (*epenthesis*) | Chèn thêm âm | Anh: *bus* + *-s* → *buses* [ˈbʌsɪz]. Nhật: *strike* → ストライク (chèn nguyên âm) |
+| **Đảo âm** (*metathesis*) | Đổi chỗ các âm | Anh (một số phương ngữ): *ask* → [æks]. Việt: trò chơi **nói lái** đổi vần và thanh: "bí mật" → "bật mí" |
+
+Viết lại hai quy tắc đồng hóa bằng ký hiệu chuẩn:
+
+```
+Tiếng Anh:  /n/ → [m] / __ [p, b, m]     (in + possible → impossible)
+Tiếng Nhật: /N/ → [m] / __ [p, b, m]     (さん + ぽ → [sampo])
+```
+
+Cùng một quy tắc xuất hiện ở hai ngôn ngữ không có quan hệ họ hàng. Lý do là **đồng hóa vị trí cấu âm** giúp phát âm dễ hơn: lưỡi và môi không phải di chuyển hai lần.
 
 ### Cấu trúc âm tiết và ràng buộc kết hợp âm
 
-<Todo>
-- Cấu trúc âm tiết: âm đầu (onset), vần (rhyme) = hạt nhân + âm cuối.
-- `<Definition>` âm tiết (syllable — 音節) và mora (拍).
-- Ràng buộc kết hợp âm (phonotactics): vì sao "blick" có thể là từ tiếng Anh còn "bnick" thì không.
-</Todo>
+<Definition term="Âm tiết" en="syllable" ipa="ˈsɪləbəl" ja="音節{おんせつ}" romaji="onsetsu">
+Đơn vị phát âm tự nhiên nhỏ nhất, gồm một **hạt nhân** (thường là nguyên âm) và các âm bao quanh.
+</Definition>
+
+Cấu trúc âm tiết phổ biến theo mô hình:
+
+<Tree t="[Âm_tiết [Âm_đầu str] [Vần [Hạt_nhân ɛ] [Âm_cuối ŋkθs]]]" caption="Cấu trúc âm tiết của strengths: âm đầu (onset) và vần (rhyme), vần gồm hạt nhân (nucleus) và âm cuối (coda)." />
+
+Mỗi ngôn ngữ cho phép những dạng âm tiết khác nhau (C = phụ âm, V = nguyên âm):
+
+| Ngôn ngữ | Dạng âm tiết tối đa | Ví dụ |
+|---|---|---|
+| Tiếng Việt | C + (w) + V + C (+ thanh điệu) | *hoàng*, *tuyết* |
+| Tiếng Anh | CCC + V + CCCC | *strengths* [strɛŋkθs] |
+| Tiếng Nhật | (C)(j)V + (N / Q / nguyên âm dài) | <Ja t="きょう" /> [kjoː], <Ja t="ほん" /> [hoN] |
+
+<Definition term="Mora" en="mora" ipa="ˈmɔːrə" ja="拍{はく}" romaji="haku">
+Đơn vị đo "độ nặng" hay độ dài âm vị học của âm tiết. Âm tiết nhẹ (CV) có một mora; âm tiết có nguyên âm dài hoặc âm cuối có hai mora. Tiếng Nhật dùng mora làm đơn vị nhịp cơ bản.
+</Definition>
+
+**Ràng buộc kết hợp âm** (*phonotactics*) quy định những chuỗi âm nào được phép. Người nói tiếng Anh cảm thấy ngay:
+
+- *blick* [blɪk]: **có thể** là một từ tiếng Anh, dù chưa tồn tại. [bl-] là cụm phụ âm đầu hợp lệ (*black*, *blue*).
+- \**bnick* [bnɪk]: **không thể** là từ tiếng Anh, vì [bn-] không bao giờ đứng đầu từ.
+
+Người Việt cũng có trực giác tương tự: "\*xtrăng", "\*blàn" không giống từ tiếng Việt vì âm tiết tiếng Việt **không có cụm phụ âm**. Người Nhật cảm thấy "\*kit" không trọn vẹn vì âm tiết tiếng Nhật (trừ ん, っ) phải kết thúc bằng nguyên âm.
+
+<Callout type="note" title="Ràng buộc kết hợp âm và lỗi phát âm ngoại ngữ">
+Khi gặp chuỗi âm tiếng mẹ đẻ không cho phép, người học **tự động sửa** theo ràng buộc của ngôn ngữ mình:
+- Người Việt: *ice* [aɪs] → "ai" (bỏ âm cuối, vì vần "ai" đã có âm cuối là bán nguyên âm) hoặc "ai-xờ" (thêm âm tiết).
+- Người Nhật: *ice* → アイス (*aisu*, thêm nguyên âm để âm tiết kết thúc bằng nguyên âm).
+- Cả hai đều "sửa" cùng một từ, nhưng theo hai chiến lược khác nhau: **lược** và **thêm**.
+</Callout>
 
 ### Âm tiết tiếng Việt
 
-<Todo>
-- Mô hình năm thành phần: thanh điệu, âm đầu, âm đệm, âm chính, âm cuối (theo Đoàn Thiện Thuật — ghi nguồn).
-- Phân tích ví dụ: "hoàng", "tuyết".
-</Todo>
+Âm tiết tiếng Việt có cấu trúc rất chặt chẽ và dễ phân tích, vì nó thường trùng với một hình vị ("tiếng"). Theo mô hình được dùng phổ biến trong các giáo trình Việt ngữ học (Đoàn Thiện Thuật, *Ngữ âm tiếng Việt*), âm tiết gồm **năm thành phần** xếp theo hai bậc:
+
+<Tree t="[Âm_tiết [Thanh_điệu huyền] [Âm_đầu h] [Vần [Âm_đệm o] [Âm_chính a] [Âm_cuối ng]]]" caption="Cấu trúc âm tiết hoàng: thanh điệu bao trùm cả âm tiết; vần gồm âm đệm, âm chính, âm cuối." />
+
+| Thành phần | Bắt buộc? | Vị trí | Ví dụ trong "hoàng" | Ví dụ trong "tuyết" |
+|---|---|---|---|---|
+| **Thanh điệu** | Có | Bao trùm cả âm tiết | huyền | sắc |
+| **Âm đầu** | Có thể vắng trên chữ viết ("an"); nhiều phân tích coi đó là âm tắc thanh hầu [ʔ] | Đầu âm tiết | h /h/ | t /t/ |
+| **Âm đệm** | Không | Trước âm chính, làm tròn môi | o /w/ | u /w/ |
+| **Âm chính** | Có | Hạt nhân của vần | a /aː/ | yê /iə/ |
+| **Âm cuối** | Không | Cuối âm tiết | ng /ŋ/ | t /t/ |
+
+**Âm cuối** tiếng Việt chỉ có 8 khả năng: 6 phụ âm (-m, -n, -ng/-nh, -p, -t, -c/-ch) và 2 bán nguyên âm (-u/-o như "sao", -i/-y như "tay"). Các âm cuối tắc -p, -t, -c/-ch **không bật hơi** ([p̚ t̚ k̚]).
+
+<Callout type="culture" title="Một ràng buộc đẹp giữa thanh điệu và âm cuối">
+Âm tiết kết thúc bằng **-p, -t, -c, -ch** chỉ kết hợp được với **hai thanh**: sắc và nặng (*tấp – tập*, *mát – mạt*, *các – cạc*, *ách – ạch*). Không có từ nào như \*"tàp", \*"mãt". Đây là một ràng buộc kết hợp âm mà người Việt nào cũng "biết" nhưng hiếm ai để ý. Nhiều tài liệu truyền thống vì thế tách hai thanh này thành hai "thanh nhập", nâng tổng số thanh lên 8.
+</Callout>
 
 ## Mở rộng: Tiếng Anh
 
@@ -61,17 +183,62 @@ Người Nhật khó phân biệt "light" và "right", người Việt dễ đ�
 
 ### Hình vị số nhiều và quá khứ
 
-<Todo>
-- -s: [s] (cats), [z] (dogs), [ɪz] (buses); -ed: [t] (walked), [d] (played), [ɪd] (wanted).
-- Viết quy tắc chọn biến thể — liên hệ Chương 3.
-</Todo>
+Tiếp nối [Chương 3](/bai-hoc/hinh-thai-hoc): biến thể của hậu tố *-s* và *-ed* được chọn theo **quy tắc âm vị học**, dựa vào âm cuối của gốc từ.
+
+| Hậu tố | Sau âm [+xuýt] / [t d] | Sau âm vô thanh khác | Sau âm hữu thanh khác |
+|---|---|---|---|
+| *-s* (số nhiều, ngôi 3, sở hữu) | [ɪz]: *buses*, *wishes*, *judges* | [s]: *cats*, *books*, *laughs* | [z]: *dogs*, *bees*, *pens* |
+| *-ed* (quá khứ) | [ɪd] sau [t d]: *wanted*, *needed* | [t]: *walked*, *kissed*, *laughed* | [d]: *played*, *robbed*, *hummed* |
+
+Quy tắc gồm hai bước:
+
+1. **Thêm âm**: chèn [ɪ] nếu gốc kết thúc bằng âm quá giống hậu tố ([+xuýt] với *-s*; [t d] với *-ed*). Nếu không chèn, hai âm giống nhau sẽ dính vào nhau, không nghe ra.
+2. **Đồng hóa thanh tính**: hậu tố có cùng thanh tính với âm đứng ngay trước. Vô thanh đi với vô thanh ([s], [t]), hữu thanh đi với hữu thanh ([z], [d]).
+
+Người bản ngữ áp dụng quy tắc này cả với từ mới: *blicks* [blɪks], *wugs* [wʌɡz]. Đây là bằng chứng cho thấy họ nắm quy tắc chứ không học thuộc từng từ (xem thí nghiệm *wug test* ở [Chương 9](/bai-hoc/thu-dac-ngon-ngu)).
+
+<Callout type="tip" title="Khó khăn của người Việt">
+Người Việt thường đọc mọi *-ed* thành [ɪd] ("walk-ịt") hoặc bỏ hẳn. Ghi nhớ quy tắc hai bước trên và luyện với các cặp *walked* [wɔːkt] – *played* [pleɪd] – *wanted* [ˈwɑːntɪd].
+</Callout>
 
 ### Quy tắc âm vị học tiếng Anh
 
-<Todo>
-- Bật hơi đầu âm tiết có trọng âm; flapping trong tiếng Anh Mỹ (water [ˈwɑːɾɚ]).
-- Ràng buộc: /ŋ/ không đứng đầu từ.
-</Todo>
+**Bật hơi** (*aspiration*): /p t k/ được bật hơi ở đầu âm tiết mang trọng âm.
+
+```
+/p, t, k/ → [pʰ, tʰ, kʰ] / đầu âm tiết mang trọng âm
+pin [pʰɪn], top [tʰɑːp], cat [kʰæt]  —  spin, stop, scat: không bật hơi
+```
+
+**Âm vỗ hóa** (*flapping*) trong tiếng Anh Mỹ: /t/ và /d/ giữa hai nguyên âm, khi âm sau không mang trọng âm, trở thành âm vỗ [ɾ]:
+
+| Từ | Phát âm (Mỹ) | Ghi chú |
+|---|---|---|
+| *water* | [ˈwɑːɾɚ] | /t/ → [ɾ] |
+| *better* | [ˈbɛɾɚ] | |
+| *writer* / *rider* | [ˈraɪɾɚ] / [ˈraɪɾɚ] | Hai từ gần như đồng âm (khác ở độ dài nguyên âm) |
+| *attack* | [əˈtʰæk] | Không vỗ hóa, vì âm tiết sau mang trọng âm |
+
+Âm [ɾ] này chính là âm ら của tiếng Nhật. Vì thế người Nhật nghe *water* của người Mỹ như "wara".
+
+**Ràng buộc vị trí**:
+- /ŋ/ không đứng đầu từ: có *sing* [sɪŋ], không có \*[ŋɪs]. Tiếng Việt thì có: "**ng**a", "**ngh**e".
+- /h/ không đứng cuối từ: có *hat*, không có từ kết thúc bằng [h].
+- /ʒ/ hiếm ở đầu từ, trừ từ vay mượn (*genre*).
+
+### Cụm phụ âm đầu
+
+Tiếng Anh cho phép tối đa **ba** phụ âm đầu, với ràng buộc rất chặt: nếu có ba thì phụ âm đầu tiên **phải là /s/**, phụ âm thứ hai là /p t k/, phụ âm thứ ba là /l r w j/:
+
+| Cụm | Ví dụ |
+|---|---|
+| /spr/ | *spring*, *spray* |
+| /str/ | *street*, *strong* |
+| /skr/ | *scream*, *script* |
+| /spl/ | *split*, *splash* |
+| /skw/ | *square*, *squeeze* |
+
+Không có \*/sbr/, \*/ptr/, \*/lsp/. Tiếng Việt và tiếng Nhật đều không có cụm phụ âm đầu, nên các từ như *street* khó với cả người Việt lẫn người Nhật. Người Việt hay bỏ bớt âm ("*sờ-trít*" hoặc "*trít*"), người Nhật thêm nguyên âm (ストリート *sutorīto*).
 
 </LangSection>
 
@@ -81,23 +248,79 @@ Người Nhật khó phân biệt "light" và "right", người Việt dễ đ�
 
 ### Mora và cấu trúc âm tiết
 
-<Todo>
-- Cấu trúc (C)(j)V + (N/Q/R); đếm mora: <Ja t="日本{にっぽん}" /> = 4 mora, 2 âm tiết.
-</Todo>
+Mỗi mora tiếng Nhật có một trong các dạng sau:
 
-### Hiện tượng hữu thanh hóa trong từ ghép
+| Dạng | Ví dụ | Ghi chú |
+|---|---|---|
+| V | あ, い | chỉ nguyên âm |
+| CV | か, さ | phụ âm + nguyên âm |
+| CjV | きゃ, しょ | phụ âm + bán nguyên âm [j] + nguyên âm |
+| N | ん | âm mũi mora |
+| Q | っ | nửa đầu của phụ âm kép |
+| R | ー (phần dài của nguyên âm) | trường âm |
 
-<Todo>
-- <Ja t="連濁{れんだく}" romaji="rendaku" />: <Ja t="人{ひと}" /> + <Ja t="人{ひと}" /> → <Ja t="人々{ひとびと}" />; <Ja t="山{やま}" /> + <Ja t="川{かわ}" /> → やまがわ.
-- Luật Lyman: rendaku thường không xảy ra khi thành tố sau đã có phụ âm hữu thanh.
-</Todo>
+Một **âm tiết** gồm một mora thường (CV…), có thể cộng thêm một mora đặc biệt N, Q hoặc R. Hãy phân tích:
 
-### Nhật hóa từ vay mượn
+| Từ | Mora | Số mora | Âm tiết | Số âm tiết |
+|---|---|---|---|---|
+| <Ja t="日本{にっぽん}" romaji="Nippon" /> | に・っ・ぽ・ん | 4 | nip・pon | 2 |
+| <Ja t="東京{とうきょう}" romaji="Tōkyō" /> | と・う・きょ・う | 4 | tō・kyō | 2 |
+| <Ja t="新幹線{しんかんせん}" romaji="shinkansen" /> | し・ん・か・ん・せ・ん | 6 | shin・kan・sen | 3 |
+| マクドナルド | マ・ク・ド・ナ・ル・ド | 6 | ma・ku・do・na・ru・do | 6 |
 
-<Todo>
-- Chèn nguyên âm để phù hợp cấu trúc mora: strike → ストライク (sutoraiku), Christmas → クリスマス.
-- So sánh với cách Việt hóa: cà phê, ga (gare), xà phòng (savon).
-</Todo>
+Người Nhật thường cảm nhận độ dài theo **mora**. Trò chơi chữ, thơ và cách chia nhịp khi hát đều dựa vào mora.
+
+### Hiện tượng hữu thanh hóa trong từ ghép (連濁)
+
+<Definition term="Rendaku" en="sequential voicing" ja="連濁{れんだく}" romaji="rendaku">
+Hiện tượng phụ âm vô thanh đầu **thành tố thứ hai** của từ ghép chuyển thành **hữu thanh**.
+</Definition>
+
+| Thành tố 1 | Thành tố 2 | Từ ghép | Biến đổi |
+|---|---|---|---|
+| <Ja t="人{ひと}" /> hito | <Ja t="人{ひと}" /> hito | <Ja t="人々{ひとびと}" /> hitobito (mọi người) | h → b |
+| <Ja t="本{ほん}" /> hon | <Ja t="棚{たな}" /> tana | <Ja t="本棚{ほんだな}" /> hondana (kệ sách) | t → d |
+| <Ja t="手{て}" /> te | <Ja t="紙{かみ}" /> kami | <Ja t="手紙{てがみ}" /> tegami (lá thư) | k → g |
+| <Ja t="山{やま}" /> yama | <Ja t="寺{てら}" /> tera | <Ja t="山寺{やまでら}" /> yamadera (chùa trên núi) | t → d |
+
+Rendaku **không xảy ra** trong một số trường hợp:
+
+- **Luật Lyman** (*Lyman's Law*): nếu thành tố sau **đã chứa phụ âm hữu thanh** (loại tắc/xát như g, z, d, b), rendaku bị chặn. <Ja t="春{はる}" /> + <Ja t="風{かぜ}" /> → <Ja t="春風{はるかぜ}" /> *harukaze*, không phải \*harugaze, vì *kaze* đã có [z]. Tương tự, <Ja t="合鍵{あいかぎ}" /> *aikagi* (chìa khóa phụ), không phải \*aigagi.
+- **Từ ghép đẳng lập** (hai thành tố ngang hàng): <Ja t="山川{やまかわ}" /> *yamakawa* (núi và sông) không có rendaku. Còn <Ja t="山川{やまがわ}" /> *yamagawa* là từ ghép chính phụ, nghĩa là "sông trên núi", nên có rendaku.
+- **Từ vay mượn phương Tây** hầu như không bị rendaku: <Ja t="東京{とうきょう}タワー" romaji="Tōkyō tawā" /> giữ nguyên [t], không thành \*ダワー.
+
+<Callout type="culture" title="Góc đối chiếu">
+Rendaku cho thấy âm vị học có thể **mang thông tin ngữ pháp**: sự có mặt hay vắng mặt của hữu thanh hóa giúp phân biệt từ ghép chính phụ (やまがわ) với từ ghép đẳng lập (やまかわ). Tiếng Việt không có hiện tượng tương tự trong từ ghép. Tuy vậy, **từ láy** tiếng Việt cũng dùng biến đổi âm thanh có quy luật để tạo nghĩa ("đỏ" → "đo đỏ": âm tiết lặp đổi thanh).
+</Callout>
+
+### Nhật hóa và Việt hóa từ vay mượn
+
+Khi mượn từ, mỗi ngôn ngữ "sửa" từ gốc để phù hợp với **ràng buộc âm vị học** của mình.
+
+**Tiếng Nhật** chèn nguyên âm (thường là [ɯ], sau t/d là [o]) để mọi phụ âm đều có nguyên âm đi kèm, và thay các âm không có:
+
+| Từ gốc | Tiếng Nhật | Mora | Biến đổi chính |
+|---|---|---|---|
+| *strike* | ストライク *sutoraiku* | 5 | chèn u sau s, o sau t; r → [ɾ] |
+| *Christmas* | クリスマス *kurisumasu* | 5 | chèn u sau k, s (cuối từ) |
+| *McDonald's* | マクドナルド *makudonarudo* | 6 | chèn u, o; l → [ɾ] |
+| *milk* | ミルク *miruku* | 3 | l → [ɾ]; chèn u |
+| *coffee* | コーヒー *kōhī* | 4 | [f] → h; nguyên âm dài |
+
+**Tiếng Việt** biến từ gốc thành chuỗi **âm tiết đơn** có thanh điệu. Tiếng Việt thường bỏ bớt phụ âm trong cụm (không chèn nguyên âm) và gán thanh điệu:
+
+| Từ gốc (tiếng Pháp) | Tiếng Việt | Biến đổi chính |
+|---|---|---|
+| *café* | cà phê | tách âm tiết, gán thanh huyền |
+| *gare* | ga | bỏ [ʁ] cuối |
+| *savon* | xà phòng | tách âm tiết, âm mũi → -ng, gán thanh |
+| *fromage* | phô mai | bỏ [ʁ] trong cụm phụ âm |
+| *chemise* | sơ mi | bỏ âm cuối |
+
+<Callout type="tip" title="Khó khăn và lợi thế của người Việt">
+- Khi học từ ngoại lai tiếng Nhật, người Việt phải **thêm** nguyên âm (ミルク, không phải "mil-ku") và **đếm mora**, trái với thói quen **bỏ bớt** âm của tiếng Việt.
+- Không phải từ ngoại lai nào của tiếng Nhật cũng đến từ tiếng Anh: パン (*pan*, bánh mì) từ tiếng Bồ Đào Nha *pão*, アルバイト (*arubaito*, việc làm thêm) từ tiếng Đức *Arbeit*. Tiếng Việt cũng có một lớp từ gốc Pháp riêng (ga, xà phòng, phô mai). Đừng mặc định mọi từ katakana đều bắt nguồn từ tiếng Anh.
+</Callout>
 
 </LangSection>
 
@@ -106,32 +329,32 @@ Người Nhật khó phân biệt "light" và "right", người Việt dễ đ�
 <Compare
   rows={[
     { aspect: 'Đơn vị nhịp cơ bản', vi: 'Âm tiết', en: 'Chân nhịp (theo trọng âm)', ja: 'Mora' },
-    { aspect: 'Cụm phụ âm đầu', vi: 'Không có', en: 'Có: str-, spl-…', ja: 'Không có' },
+    { aspect: 'Cụm phụ âm đầu', vi: 'Không có', en: 'Tối đa 3: str-, spl-, skw-…', ja: 'Không có (chỉ C + [j])' },
+    { aspect: 'Âm cuối', vi: '8 khả năng: -m, -n, -ng, -p, -t, -c và bán nguyên âm -u, -i', en: 'Rất đa dạng, tối đa 4 phụ âm: strengths', ja: 'Chỉ ん (N) và っ (Q)' },
     { aspect: 'Từ "coffee / café"', vi: 'cà phê', en: 'coffee', ja: 'コーヒー (kōhī)' },
-    { aspect: 'Cặp /l/ – /r/', vi: 'Hai âm vị khác nhau (lá – rá)', en: 'Hai âm vị khác nhau (light – right)', ja: 'Một âm vị /r/' },
+    { aspect: 'Cặp [l] – [r]', vi: 'Hai âm vị (lá – rá); "r" đọc [z] ở Hà Nội, [r]/[ɹ] hoặc [ʐ] ở nhiều nơi khác', en: 'Hai âm vị (light – right)', ja: 'Một âm vị, phát âm là âm vỗ [ɾ]' },
+    { aspect: '[t] – [tʰ]', vi: 'Hai âm vị: tai – thai', en: 'Biến thể của /t/: stop – top', ja: 'Không phân biệt' },
+    { aspect: 'Đồng hóa âm mũi', vi: 'Chữ viết thể hiện riêng: -m, -n, -ng', en: 'in- → im-: impossible', ja: 'ん → [m n ŋ ɴ] theo âm sau' },
+    { aspect: 'Chiến lược với từ vay mượn', vi: 'Bỏ bớt phụ âm, tách âm tiết, gán thanh: xà phòng', en: 'Giữ gần nguyên dạng', ja: 'Chèn nguyên âm: ストライク' },
+    { aspect: 'Biến đổi âm có chức năng ngữ pháp', vi: 'Láy: đỏ → đo đỏ', en: 'Biến thể -s/-ed: cats, dogs, buses', ja: '連濁{れんだく}: やまがわ vs やまかわ' },
   ]}
 />
 
-<Todo>
-- Rà soát hàng /l/ – /r/ tiếng Việt: lưu ý nhiều phương ngữ phát âm "r" khác nhau.
-</Todo>
-
 ## Tóm tắt
 
-<Todo>
-- 5–6 gạch đầu dòng ý chính của chương.
-</Todo>
+- **Âm vị** là đơn vị âm thanh nhỏ nhất có chức năng khu biệt nghĩa, **riêng cho từng ngôn ngữ**. Cặp tối thiểu (*light – right*, *ba – bà*, <Ja t="来{き}て" /> – <Ja t="切{き}って" />) là phép thử cơ bản.
+- Một âm vị có thể có nhiều **biến thể** nằm trong **phân bố bổ sung**: [pʰ]/[p] trong tiếng Anh, [m n ŋ ɴ] của ん trong tiếng Nhật. Âm vị của tiếng mẹ đẻ như "bộ lọc" quyết định ta nghe thấy gì.
+- Âm vị là tập hợp các **nét khu biệt**. Quy tắc âm vị học (đồng hóa, dị hóa, lược âm, thêm âm, đảo âm) tác động lên các **lớp tự nhiên** và được viết theo dạng A → B / C __ D.
+- Mỗi ngôn ngữ có **ràng buộc kết hợp âm** riêng: tiếng Anh cho phép cụm phụ âm, tiếng Việt và tiếng Nhật thì không. Người học ngoại ngữ vô thức "sửa" từ theo ràng buộc của tiếng mẹ đẻ: người Việt thường bỏ bớt, người Nhật thường thêm nguyên âm.
+- Âm tiết tiếng Việt gồm năm thành phần: **thanh điệu, âm đầu, âm đệm, âm chính, âm cuối**. Âm tiết có âm cuối -p, -t, -c, -ch chỉ mang thanh sắc hoặc nặng.
+- Tiếng Nhật tổ chức theo **mora**; <Ja t="連濁{れんだく}" /> và luật Lyman cho thấy âm vị học tương tác với cấu tạo từ.
 
 <Summary lang="en">
-<Todo>
-- Đoạn tóm tắt 3–4 câu bằng tiếng Anh.
-</Todo>
+Phonology studies how each language organizes sounds into a system. A **phoneme** is the smallest sound unit that distinguishes meaning, identified through minimal pairs, and it may be realized by several **allophones** in complementary distribution, such as aspirated and unaspirated [p] in English or the nasal ん in Japanese. Phonological rules like assimilation, deletion and epenthesis operate on natural classes defined by distinctive features, and phonotactic constraints determine possible syllables: English allows complex consonant clusters, whereas Vietnamese syllables consist of tone, onset, medial glide, nucleus and coda, and Japanese is organized around the mora. These differences explain why learners delete or insert sounds when borrowing and learning words from other languages.
 </Summary>
 
 <Summary lang="ja">
-<Todo>
-- Đoạn tóm tắt 2–3 câu bằng tiếng Nhật (dùng `<Ja t="..." />`).
-</Todo>
+<Ja t="音韻論{おんいんろん}は、言語{げんご}ごとに音{おと}がどのような体系{たいけい}を成{な}しているかを研究{けんきゅう}する。意味{いみ}を区別{くべつ}する最小{さいしょう}の単位{たんい}が音素{おんそ}であり、同{おな}じ音素{おんそ}が環境{かんきょう}によって異{こと}なる異音{いおん}として現{あらわ}れる。ベトナム語{ご}は声調{せいちょう}を持{も}つ音節{おんせつ}、英語{えいご}は子音連続{しいんれんぞく}を許{ゆる}す音節{おんせつ}、日本語{にほんご}は拍{はく}を基本{きほん}単位{たんい}とし、外来語{がいらいご}の受容{じゅよう}にもその違{ちが}いが表{あらわ}れる。" />
 </Summary>
 
 ## Câu hỏi thảo luận
@@ -139,3 +362,6 @@ Người Nhật khó phân biệt "light" và "right", người Việt dễ đ�
 1. Tìm 5 cặp tối thiểu trong tiếng Việt chỉ khác nhau về thanh điệu.
 2. Vì sao "McDonald's" trong tiếng Nhật trở thành マクドナルド (makudonarudo)? Đếm số mora.
 3. Người Việt học tiếng Anh hay đọc "ice" thành "ai" hoặc "ai-xờ". Hãy giải thích bằng ràng buộc cấu trúc âm tiết.
+4. Hãy phân tích các âm tiết "khuya", "quyển", "nghiêng" thành năm thành phần. Chữ viết có phản ánh đúng cấu trúc không?
+5. Vì sao người Nhật nói tiếng Anh hay nhầm *light* và *right*, trong khi người Việt ít gặp khó khăn này? Dùng khái niệm âm vị và biến thể âm vị để giải thích.
+6. Hậu tố số nhiều của từ mới *wug* đọc là [z], của *blick* đọc là [s]. Điều đó chứng minh gì về tri thức âm vị học của người bản ngữ?

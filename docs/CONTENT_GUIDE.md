@@ -104,6 +104,7 @@ Viết bằng ký hiệu ngoặc vuông có nhãn. Sau nhãn, các chữ liền 
 <Tree t="[S [NP Tôi] [VP [V ăn] [NP cơm]]]" caption="(tùy chọn)" />
 <Tree t="[PP [P with] [^NP the telescope]]" />     ← "^" vẽ tam giác (cụm không phân tích tiếp)
 <Tree t="[VP [NP 本{ほん}を|hon-o] [V 読{よ}む|yomu]]" />  ← romaji sau "|"; furigana trong cây bị bỏ qua
+<Tree t="[Âm_tiết [Âm_đầu h] [Vần oàng]]" />         ← nhãn là một cụm liền, "_" hiển thị thành dấu cách
 ```
 Ngoặc không cân hoặc thiếu nhãn sẽ bị `check:content` báo lỗi. Không dùng dạng furigana `[cụm]{đọc}` trong cây, vì dấu `[` bị hiểu là nút mới.
 

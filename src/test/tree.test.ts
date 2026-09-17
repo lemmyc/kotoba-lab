@@ -16,6 +16,12 @@ describe('parseTree', () => {
     expect(np.children[0].label).toBe('the old telescope')
   })
 
+  it('shows "_" in labels as spaces', () => {
+    const tree = parseTree('[Âm_tiết [Âm_đầu h] [Vần oàng]]')
+    expect(tree.label).toBe('Âm tiết')
+    expect(tree.children[0].label).toBe('Âm đầu')
+  })
+
   it('reads romaji after "|" and drops furigana from leaves', () => {
     const leaf = parseTree('[NP 本{ほん}を|hon-o]').children[0]
     expect(leaf).toMatchObject({ label: '本を', romaji: 'hon-o', leaf: true })

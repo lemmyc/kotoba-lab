@@ -6,6 +6,7 @@ import { stripFurigana } from './furigana'
  *   [S [NP Tôi] [VP [V ăn] [NP cơm]]]
  *   [NP 本{ほん}を|hon-o]       → leaf with romaji after "|" (furigana is dropped)
  *   [^NP the man with a hat]   → "^" draws the phrase as a triangle (unanalysed)
+ *   [Âm_đầu h]                 → "_" in a label is shown as a space
  *
  * After a label, consecutive words form one leaf; nested brackets are child nodes.
  */
@@ -83,7 +84,8 @@ export function parseTree(input: string): TreeNode {
         if (triangle && (children.length !== 1 || !children[0].leaf)) {
           throw new TreeSyntaxError(`Nút tam giác [^${label} …] chỉ được chứa chữ, không chứa nút con.`)
         }
-        return { label: stripFurigana(label), leaf: false, triangle, children }
+        // labels are single tokens, so "_" stands for a space: [Âm_đầu h]
+        return { label: stripFurigana(label).replace(/_/g, ' '), leaf: false, triangle, children }
       }
       if (token.type === 'open') {
         flushWords()
