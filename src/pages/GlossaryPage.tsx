@@ -1,6 +1,6 @@
-import { useEffect, useMemo } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { Search, X } from 'lucide-react'
-import { useLocation, useSearchParams } from 'react-router'
+import { useLocation, useNavigationType, useSearchParams } from 'react-router'
 import { TermCard } from '../components/glossary/TermCard'
 import { EmptyState } from '../components/ui/EmptyState'
 import { PageHeader } from '../components/ui/PageHeader'
@@ -15,8 +15,20 @@ export default function GlossaryPage() {
   usePageMeta('Từ điển thuật ngữ', 'Thuật ngữ ngôn ngữ học Việt – Anh – Nhật, có phiên âm IPA, furigana, romaji và phát âm.')
   const [params, setParams] = useSearchParams()
   const { hash } = useLocation()
-  const query = params.get('q') ?? ''
+  const navigationType = useNavigationType()
+  const urlQuery = params.get('q') ?? ''
   const chapter = params.get('chuong') ?? 'all'
+
+  // The input keeps its own state: router updates run in a transition, so binding the input
+  // straight to ?q= made the caret jump and broke IME composition (かな, Telex).
+  const [input, setInput] = useState(urlQuery)
+  const [seenUrlQuery, setSeenUrlQuery] = useState(urlQuery)
+  if (urlQuery !== seenUrlQuery) {
+    setSeenUrlQuery(urlQuery)
+    // our own writes use `replace`; anything else (search dialog, back/forward) comes from outside
+    if (navigationType !== 'REPLACE') setInput(urlQuery)
+  }
+  const query = useDeferredValue(input)
   const highlightId = hash.startsWith('#term-') ? decodeURIComponent(hash.slice(6)) : undefined
 
   function update(key: string, value: string) {
@@ -58,15 +70,21 @@ export default function GlossaryPage() {
               <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted" aria-hidden />
               <input
                 type="search"
-                value={query}
-                onChange={(event) => update('q', event.target.value)}
+                value={input}
+                onChange={(event) => {
+                  setInput(event.target.value)
+                  update('q', event.target.value)
+                }}
                 placeholder="Tìm bằng tiếng Việt (có/không dấu), English, かな, romaji…"
                 className="h-11 w-full rounded-xl border border-line bg-surface pr-10 pl-9 outline-none focus:border-brand"
               />
-              {query && (
+              {input && (
                 <button
                   type="button"
-                  onClick={() => update('q', '')}
+                  onClick={() => {
+                    setInput('')
+                    update('q', '')
+                  }}
                   className="absolute top-1/2 right-2 -translate-y-1/2 rounded-md p-1 text-muted hover:bg-surface-2"
                   aria-label="Xóa từ khóa"
                 >

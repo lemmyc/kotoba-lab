@@ -43,7 +43,14 @@ export function createPersistentStore<T>(key: string, fallback: T, sanitize: (ra
   }
 
   function subscribe(listener: () => void) {
-    if (listeners.size === 0) window.addEventListener('storage', onStorage)
+    if (listeners.size === 0) {
+      window.addEventListener('storage', onStorage)
+      // Nobody listened for a while, so another tab may have written in the meantime.
+      // Refresh the cache (useSyncExternalStore re-reads the snapshot right after subscribing);
+      // otherwise the next set() would overwrite that tab's changes.
+      const fresh = read()
+      if (JSON.stringify(fresh) !== JSON.stringify(state)) state = fresh
+    }
     listeners.add(listener)
     return () => {
       listeners.delete(listener)

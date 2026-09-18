@@ -71,7 +71,8 @@ export function FlashcardDeck({ cards, direction }: FlashcardDeckProps) {
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (done || isTypingTarget(event.target) || event.ctrlKey || event.metaKey || event.altKey) return
+      if (done || isTypingTarget(event.target) || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return
+      if (document.querySelector('[aria-modal="true"]')) return
       if (event.key === ' ' || event.key === 'Enter') {
         if ((event.target as HTMLElement | null)?.closest('button, a')) return
         event.preventDefault()
@@ -80,6 +81,8 @@ export function FlashcardDeck({ cards, direction }: FlashcardDeckProps) {
         go(1)
       } else if (event.key === 'ArrowLeft') {
         go(-1)
+      } else if (event.repeat) {
+        // holding 1 / 2 must not mark a whole run of cards
       } else if (event.key === '1') {
         mark('learning')
       } else if (event.key === '2') {
@@ -130,12 +133,13 @@ export function FlashcardDeck({ cards, direction }: FlashcardDeckProps) {
         </span>
       </div>
 
-      <div className={cn('flip-card', flipped && 'is-flipped')}>
+      {/* keyed by card: a new card mounts face-up instead of rotating back and briefly showing its answer */}
+      <div key={index} className={cn('flip-card', flipped && 'is-flipped')}>
         <div className="flip-inner min-h-72">
           <div
             onClick={() => setFlipped(true)}
             className="flip-face flex min-h-72 w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border border-line bg-surface p-8 text-center shadow-sm"
-            aria-hidden={flipped}
+            inert={flipped}
           >
             <LangTag lang={front} full />
             <Side term={card} lang={front} large />
@@ -145,7 +149,6 @@ export function FlashcardDeck({ cards, direction }: FlashcardDeckProps) {
                 event.stopPropagation()
                 setFlipped(true)
               }}
-              tabIndex={flipped ? -1 : 0}
               className="rounded-full border border-line px-3 py-1 text-xs text-muted hover:border-brand/40 hover:text-ink"
             >
               Lật thẻ (Space)
@@ -153,7 +156,7 @@ export function FlashcardDeck({ cards, direction }: FlashcardDeckProps) {
           </div>
           <div
             className="flip-face flip-back flex cursor-pointer flex-col items-center justify-center gap-3 overflow-y-auto rounded-2xl border border-brand/30 bg-brand-soft/40 p-6 text-center"
-            aria-hidden={!flipped}
+            inert={!flipped}
             onClick={() => setFlipped(false)}
           >
             <LangTag lang={back} full />

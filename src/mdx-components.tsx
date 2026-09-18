@@ -39,7 +39,7 @@ function Anchor({ href = '', children, ...props }: ComponentPropsWithoutRef<'a'>
 
 function Table(props: ComponentPropsWithoutRef<'table'>) {
   return (
-    <div className="not-prose-table my-6 overflow-x-auto">
+    <div className="not-prose-table relative my-6 overflow-x-auto">
       <table {...props} />
     </div>
   )

@@ -30,19 +30,49 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 function SearchPanel({ onClose }: { onClose: () => void }) {
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
+  const dialogRef = useRef<HTMLDivElement>(null)
   const listId = useId()
   const [query, setQuery] = useState('')
   const [active, setActive] = useState(0)
   const results = useMemo(() => searchContent(query, lessons, glossary), [query])
 
   useEffect(() => {
+    const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null
     inputRef.current?.focus()
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
       document.body.style.overflow = previousOverflow
+      // give focus back to whatever opened the dialog (if it is still on the page)
+      if (opener?.isConnected) opener.focus({ preventScroll: true })
     }
   }, [])
+
+  useEffect(() => {
+    document.getElementById(`${listId}-${active}`)?.scrollIntoView({ block: 'nearest' })
+  }, [active, listId])
+
+  function pick(suggestion: string) {
+    setQuery(suggestion)
+    setActive(0)
+    // the suggestion buttons disappear once there is a query — keep focus (and keyboard control) in the dialog
+    inputRef.current?.focus()
+  }
+
+  /** Keep Tab inside the dialog. */
+  function trapFocus(event: React.KeyboardEvent) {
+    const focusable = dialogRef.current?.querySelectorAll<HTMLElement>('input, button:not([disabled])')
+    if (!focusable || focusable.length === 0) return
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault()
+      last.focus()
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault()
+      first.focus()
+    }
+  }
 
   function go(result: SearchResult) {
     onClose()
@@ -53,9 +83,11 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
     if (event.key === 'Escape') {
       event.preventDefault()
       onClose()
+    } else if (event.key === 'Tab') {
+      trapFocus(event)
     } else if (event.key === 'ArrowDown') {
       event.preventDefault()
-      setActive((i) => Math.min(i + 1, results.length - 1))
+      setActive((i) => Math.max(0, Math.min(i + 1, results.length - 1)))
     } else if (event.key === 'ArrowUp') {
       event.preventDefault()
       setActive((i) => Math.max(i - 1, 0))
@@ -67,8 +99,9 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-[70] flex items-start justify-center px-4 pt-[12dvh]" onKeyDown={onKeyDown}>
-      <div className="absolute inset-0 bg-ink/40 backdrop-blur-sm" onClick={onClose} aria-hidden />
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} aria-hidden />
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label="Tìm kiếm bài học và thuật ngữ"
@@ -105,7 +138,7 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
                   <button
                     key={suggestion}
                     type="button"
-                    onClick={() => setQuery(suggestion)}
+                    onClick={() => pick(suggestion)}
                     className="rounded-full border border-line px-3 py-1 text-ink hover:border-brand/50 hover:bg-surface-2"
                   >
                     {suggestion}

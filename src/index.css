@@ -135,12 +135,6 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 /* ------------------------------------------------------------------ */
 /* Utilities                                                           */
 /* ------------------------------------------------------------------ */
@@ -158,6 +152,8 @@
 /* ------------------------------------------------------------------ */
 .kl-ruby {
   ruby-position: over;
+  /* keep the base together when the reading is wider (研究 not "研 究") */
+  ruby-align: center;
 }
 .kl-ruby rt {
   font-family: var(--font-jp);

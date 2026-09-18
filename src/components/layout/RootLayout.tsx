@@ -12,7 +12,8 @@ export default function RootLayout() {
   // Global shortcut: F toggles furigana (ignored while typing or with modifiers).
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key.toLowerCase() !== 'f' || event.repeat) return
+      // `key` can be missing on synthetic events (e.g. browser autofill)
+      if (event.key?.toLowerCase() !== 'f' || event.repeat) return
       if (event.ctrlKey || event.metaKey || event.altKey) return
       if (isTypingTarget(event.target)) return
       toggleFurigana()

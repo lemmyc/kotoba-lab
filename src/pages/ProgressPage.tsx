@@ -24,8 +24,11 @@ export default function ProgressPage() {
   const progress = useProgress()
 
   const completedCount = lessons.filter((lesson) => progress.completed.includes(lesson.slug)).length
-  const quizzesTaken = lessons.filter((lesson) => progress.quiz[lesson.slug]).length
-  const quizRecords = lessons.map((lesson) => progress.quiz[lesson.slug]).filter((record) => record !== undefined)
+  // a record made when the chapter had a different number of questions is out of date (e.g. 3/3 on an old 3-question quiz)
+  const quizRecords = lessons
+    .map((lesson) => progress.quiz[lesson.slug])
+    .filter((record, i) => record !== undefined && record.total === getQuiz(lessons[i].slug).length)
+  const quizzesTaken = quizRecords.length
   const averageQuiz =
     quizRecords.length > 0 ? Math.round((quizRecords.reduce((sum, r) => sum + r.best / r.total, 0) / quizRecords.length) * 100) : 0
   const knownCards = glossary.filter((term) => progress.cards[term.id] === 'known').length
@@ -66,7 +69,7 @@ export default function ProgressPage() {
           ))}
         </div>
 
-        <div className="mt-10 overflow-x-auto rounded-2xl border border-line bg-surface">
+        <div className="relative mt-10 overflow-x-auto rounded-2xl border border-line bg-surface">
           <table className="w-full min-w-[44rem] text-left text-sm">
             <thead className="bg-surface-2/60 text-xs tracking-wide text-muted uppercase">
               <tr>
@@ -103,7 +106,14 @@ export default function ProgressPage() {
                       )}
                     </td>
                     <td className="px-4 py-3 tabular-nums">
-                      {record ? (
+                      {record && record.total !== quizCount ? (
+                        <span
+                          className="text-muted"
+                          title={`Bộ câu hỏi đã thay đổi từ lần làm trước (${record.best}/${record.total}). Hãy làm lại để cập nhật điểm.`}
+                        >
+                          Cần làm lại
+                        </span>
+                      ) : record ? (
                         <span title={`Lần gần nhất: ${record.last}/${record.total} · ${formatDate(record.at)}`}>
                           {record.best}/{record.total}
                           <span className="ml-1 text-xs text-muted">({record.attempts} lần)</span>

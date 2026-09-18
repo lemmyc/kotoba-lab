@@ -1,10 +1,12 @@
-import { Suspense } from 'react'
-import { ChevronRight, Clock, Construction, ListChecks, Target } from 'lucide-react'
+import { Fragment, Suspense } from 'react'
+import { ChevronRight, Clock, Construction, ExternalLink, ListChecks, Target } from 'lucide-react'
 import { Link, useParams } from 'react-router'
+import { ChapterPager, FloatingChapterPager } from '../components/lesson/ChapterPager'
 import { CompleteButton } from '../components/lesson/CompleteButton'
 import { KeyTerms } from '../components/lesson/KeyTerms'
 import { LessonNav } from '../components/lesson/LessonNav'
 import { ReadingProgress } from '../components/lesson/ReadingProgress'
+import { ScrollWhenReady } from '../components/lesson/ScrollWhenReady'
 import { StatusBadge } from '../components/lesson/StatusBadge'
 import { Toc } from '../components/lesson/Toc'
 import { FuriganaToggle } from '../components/layout/FuriganaToggle'
@@ -14,6 +16,7 @@ import { getLesson, getPart } from '../data/lessons'
 import { getQuiz } from '../data/quizzes'
 import { getReferencesForChapter } from '../data/references'
 import { mdxComponents } from '../mdx-components'
+import { useChapterShortcuts } from '../lib/chapter-shortcuts'
 import { hasLessonContent, renderLessonContent } from '../lib/lesson-content'
 import { usePageMeta } from '../lib/page-meta'
 import NotFoundPage from './NotFoundPage'
@@ -34,7 +37,9 @@ function ContentSkeleton() {
 export default function LessonPage() {
   const { slug } = useParams()
   const lesson = getLesson(slug)
-  usePageMeta(lesson ? `Chương ${lesson.number}: ${lesson.title}` : undefined, lesson?.description)
+  // set the 404 title here too: this parent effect runs after NotFoundPage's own one
+  usePageMeta(lesson ? `Chương ${lesson.number}: ${lesson.title}` : 'Không tìm thấy trang', lesson?.description)
+  useChapterShortcuts(lesson?.slug ?? '')
 
   if (!lesson) return <NotFoundPage />
 
@@ -42,22 +47,26 @@ export default function LessonPage() {
   const quizCount = getQuiz(lesson.slug).length
   const readings = getReferencesForChapter(lesson.slug)
 
+  // keyed by slug: moving to another chapter remounts the page (TOC state, Suspense skeleton, pager)
   return (
-    <>
+    <Fragment key={lesson.slug}>
       <ReadingProgress />
 
       {/* Lesson header */}
-      <header className="border-b border-line bg-surface/50">
+      <header id="lesson-header" className="border-b border-line bg-surface/50">
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-sm text-muted">
-            <Link to="/khoa-hoc" className="hover:text-brand">
-              Khóa học
-            </Link>
-            <ChevronRight className="size-3.5" aria-hidden />
-            <span>
-              Phần {ROMAN[part.id - 1]}: {part.title}
-            </span>
-          </nav>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-sm text-muted">
+              <Link to="/khoa-hoc" className="hover:text-brand">
+                Khóa học
+              </Link>
+              <ChevronRight className="size-3.5" aria-hidden />
+              <Link to={`/khoa-hoc#part-${part.id}`} className="hover:text-brand">
+                Phần {ROMAN[part.id - 1]}: {part.title}
+              </Link>
+            </nav>
+            <ChapterPager slug={lesson.slug} />
+          </div>
 
           <p className="mt-5 text-sm font-semibold text-accent">Chương {lesson.number}</p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight text-balance sm:text-4xl">{lesson.title}</h1>
@@ -113,7 +122,10 @@ export default function LessonPage() {
 
           <article className="prose lesson-prose max-w-none prose-headings:tracking-tight">
             {hasLessonContent(lesson.slug) ? (
-              <Suspense fallback={<ContentSkeleton />}>{renderLessonContent(lesson.slug, mdxComponents)}</Suspense>
+              <Suspense fallback={<ContentSkeleton />}>
+                {renderLessonContent(lesson.slug, mdxComponents)}
+                <ScrollWhenReady />
+              </Suspense>
             ) : (
               <p className="text-muted">Chưa có file nội dung cho chương này.</p>
             )}
@@ -131,7 +143,15 @@ export default function LessonPage() {
                   {readings.map((ref) => (
                     <li key={ref.id} className="text-muted">
                       <span className="text-ink">{ref.authors}</span>
-                      {ref.year && ` (${ref.year})`}. <em>{ref.title}</em>
+                      {ref.year && ` (${ref.year})`}.{' '}
+                      {ref.url ? (
+                        <a href={ref.url} target="_blank" rel="noreferrer" className="text-brand hover:underline">
+                          <em>{ref.title}</em>
+                          <ExternalLink className="ml-1 inline size-3.5 align-baseline" aria-hidden />
+                        </a>
+                      ) : (
+                        <em>{ref.title}</em>
+                      )}
                       {ref.publisher && `. ${ref.publisher}`}.
                     </li>
                   ))}
@@ -159,10 +179,14 @@ export default function LessonPage() {
               </div>
             </section>
 
-            <LessonNav slug={lesson.slug} />
+            <div id="lesson-nav">
+              <LessonNav slug={lesson.slug} />
+            </div>
           </div>
         </div>
       </div>
-    </>
+
+      <FloatingChapterPager slug={lesson.slug} headerId="lesson-header" footerId="lesson-nav" />
+    </Fragment>
   )
 }

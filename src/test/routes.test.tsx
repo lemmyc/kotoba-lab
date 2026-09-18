@@ -35,9 +35,9 @@ describe('pages', () => {
     expect(await screen.findByRole('heading', { level: 1, name: lesson.title }, TIMEOUT)).toBeInTheDocument()
     // MDX body is lazy — wait for the standard section headings
     expect(await screen.findByRole('heading', { level: 2, name: 'Cơ sở lý thuyết' }, TIMEOUT)).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 2, name: 'Mở rộng: Tiếng Anh' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 2, name: 'Mở rộng: Tiếng Nhật' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 2, name: 'Thuật ngữ chính' })).toBeInTheDocument()
+    for (const name of ['Mở rộng: Tiếng Anh', 'Mở rộng: Tiếng Nhật', 'So sánh Việt – Anh – Nhật', 'Tóm tắt', 'Câu hỏi thảo luận', 'Thuật ngữ chính']) {
+      expect(screen.getByRole('heading', { level: 2, name })).toBeInTheDocument()
+    }
   })
 
   it.each(lessons.map((lesson) => [lesson.number, lesson] as const))('renders the quiz page of lesson %i', async (_, lesson) => {
@@ -69,6 +69,45 @@ describe('pages', () => {
       expect(await screen.findByRole('heading', { level: 1, name: title }, TIMEOUT)).toBeInTheDocument()
       document.body.innerHTML = ''
     }
+  })
+})
+
+describe('chapter navigation', () => {
+  it('links to the previous and next chapter from the lesson header', async () => {
+    const [, second, third] = lessons
+    renderRoute(`/bai-hoc/${second.slug}`)
+    await screen.findByRole('heading', { level: 1, name: second.title }, TIMEOUT)
+    const [headerNav] = screen.getAllByRole('navigation', { name: 'Chuyển chương' })
+    expect(within(headerNav).getByRole('link', { name: new RegExp(`^Chương trước: ${lessons[0].number}[.]`) })).toHaveAttribute(
+      'href',
+      `/bai-hoc/${lessons[0].slug}`,
+    )
+    expect(within(headerNav).getByRole('link', { name: new RegExp(`^Chương tiếp theo: ${third.number}[.]`) })).toHaveAttribute(
+      'href',
+      `/bai-hoc/${third.slug}`,
+    )
+  })
+
+  it('has no previous chapter on chapter 1', async () => {
+    renderRoute(`/bai-hoc/${lessons[0].slug}`)
+    await screen.findByRole('heading', { level: 1, name: lessons[0].title }, TIMEOUT)
+    const [headerNav] = screen.getAllByRole('navigation', { name: 'Chuyển chương' })
+    expect(within(headerNav).queryByRole('link', { name: /Chương trước/ })).not.toBeInTheDocument()
+  })
+
+  it('moves between chapters with Shift + arrow keys', async () => {
+    const router = renderRoute(`/bai-hoc/${lessons[1].slug}`)
+    await screen.findByRole('heading', { level: 1, name: lessons[1].title }, TIMEOUT)
+
+    fireEvent.keyDown(window, { key: 'ArrowRight' })
+    expect(router.state.location.pathname).toBe(`/bai-hoc/${lessons[1].slug}`)
+
+    fireEvent.keyDown(window, { key: 'ArrowRight', shiftKey: true })
+    expect(await screen.findByRole('heading', { level: 1, name: lessons[2].title }, TIMEOUT)).toBeInTheDocument()
+    expect(router.state.location.pathname).toBe(`/bai-hoc/${lessons[2].slug}`)
+
+    fireEvent.keyDown(window, { key: 'ArrowLeft', shiftKey: true })
+    expect(await screen.findByRole('heading', { level: 1, name: lessons[1].title }, TIMEOUT)).toBeInTheDocument()
   })
 })
 
@@ -123,6 +162,15 @@ describe('learning flow', () => {
     fireEvent.click(button)
     await waitFor(() => expect(screen.getAllByRole('button', { name: 'Đã hoàn thành' })).toHaveLength(2))
     expect(JSON.parse(window.localStorage.getItem(PROGRESS_KEY)!).completed).toEqual([lessons[0].slug])
+  })
+
+  it('filters the glossary while typing', async () => {
+    renderRoute('/thuat-ngu')
+    const input = await screen.findByPlaceholderText(/Tìm bằng tiếng Việt/, {}, TIMEOUT)
+    fireEvent.change(input, { target: { value: 'hinh vi' } })
+    expect(input).toHaveValue('hinh vi')
+    expect(await screen.findByRole('heading', { level: 3, name: 'Hình vị' })).toBeInTheDocument()
+    await waitFor(() => expect(screen.queryByRole('heading', { level: 3, name: 'Ngôn ngữ' })).not.toBeInTheDocument())
   })
 
   it('filters the glossary with accent-insensitive search', async () => {

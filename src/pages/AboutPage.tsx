@@ -4,11 +4,13 @@ import { buttonClass } from '../components/ui/button'
 import { JaText } from '../components/ui/JaText'
 import { LangTag } from '../components/ui/LangTag'
 import { PageHeader } from '../components/ui/PageHeader'
+import { lessons } from '../data/lessons'
 import { usePageMeta } from '../lib/page-meta'
 
 const SHORTCUTS = [
   { keys: ['Ctrl', 'K'], label: 'Mở ô tìm kiếm (⌘ K trên macOS)' },
   { keys: ['F'], label: 'Bật / tắt furigana cho tiếng Nhật' },
+  { keys: ['Shift', '←', '→'], label: 'Sang chương trước / chương sau (khi đang đọc bài)' },
   { keys: ['Space'], label: 'Lật thẻ ghi nhớ' },
   { keys: ['←', '→'], label: 'Chuyển thẻ ghi nhớ' },
   { keys: ['1', '2'], label: 'Đánh dấu thẻ: Ôn lại / Đã nhớ' },
@@ -25,6 +27,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export default function AboutPage() {
   usePageMeta('Giới thiệu & hướng dẫn')
+  const allComplete = lessons.every((lesson) => lesson.status === 'complete')
 
   return (
     <>
@@ -76,7 +79,11 @@ export default function AboutPage() {
         </Section>
 
         <Section title="Trạng thái nội dung">
-          <p>Khóa học đang được biên soạn dần. Mỗi chương có nhãn trạng thái:</p>
+          <p>
+            {allComplete
+              ? `Cả ${lessons.length} chương đều đã có đầy đủ bài giảng, thuật ngữ và quiz. Mỗi chương mang một nhãn trạng thái:`
+              : 'Khóa học đang được biên soạn dần. Mỗi chương có nhãn trạng thái:'}
+          </p>
           <ul className="space-y-2">
             <li className="flex flex-wrap items-center gap-2">
               <StatusBadge status="outline" /> đã có đề cương và dữ liệu mẫu, phần giảng chi tiết đang viết.
@@ -113,7 +120,7 @@ export default function AboutPage() {
 
         <Section title="Lưu ý về nội dung">
           <p>
-            Nội dung được biên soạn với sự hỗ trợ của AI và đang trong quá trình rà soát. Hãy đối chiếu với giáo trình (xem{' '}
+            Nội dung được biên soạn với sự hỗ trợ của AI. Hãy đối chiếu với giáo trình (xem{' '}
             <Link to="/tai-lieu" className="text-brand hover:underline">
               Tài liệu tham khảo
             </Link>

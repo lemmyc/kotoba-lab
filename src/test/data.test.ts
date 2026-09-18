@@ -49,6 +49,14 @@ describe('mdx checks', () => {
     expect(checkMdxSource('<Tree t="[S [NP Tôi] [VP ăn]]" />', registered)).toEqual([])
   })
 
+  it('flags unknown values of enum-like props', () => {
+    const issues = checkMdxSource('<Callout type="info">x</Callout>\n\n<Summary lang="jp">y</Summary>', registered)
+    const messages = issues.map((issue) => issue.message).join('\n')
+    expect(messages).toMatch(/Callout type="info"/)
+    expect(messages).toMatch(/Summary lang="jp"/)
+    expect(checkMdxSource('<Callout type="hanviet">x</Callout>', registered)).toEqual([])
+  })
+
   it('allows comments and furigana inside component props', () => {
     expect(checkMdxSource('{/* ghi chú */}\n\n<Ja t="言語{げんご}" />', registered)).toEqual([])
   })

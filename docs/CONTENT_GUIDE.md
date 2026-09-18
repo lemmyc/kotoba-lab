@@ -13,7 +13,7 @@ Tài liệu dành cho người (hoặc AI) viết bổ sung bài giảng. Chuẩ
 
 ## 2. Cấu trúc bắt buộc của một chương
 
-Giữ nguyên các tiêu đề `##` sau, vì test kiểm tra chúng:
+Giữ nguyên các tiêu đề `##` sau, vì test (`src/test/routes.test.tsx`) kiểm tra đủ cả sáu:
 
 ```mdx
 ## Cơ sở lý thuyết          ← tiếng Việt, nhiều mục ###
@@ -68,7 +68,7 @@ Không cần `import`. Danh sách được khai báo ở `src/mdx-components.tsx
 ```
 
 ### `<Callout>`: hộp ghi chú
-`type`: `note` · `tip` · `warning` · `example` · `culture` · `hanviet`; `title` là tùy chọn.
+`type`: `note` · `tip` · `warning` · `example` · `culture` · `hanviet`; `title` là tùy chọn. Giá trị `type` (cũng như `lang` của `LangSection`, `Summary`, `Gloss`) sai sẽ bị `check:content` báo lỗi.
 ```mdx
 <Callout type="hanviet">
 <Ja t="言語学{げんごがく}" /> đọc Hán Việt là **ngôn ngữ học**.
@@ -125,10 +125,10 @@ Ngoặc không cân hoặc thiếu nhãn sẽ bị `check:content` báo lỗi. K
 - `VocalTract`: `moi`, `rang`, `loi`, `ngac-cung`, `ngac-mem`, `luoi-con`, `dau-luoi`, `than-luoi`, `yet-hau`, `thanh-hau`, `khoang-mui`, `khoang-mieng`
 
 ### `<Summary lang="en|ja">`: tóm tắt bằng ngôn ngữ đích
-Với tiếng Nhật, bọc cả đoạn trong `<Ja t="…" />` để có furigana.
+Với tiếng Nhật, bọc cả đoạn trong `<Ja t="…" />` để có furigana. Đoạn dài tự xuống dòng như văn bản tiếng Nhật bình thường.
 
 ### Inline
-- `<Ja t="言語{げんご}" romaji="gengo" speak />`: chữ Nhật có furigana, `speak` để hiện nút nghe
+- `<Ja t="言語{げんご}" romaji="gengo" speak />`: chữ Nhật có furigana, `speak` để hiện nút nghe. Từ ngắn (≤ 12 ký tự, không có dấu câu) được giữ trên một dòng; câu dài thì tự xuống dòng, và phần romaji có thể xuống dòng riêng trên màn hình hẹp
 - `<Speak lang="en">language</Speak>`: từ kèm nút phát âm
 - `<Ipa>ˈlæŋɡwɪdʒ</Ipa>` → /…/ · `<Ipa phonetic>pʰɪn</Ipa>` → […]
 - `<Ruby base="言語" reading="げんご" />`: ruby đơn lẻ

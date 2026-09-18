@@ -1,5 +1,6 @@
 import { CircleCheck, Clock, Trophy } from 'lucide-react'
 import { Link } from 'react-router'
+import { getQuiz } from '../../data/quizzes'
 import type { Lesson } from '../../data/types'
 import { useProgress } from '../../lib/progress'
 import { cn } from '../../lib/utils'
@@ -9,7 +10,9 @@ import { StatusBadge } from './StatusBadge'
 export function ChapterCard({ lesson, compact = false }: { lesson: Lesson; compact?: boolean }) {
   const progress = useProgress()
   const done = progress.completed.includes(lesson.slug)
-  const quiz = progress.quiz[lesson.slug]
+  const record = progress.quiz[lesson.slug]
+  // hide scores from an older version of the quiz (different number of questions)
+  const quiz = record && record.total === getQuiz(lesson.slug).length ? record : undefined
 
   return (
     <Link

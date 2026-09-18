@@ -83,7 +83,7 @@ export function Tree({ t, caption }: TreeProps) {
           <span className="text-muted">{t}</span>
         </p>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="relative overflow-x-auto">
           <svg
             role="img"
             aria-label={`Sơ đồ cây: ${describeTree(result.tree)}`}

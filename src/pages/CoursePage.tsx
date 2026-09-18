@@ -3,16 +3,20 @@ import { StatusBadge } from '../components/lesson/StatusBadge'
 import { JaText } from '../components/ui/JaText'
 import { PageHeader } from '../components/ui/PageHeader'
 import { getLessonsByPart, lessons, parts } from '../data/lessons'
+import type { LessonStatus } from '../data/types'
 import { usePageMeta } from '../lib/page-meta'
 import { useProgress } from '../lib/progress'
 
 const ROMAN = ['I', 'II', 'III', 'IV']
+const STATUS_ORDER: LessonStatus[] = ['outline', 'draft', 'complete']
 
 export default function CoursePage() {
   usePageMeta('Lộ trình khóa học', 'Lộ trình 12 chương Nhập môn Ngôn ngữ học: bản chất ngôn ngữ, cấu trúc, tâm lý và xã hội.')
   const { completed } = useProgress()
   const done = lessons.filter((lesson) => completed.includes(lesson.slug)).length
   const percent = Math.round((done / lessons.length) * 100)
+  // the legend only matters while some chapters are still being written
+  const statuses = STATUS_ORDER.filter((status) => lessons.some((lesson) => lesson.status === status))
 
   return (
     <>
@@ -40,12 +44,14 @@ export default function CoursePage() {
               <div className="h-full rounded-full bg-success transition-all" style={{ width: `${percent}%` }} />
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
-            Trạng thái nội dung:
-            <StatusBadge status="outline" />
-            <StatusBadge status="draft" />
-            <StatusBadge status="complete" />
-          </div>
+          {statuses.length > 1 && (
+            <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
+              Trạng thái nội dung:
+              {statuses.map((status) => (
+                <StatusBadge key={status} status={status} />
+              ))}
+            </div>
+          )}
         </div>
       </PageHeader>
 
@@ -57,7 +63,7 @@ export default function CoursePage() {
                 {ROMAN[part.id - 1]}
               </span>
               <div>
-                <h2 id={`part-${part.id}`} className="text-2xl font-bold">
+                <h2 id={`part-${part.id}`} className="scroll-mt-24 text-2xl font-bold">
                   Phần {ROMAN[part.id - 1]}: {part.title}
                 </h2>
                 <p className="mt-1 text-sm text-muted">
