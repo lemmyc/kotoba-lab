@@ -4,7 +4,7 @@
 
 Kotoba Lab là website học ngôn ngữ học. Lý thuyết được giảng bằng tiếng Việt, sau đó mở rộng sang tiếng Anh và tiếng Nhật. Khóa học gồm 12 chương, bám theo khung giáo trình *An Introduction to Language* (Fromkin, Rodman & Hyams).
 
-> **Trạng thái:** đã hoàn thiện khung website và đề cương 12 chương. Chương 1 đã viết đầy đủ và làm chương mẫu (đang rà soát); các chương 2–12 đang ở dạng khung bài và sẽ được viết dần. Xem [docs/CONTENT_ROADMAP.md](docs/CONTENT_ROADMAP.md).
+> **Trạng thái:** cả 12 chương đã hoàn chỉnh: bài giảng, 180 thuật ngữ và 120 câu quiz. Nội dung được biên soạn với sự hỗ trợ của AI; hãy đối chiếu với tài liệu tham khảo khi dùng cho mục đích học thuật. Xem [docs/CONTENT_ROADMAP.md](docs/CONTENT_ROADMAP.md).
 
 ## Tính năng
 
@@ -14,6 +14,7 @@ Kotoba Lab là website học ngôn ngữ học. Lý thuyết được giảng b�
 - **Quiz** theo chương, giải thích ngay sau mỗi câu, lưu điểm cao nhất.
 - **Thẻ ghi nhớ (flashcard)** với 4 chiều hỏi, đánh dấu Đã nhớ / Ôn lại, có phím tắt.
 - **Tiến độ học** lưu trong `localStorage`, không cần tài khoản.
+- **Chuyển chương** bằng nút ‹ › ở đầu bài, thanh nổi ở đáy màn hình hoặc phím `Shift + ←/→`.
 - **Tìm kiếm nhanh** bằng `Ctrl/⌘ K`, **giao diện sáng/tối**, **phát âm** EN/JA bằng Web Speech API, bố cục tốt trên điện thoại.
 
 ## Công nghệ

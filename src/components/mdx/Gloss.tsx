@@ -35,7 +35,7 @@ export function Gloss({ text, lang, romaji, gloss, translation, bad }: GlossProp
     <figure className="not-prose my-5 rounded-xl border border-line bg-surface px-5 py-4">
       <div className="flex items-start gap-3">
         {lang && <LangTag lang={lang} className="mt-1.5" />}
-        <div className="min-w-0 flex-1 overflow-x-auto">
+        <div className="relative min-w-0 flex-1 overflow-x-auto">
           {aligned ? (
             <div className="flex flex-wrap gap-x-5 gap-y-3">
               {bad && <span className="self-start pt-1 text-lg text-danger">*</span>}

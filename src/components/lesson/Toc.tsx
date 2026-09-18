@@ -58,7 +58,8 @@ function scrollToHeading(event: React.MouseEvent<HTMLAnchorElement>, id: string)
   const el = document.getElementById(id)
   if (!el) return
   event.preventDefault()
-  el.scrollIntoView({ block: 'start' })
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  el.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' })
   window.history.replaceState(window.history.state, '', `#${encodeURIComponent(id)}`)
 }
 

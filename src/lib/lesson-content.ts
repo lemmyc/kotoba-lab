@@ -21,6 +21,12 @@ export function hasLessonContent(slug: string) {
   return lessonContent.has(slug)
 }
 
+/** Starts downloading a lesson chunk early (e.g. on hover of a "next chapter" link). */
+export function preloadLessonContent(slug: string) {
+  const load = modules[`../content/lessons/${slug}.mdx`]
+  if (load) void load().catch(() => {})
+}
+
 /** Renders the MDX body of a lesson; wrap in <Suspense>. */
 export function renderLessonContent(slug: string, components: MDXComponents) {
   const Content = lessonContent.get(slug)

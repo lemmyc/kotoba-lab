@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { JaText } from '../ui/JaText'
 import { LangTag } from '../ui/LangTag'
 
@@ -13,7 +14,14 @@ interface CompareProps {
   caption?: string
 }
 
-function Cell({ value, lang }: { value?: string; lang?: 'ja' }) {
+/** kana / kanji — only those runs get lang="ja", so Vietnamese notes in a Japanese cell keep the Vietnamese font */
+const JAPANESE = /[぀-ヿ㐀-䶿一-鿿豈-﫿々〆ヵヶ]/
+
+function Segment({ text }: { text: string }) {
+  return JAPANESE.test(text) ? <JaText text={text} lang="ja" /> : <JaText text={text} />
+}
+
+function Cell({ value, lang }: { value?: string; lang?: 'en' | 'ja' }) {
   if (!value?.trim()) {
     return (
       <span className="text-muted/70 italic" title="Đang biên soạn">
@@ -23,15 +31,16 @@ function Cell({ value, lang }: { value?: string; lang?: 'ja' }) {
   }
   // **bold** segments alternate with plain ones after the split
   const parts = value.split(/\*\*(.+?)\*\*/)
+  const render = (part: string) => (lang === 'ja' ? <Segment text={part} /> : <JaText text={part} />)
   return (
-    <span lang={lang}>
+    <span lang={lang === 'en' ? 'en' : undefined}>
       {parts.map((part, index) =>
         index % 2 === 1 ? (
           <strong key={index} className="font-semibold text-brand">
-            <JaText text={part} />
+            {render(part)}
           </strong>
         ) : (
-          <JaText key={index} text={part} />
+          <Fragment key={index}>{render(part)}</Fragment>
         ),
       )}
     </span>
@@ -41,7 +50,7 @@ function Cell({ value, lang }: { value?: string; lang?: 'ja' }) {
 /** Vietnamese – English – Japanese comparison table. Cells accept furigana markup and **bold**. */
 export function Compare({ rows, caption }: CompareProps) {
   return (
-    <div className="not-prose my-6 overflow-x-auto rounded-xl border border-line bg-surface">
+    <div className="not-prose relative my-6 overflow-x-auto rounded-xl border border-line bg-surface">
       <table className="w-full min-w-[40rem] border-collapse text-left text-[15px]">
         {caption && <caption className="border-b border-line px-4 py-3 text-left text-sm text-muted">{caption}</caption>}
         <thead>
@@ -70,7 +79,7 @@ export function Compare({ rows, caption }: CompareProps) {
                 <Cell value={row.vi} />
               </td>
               <td className="px-4 py-3">
-                <Cell value={row.en} />
+                <Cell value={row.en} lang="en" />
               </td>
               <td className="px-4 py-3 leading-loose">
                 <Cell value={row.ja} lang="ja" />

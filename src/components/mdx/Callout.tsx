@@ -28,7 +28,7 @@ interface CalloutProps {
 }
 
 export function Callout({ type = 'note', title, children }: CalloutProps) {
-  const config = CONFIG[type]
+  const config = CONFIG[type] ?? CONFIG.note
   return (
     <aside className={cn('not-prose my-6 rounded-xl border px-5 py-4', config.className)}>
       <p className="mb-2 flex items-center gap-2 text-sm font-semibold">

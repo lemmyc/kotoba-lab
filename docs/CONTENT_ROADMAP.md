@@ -6,7 +6,7 @@ Cập nhật file này mỗi khi hoàn thành một phần. Số liệu thực t
 
 | # | Chương (slug) | Trạng thái | Lý thuyết | Mở rộng EN | Mở rộng JA | So sánh | Tóm tắt EN/JA | Thuật ngữ | Quiz |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Ngôn ngữ là gì? (`ban-chat-ngon-ngu`) | draft | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 12 | 10/10 |
+| 1 | Ngôn ngữ là gì? (`ban-chat-ngon-ngu`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 2 | Ngôn ngữ và não bộ (`ngon-ngu-va-nao-bo`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 3 | Hình thái học (`hinh-thai-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 4 | Cú pháp học (`cu-phap-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
@@ -16,22 +16,22 @@ Cập nhật file này mỗi khi hoàn thành một phần. Số liệu thực t
 | 8 | Âm vị học (`am-vi-hoc`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 9 | Thụ đắc và xử lý ngôn ngữ (`thu-dac-ngon-ngu`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 | 10 | Ngôn ngữ và xã hội (`ngon-ngu-va-xa-hoi`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
-| 11 | Lịch sử và biến đổi ngôn ngữ (`bien-doi-ngon-ngu`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
-| 12 | Chữ viết (`chu-viet`) | outline | ⬜ | ⬜ | ⬜ | 🟡 | ⬜ | 5 | 3/10 |
+| 11 | Lịch sử và biến đổi ngôn ngữ (`bien-doi-ngon-ngu`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
+| 12 | Chữ viết (`chu-viet`) | complete | ✅ | ✅ | ✅ | ✅ | ✅ | 15 | 10/10 |
 
-Chương 1 để 🟡 vì nội dung do AI hỗ trợ biên soạn, cần người rà soát trước khi chuyển sang `complete`.
+Cả 12 chương đã hoàn chỉnh (0 `<Todo>`). Nội dung được biên soạn với sự hỗ trợ của AI; mọi số liệu, niên đại và trích dẫn nên tiếp tục được đối chiếu với các tài liệu trong `src/data/references.ts`.
 
-## Thứ tự đề xuất
+## Hướng rà soát tiếp theo
 
-1. **Rà soát chương 1**, rồi chuyển sang `complete`.
-2. Chương 3 → 4 → 7 → 8: các bình diện cấu trúc cốt lõi, nhiều ví dụ đối chiếu ba ngôn ngữ.
-3. Chương 5 → 6.
-4. Chương 2 → 9 → 10 → 11 → 12.
+1. Nhờ người có chuyên môn đọc lại các phần có niên đại, số liệu (chương 2, 9, 11, 12).
+2. Bổ sung ví dụ âm thanh thật (ghi âm người bản ngữ) cho chương 7, 8.
+3. Thêm câu hỏi quiz nâng cao (mỗi chương 5 câu) cho người muốn ôn sâu.
 
 ## Việc kỹ thuật có thể làm thêm
 
-- [ ] Component `Tree`: vẽ cây cú pháp và cây hình thái (chương 3, 4)
-- [ ] Component `ToneChart`: đường nét 6 thanh điệu tiếng Việt (chương 7, 8)
-- [ ] Hình minh họa bộ máy phát âm, bản đồ vùng não (chương 2, 7)
+- [x] Component `Tree`: vẽ cây cú pháp và cây hình thái (chương 3, 4)
+- [x] Component `ToneChart`: đường nét 6 thanh điệu tiếng Việt (chương 7, 8)
+- [x] Hình minh họa bộ máy phát âm, bản đồ vùng não (chương 2, 7): `VocalTract`, `BrainDiagram`
+- [x] Điều hướng chương trước/sau: nút ở đầu bài, thanh nổi, phím `Shift + ←/→`
 - [ ] Prerender các route tĩnh để cải thiện SEO
 - [ ] Ôn tập ngắt quãng (spaced repetition) cho flashcard

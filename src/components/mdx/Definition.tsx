@@ -24,7 +24,7 @@ export function Definition({ term, en, ipa, ja, romaji, children }: DefinitionPr
         <span className="text-lg font-bold">{term}</span>
         <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
           {en && (
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex min-w-0 flex-wrap items-center gap-1.5">
               <LangTag lang="en" />
               <span>{en}</span>
               {ipa && <span className="font-ipa text-muted">/{ipa}/</span>}
@@ -32,7 +32,7 @@ export function Definition({ term, en, ipa, ja, romaji, children }: DefinitionPr
             </span>
           )}
           {ja && (
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex min-w-0 flex-wrap items-center gap-1.5">
               <LangTag lang="ja" />
               <JaText text={ja} lang="ja" className="text-base" />
               {romaji && <span className="text-muted italic">{romaji}</span>}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BookOpen, ChartNoAxesColumn, Info, Languages, Layers, Library, Menu, Search, X } from 'lucide-react'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation } from 'react-router'
 import { cn } from '../../lib/utils'
 import { FuriganaToggle } from './FuriganaToggle'
 import { Logo } from './Logo'
@@ -20,22 +20,31 @@ const SECONDARY_ITEMS = [
 ] as const
 
 export function Header() {
+  const location = useLocation()
   const [searchOpen, setSearchOpen] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  // The menu belongs to the page it was opened on: any navigation (links, search, back/forward) closes it.
+  const [menuOpenAt, setMenuOpenAt] = useState<string | null>(null)
+  const menuOpen = menuOpenAt === location.key
+  const closeMenu = () => setMenuOpenAt(null)
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      if ((event.ctrlKey || event.metaKey) && event.key?.toLowerCase() === 'k') {
         event.preventDefault()
-        setMenuOpen(false)
+        setMenuOpenAt(null)
         setSearchOpen((open) => !open)
+      } else if (event.key === 'Escape') {
+        setMenuOpenAt(null)
       }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
 
-  const closeMenu = () => setMenuOpen(false)
+  function openSearch() {
+    setMenuOpenAt(null)
+    setSearchOpen(true)
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md supports-[backdrop-filter]:bg-bg/70">
@@ -62,7 +71,7 @@ export function Header() {
         <div className="ml-auto flex items-center gap-1">
           <button
             type="button"
-            onClick={() => setSearchOpen(true)}
+            onClick={openSearch}
             className="hidden h-9 items-center gap-2 rounded-lg border border-line bg-surface px-3 text-sm text-muted transition hover:border-brand/40 hover:text-ink sm:inline-flex"
             aria-label="Tìm kiếm (Ctrl+K)"
           >
@@ -72,7 +81,7 @@ export function Header() {
           </button>
           <button
             type="button"
-            onClick={() => setSearchOpen(true)}
+            onClick={openSearch}
             className="grid size-9 place-items-center rounded-lg text-muted hover:bg-surface-2 hover:text-ink sm:hidden"
             aria-label="Tìm kiếm"
           >
@@ -82,7 +91,7 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            onClick={() => setMenuOpen((open) => !open)}
+            onClick={() => setMenuOpenAt(menuOpen ? null : location.key)}
             className="grid size-9 place-items-center rounded-lg text-ink hover:bg-surface-2 lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
@@ -94,7 +103,7 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <div id="mobile-menu" className="border-t border-line bg-bg lg:hidden">
+        <div id="mobile-menu" className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-line bg-bg lg:hidden">
           <nav className="mx-auto grid max-w-6xl gap-1 px-4 py-3 sm:px-6" aria-label="Menu di động">
             {[...NAV_ITEMS, ...SECONDARY_ITEMS].map(({ to, label, Icon }) => (
               <NavLink

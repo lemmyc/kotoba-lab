@@ -11,7 +11,7 @@ import NotFoundPage from './NotFoundPage'
 export default function QuizPage() {
   const { slug } = useParams()
   const lesson = getLesson(slug)
-  usePageMeta(lesson ? `Quiz chương ${lesson.number}: ${lesson.title}` : undefined)
+  usePageMeta(lesson ? `Quiz chương ${lesson.number}: ${lesson.title}` : 'Không tìm thấy trang')
 
   if (!lesson) return <NotFoundPage />
   const questions = getQuiz(lesson.slug)
