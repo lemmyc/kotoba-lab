@@ -271,16 +271,17 @@ export const lessons: Lesson[] = [
     titleJa: '文字体系{もじたいけい}',
     titleJaRomaji: 'Moji taikei',
     description:
-      'Lịch sử chữ viết, các loại hình chữ viết, chính tả, từ chữ Hán – chữ Nôm đến chữ Quốc ngữ, và hệ chữ ba bộ của tiếng Nhật.',
+      'Lịch sử và các loại hình chữ viết, chính tả nông – sâu, từ chữ Hán – chữ Nôm đến chữ Quốc ngữ, chính tả tiếng Anh, và hệ chữ ba bộ của tiếng Nhật.',
     objectives: [
-      'Phân biệt chữ ghi ý, chữ ghi âm tiết, chữ ghi phụ âm và chữ cái.',
-      'Tóm lược lịch sử chữ viết của tiếng Việt: chữ Hán, chữ Nôm, chữ Quốc ngữ.',
-      'Giải thích mối quan hệ chữ – âm trong chính tả tiếng Anh.',
-      'Mô tả cách kanji, hiragana và katakana phối hợp trong tiếng Nhật.',
+      'Phân biệt chữ ghi ý, chữ ghi âm tiết, chữ cái, abjad và abugida; nhận diện chữ hình thanh.',
+      'Giải thích nguyên tắc mượn âm (rebus) và các nơi chữ viết ra đời độc lập.',
+      'Tóm lược lịch sử chữ viết của tiếng Việt: chữ Hán, chữ Nôm, chữ Quốc ngữ; giải thích các quy tắc c/k/q, g/gh, ng/ngh.',
+      'Giải thích vì sao chính tả tiếng Anh "sâu" và các nỗ lực cải cách chính tả.',
+      'Mô tả cách kanji (âm On, âm Kun), hiragana và katakana phối hợp, nguồn gốc kana và các cải cách chữ viết tiếng Nhật.',
     ],
-    topics: ['writing', 'logogram', 'syllabary', 'alphabet', 'chữ Nôm', 'chữ Quốc ngữ', 'kanji', 'kana', '文字', 'orthography'],
-    minutes: 35,
-    status: 'outline',
+    topics: ['writing', 'logogram', 'syllabary', 'alphabet', 'abjad', 'abugida', 'rebus', 'chữ Nôm', 'chữ Quốc ngữ', 'Alexandre de Rhodes', 'kanji', 'kana', '文字', '常用漢字', "man'yōgana", 'orthography', 'Webster'],
+    minutes: 60,
+    status: 'complete',
   },
 ]
 
